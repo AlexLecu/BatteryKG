@@ -1,0 +1,207 @@
+# Hand-extracted 2026-07-11 from the LG Chem PRODUCT SPECIFICATION
+# "Rechargeable Lithium Ion Battery Model: INR18650HG2 3000mAh",
+# doc PS-HG2-Rev0, dated 2015-01-28. PDF page = printed document page.
+cell_model: LG Chem 18650HG2
+manufacturer: LG Chem
+source_document: lg_inr18650hg2.pdf
+source_url: https://www.batteryspace.com/prod-specs/9989.specs.pdf
+retrieved: 2026-07-11
+claims:
+  - property: nominal_capacity_ah
+    value: 3.0
+    unit: Ah
+    page: 4
+    stated_conditions:
+      text: "2.1 Capacity: Nominal 3000 mAh (Cnom), Std. charge/discharge
+             (1500mA CC-CV 4.2V/50mA cut; 600mA CC to 2.0V; 25±2°C per 4.1)"
+      temperature_c: 25
+      charge_current_a: 1.5
+      discharge_current_a: 0.6
+
+  - property: nominal_voltage_v
+    value: 3.6
+    unit: V
+    page: 4
+    stated_conditions:
+      text: "2.2 Nominal Voltage: 3.60V, average for Std. discharge"
+
+  - property: std_charge_current_a
+    value: 1.5
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.3.1 Standard Charge: CC 1500mA, CV 4.2V, end (cut-off) 50mA"
+      charge_voltage_v: 4.2
+      end_current_ma: 50
+
+  - property: fast_charge_current_a
+    value: 4.0
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.3.2 Fast charge: CC 4000mA, CV 4.2V, end (cut-off) 100mA"
+      charge_voltage_v: 4.2
+      end_current_ma: 100
+
+  - property: max_charge_voltage_v
+    value: 4.2
+    unit: V
+    page: 4
+    stated_conditions:
+      text: "2.4 Max. Charge Voltage: 4.20 ± 0.05V"
+
+  - property: max_charge_current_a
+    value: 6.0
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.5 Max. Charge Current: 6000mA"
+
+  - property: std_discharge_current_a
+    value: 0.6
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.6.1 Standard Discharge: CC 600mA, end voltage (cut off) 2.0V"
+      discharge_cutoff_v: 2.0
+
+  - property: fast_discharge_current_a
+    value: [10.0, 20.0]
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.6.2 Fast Discharge: CC 10000mA, 20000mA; end voltage 2.0V"
+      discharge_cutoff_v: 2.0
+
+  - property: max_cont_discharge_a
+    value: 20.0
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.7 Max. Discharge Current, for continuous discharge: 20000mA"
+
+  - property: mass_g
+    value: 47.0
+    unit: g
+    page: 4
+    stated_conditions:
+      text: "2.8 Weight: Max. 47.0 g"
+
+  - property: charge_temp_range_c
+    value: [-5, 50]
+    unit: degC
+    page: 4
+    stated_conditions:
+      text: "2.9 Operating Temperature (Cell Surface Temperature), Charge: -5 ~ 50°C"
+
+  - property: discharge_temp_range_c
+    value: [-20, 75]
+    unit: degC
+    page: 4
+    stated_conditions:
+      text: "2.9 Operating Temperature (Cell Surface Temperature), Discharge: -20 ~ 75°C"
+
+  - property: storage_temp_range_c
+    value: [-20, 20]
+    unit: degC
+    page: 4
+    stated_conditions:
+      text: "2.10 Storage Temperature (for shipping state), 1 year: -20 ~ 20°C"
+    notes: "1 month: -20~60°C; 3 months: -20~45°C; shipping state ~40% charged"
+
+  - property: internal_impedance_mohm
+    value: 20
+    unit: mOhm
+    page: 6
+    stated_conditions:
+      text: "4.2.1 Initial AC Impedance: <= 20 mOhm at 1kHz after standard charge,
+             without PTC"
+    notes: upper bound
+
+  - property: cycle_life_cycles
+    value: 300
+    unit: cycles
+    page: 6
+    stated_conditions:
+      text: "4.2.3 Cycle Life: charged/discharged per 4.1.3 (4000mA CC-CV 4.2V
+             charge, 10000mA CC discharge to 2.0V), 25±2°C; 301st cycle discharge
+             capacity (std conditions) >= 60% of Cnom"
+      temperature_c: 25
+      charge_current_a: 4.0
+      discharge_current_a: 10.0
+      dod_pct: 100
+      end_condition: "capacity >= 60% of nominal at cycle 301"
+    notes: "10A discharge ~ 3.3C; pass criterion, not typical life"
+
+  - property: cycle_life_cycles
+    value: 200
+    unit: cycles
+    page: 6
+    stated_conditions:
+      text: "4.2.3 Cycle Life: as above but 20000mA CC discharge; 201st cycle
+             discharge capacity (std conditions) >= 60% of Cnom"
+      temperature_c: 25
+      charge_current_a: 4.0
+      discharge_current_a: 20.0
+      dod_pct: 100
+      end_condition: "capacity >= 60% of nominal at cycle 201"
+    notes: "20A discharge ~ 6.7C; pass criterion, not typical life"
+
+  - property: storage_capacity_remaining_pct
+    value: 90
+    unit: pct
+    page: 6
+    stated_conditions:
+      text: "4.3.1 Storage Characteristics: >= 90% of Cnom remaining after
+             30 days at 23±2°C, charged per 4.1.1"
+      temperature_c: 23
+      duration_days: 30
+    notes: lower bound
+
+  - property: storage_capacity_recovery_pct
+    value: 80
+    unit: pct
+    page: 6
+    stated_conditions:
+      text: "4.3.2 High Temperature Storage Test: capacity recovery rate >= 80%
+             of Cnom after 1 week at 60°C"
+      temperature_c: 60
+      duration_days: 7
+    notes: lower bound
+
+  - property: capacity_retention_at_temp_pct
+    value: 60
+    unit: pct
+    page: 7
+    stated_conditions:
+      text: "4.3.4 Temperature Dependency of Capacity: charge at 25°C,
+             discharge at -10°C -> 60% (of Cnom)"
+      charge_temperature_c: 25
+      discharge_temperature_c: -10
+
+  - property: capacity_retention_at_temp_pct
+    value: 80
+    unit: pct
+    page: 7
+    stated_conditions:
+      text: "4.3.4: charge at 25°C, discharge at 0°C -> 80% (of Cnom)"
+      charge_temperature_c: 25
+      discharge_temperature_c: 0
+
+  - property: capacity_retention_at_temp_pct
+    value: 100
+    unit: pct
+    page: 7
+    stated_conditions:
+      text: "4.3.4: charge at 25°C, discharge at 25°C -> 100% (of Cnom)"
+      charge_temperature_c: 25
+      discharge_temperature_c: 25
+
+  - property: capacity_retention_at_temp_pct
+    value: 95
+    unit: pct
+    page: 7
+    stated_conditions:
+      text: "4.3.4: charge at 25°C, discharge at 60°C -> 95% (of Cnom)"
+      charge_temperature_c: 25
+      discharge_temperature_c: 60

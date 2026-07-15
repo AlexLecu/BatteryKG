@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ArXiv Query: search_query=all:"NCR18650B"</title>
+  <entry>
+    <id>http://arxiv.org/abs/2502.12345v1</id>
+    <published>2025-02-10T00:00:00Z</published>
+    <title>Data-driven aging models for 18650 cells:
+      a public degradation dataset</title>
+    <summary>We release cycling data for NCR18650B and HG2 cells.</summary>
+    <author><name>D. Researcher</name></author>
+    <author><name>E. Researcher</name></author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1901.00001v1</id>
+    <published>2019-01-01T00:00:00Z</published>
+    <title>Too old to include</title>
+    <summary>old</summary>
+    <author><name>F. Old</name></author>
+  </entry>
+</feed>

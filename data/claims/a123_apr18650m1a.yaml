@@ -1,0 +1,109 @@
+# Hand-extracted 2026-07-11 from the 1-page A123 datasheet (doc MD100009, (c) 2009).
+cell_model: A123 APR18650M1A
+manufacturer: A123 Systems
+source_document: a123_apr18650m1a.pdf
+source_url: https://www.batteryspace.com/prod-specs/6612.pdf
+retrieved: 2026-07-11
+claims:
+  - property: nominal_capacity_ah
+    value: 1.1
+    unit: Ah
+    page: 1
+    stated_conditions:
+      text: "'Nominal capacity and voltage: 1.1Ah, 3.3 V' — no measurement conditions stated"
+
+  - property: nominal_voltage_v
+    value: 3.3
+    unit: V
+    page: 1
+    stated_conditions:
+      text: unspecified
+
+  - property: std_charge_current_a
+    value: 1.5
+    unit: A
+    page: 1
+    stated_conditions:
+      text: "Recommended standard charge method: 1.5A to 3.6V CCCV, 45 min"
+      charge_voltage_v: 3.6
+      charge_time_min: 45
+
+  - property: fast_charge_current_a
+    value: 4.0
+    unit: A
+    page: 1
+    stated_conditions:
+      text: "Recommended fast charge current: 4A to 3.6V CCCV, 15 min"
+      charge_voltage_v: 3.6
+      charge_time_min: 15
+
+  - property: max_cont_discharge_a
+    value: 30.0
+    unit: A
+    page: 1
+    stated_conditions:
+      text: "Maximum continuous discharge: 30A"
+
+  - property: cycle_life_cycles
+    value: 1000
+    unit: cycles
+    page: 1
+    stated_conditions:
+      text: "Cycle life at 5C discharge, 100% DOD: Over 1,000 cycles — charge
+             regime, temperature, and end-of-life capacity threshold NOT stated"
+      discharge_c_rate: 5.0
+      dod_pct: 100
+    notes: "claim reads 'Over 1,000 cycles' -> value recorded as the stated lower
+            bound. The omission of charge rate / temperature / retention threshold
+            is itself a finding."
+
+  - property: cycle_life_retention_pct
+    value: 93
+    unit: pct
+    page: 1
+    stated_conditions:
+      text: "Projected Cycle Life graph: 100% DOD, 1C/1C, Room Temperature —
+             ~93% of initial capacity after ~1700 cycles"
+      charge_c_rate: 1.0
+      discharge_c_rate: 1.0
+      dod_pct: 100
+      cycles: 1700
+    notes: "read from graph (no printed number); conservative reading of the
+            final plotted point"
+
+  - property: charge_voltage_v
+    value: 3.6
+    unit: V
+    page: 1
+    stated_conditions:
+      text: "Recommended charge and cut-off V at 25°C: 3.6V to 2V"
+      temperature_c: 25
+
+  - property: discharge_cutoff_v
+    value: 2.0
+    unit: V
+    page: 1
+    stated_conditions:
+      text: "Recommended charge and cut-off V at 25°C: 3.6V to 2V"
+      temperature_c: 25
+
+  - property: operating_temp_range_c
+    value: [-30, 60]
+    unit: degC
+    page: 1
+    stated_conditions:
+      text: "Operating temperature range: -30°C to +60°C"
+
+  - property: storage_temp_range_c
+    value: [-50, 60]
+    unit: degC
+    page: 1
+    stated_conditions:
+      text: "Storage temperature range: -50°C to +60°C"
+
+  - property: mass_g
+    value: 39
+    unit: g
+    page: 1
+    stated_conditions:
+      text: "Core cell weight: 39 grams"

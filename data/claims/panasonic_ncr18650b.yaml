@@ -1,0 +1,118 @@
+# Hand-extracted 2026-07-11 from the 4-page Panasonic marketing datasheet
+# (doc code 2G23X0KYKU). NOTE: this document contains NO cycle-life claim at
+# all — recorded under `omissions`. The formal cycle-life claim lives in the
+# official SANYO/Panasonic full specification (separate YAML).
+cell_model: Panasonic NCR18650B
+manufacturer: Panasonic
+source_document: panasonic_ncr18650b.pdf
+source_url: https://www.orbtronic.com/content/NCR18650B-Datasheet-Panasonic-Specifications.pdf
+retrieved: 2026-07-11
+omissions:
+  - property: cycle_life_cycles
+    note: "no cycle-life number or graph anywhere in this 4-page datasheet —
+           the omission is itself a finding"
+claims:
+  - property: rated_capacity_ah
+    value: 3.2
+    unit: Ah
+    page: 1
+    stated_conditions:
+      text: "Rated Capacity (at 20°C): Min. 3200mAh"
+      temperature_c: 20
+    notes: minimum
+
+  - property: minimum_capacity_ah
+    value: 3.25
+    unit: Ah
+    page: 1
+    stated_conditions:
+      text: "Nominal Capacity (at 25°C): Min. 3250mAh"
+      temperature_c: 25
+
+  - property: nominal_capacity_ah
+    value: 3.35
+    unit: Ah
+    page: 1
+    stated_conditions:
+      text: "Nominal Capacity (at 25°C): Typ. 3350mAh"
+      temperature_c: 25
+
+  - property: nominal_voltage_v
+    value: 3.6
+    unit: V
+    page: 1
+    stated_conditions:
+      text: unspecified
+
+  - property: charge_voltage_v
+    value: 4.2
+    unit: V
+    page: 1
+    stated_conditions:
+      text: "Charging Method: Constant Current-Constant Voltage; Charging Voltage: 4.2V"
+
+  - property: std_charge_current_a
+    value: 1.625
+    unit: A
+    page: 1
+    stated_conditions:
+      text: "Charging Current: Std. 1625mA"
+
+  - property: std_charge_time_h
+    value: 4.0
+    unit: h
+    page: 1
+    stated_conditions:
+      text: "Charging Time: 4.0hrs."
+
+  - property: charge_temp_range_c
+    value: [10, 45]
+    unit: degC
+    page: 1
+    stated_conditions:
+      text: "Ambient Temperature, Charge: +10 ~ +45°C"
+    notes: "the official SANYO full spec states 0 ~ +40°C instead — the two
+            Panasonic documents disagree (recorded in both YAMLs)"
+
+  - property: discharge_temp_range_c
+    value: [-20, 60]
+    unit: degC
+    page: 1
+    stated_conditions:
+      text: "Ambient Temperature, Discharge: -20 ~ +60°C"
+
+  - property: storage_temp_range_c
+    value: [-20, 50]
+    unit: degC
+    page: 1
+    stated_conditions:
+      text: "Ambient Temperature, Storage: -20 ~ +50°C"
+
+  - property: mass_g
+    value: 47.5
+    unit: g
+    page: 1
+    stated_conditions:
+      text: "Weight (Max.): 47.5g"
+
+  - property: volumetric_energy_density_wh_l
+    value: 676
+    unit: Wh/l
+    page: 1
+    stated_conditions:
+      text: unspecified
+
+  - property: gravimetric_energy_density_wh_kg
+    value: 243
+    unit: Wh/kg
+    page: 1
+    stated_conditions:
+      text: unspecified
+
+  - property: discharge_cutoff_v
+    value: 2.5
+    unit: V
+    page: 2
+    stated_conditions:
+      text: "graph annotation: 'Discharge: CC: Variable Current (E.V.:2.50V)'"
+    notes: "from graph annotations (pages 2-3), not the spec table"

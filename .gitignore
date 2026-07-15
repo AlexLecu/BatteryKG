@@ -1,0 +1,51 @@
+# --- Data (large / reproducible) ---
+data/raw/
+data/processed/*
+!data/processed/.gitkeep
+data/claims/datasheets/
+data/claims/extracted_text/
+
+# --- Outputs (regenerable, except the two reports the app reads) ---
+outputs/*
+!outputs/.gitkeep
+!outputs/experiment_01_prediction.md
+!outputs/experiment_02_extraction.md
+
+# --- Monitor run state ---
+data/monitor/
+
+# --- Python ---
+__pycache__/
+.pytest_cache/
+.built-by-build_public_release
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# --- Environments ---
+.venv/
+venv/
+env/
+.python-version
+
+# --- IDE / OS ---
+.idea/
+.vscode/
+.DS_Store
+
+# --- AI-assistant tooling state (never ship process artifacts) ---
+.claude/
+CLAUDE.md
+.cursor/
+.cursorrules
+.aider*
+.mcp.json
+
+# --- Secrets ---
+.env
+*.local
+
+# --- Neo4j data volume (regenerable graph) ---
+neo4j/

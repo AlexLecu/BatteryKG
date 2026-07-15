@@ -1,0 +1,14 @@
+# BatteryKG app theme — consistent with the paper's palette
+# (primary = the paper's orange; ink/gray text tones; no custom CSS anywhere)
+[theme]
+primaryColor = "#ea580c"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f5f5f4"
+textColor = "#1f2937"
+font = "sans serif"
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false

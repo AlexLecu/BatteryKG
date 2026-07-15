@@ -1,0 +1,98 @@
+{
+ "trained_at": "2026-07-10T23:02:21+00:00",
+ "n_training_cells": 120,
+ "features": [
+  "var_dQ_100_10",
+  "min_dQ_100_10",
+  "slope_2_100",
+  "capacity_cycle_2",
+  "capacity_cycle_100",
+  "cap_ratio_100_2",
+  "mean_charge_time_2_100",
+  "c_rate_1",
+  "c_rate_2",
+  "soc_transition_pct",
+  "batch",
+  "condition_nbr_wmean_log_life",
+  "condition_nbr_wstd_log_life",
+  "condition_nbr_mean_weight",
+  "condition_coverage_train",
+  "behavior_nbr_wmean_log_life",
+  "behavior_nbr_wstd_log_life",
+  "behavior_nbr_mean_weight",
+  "behavior_coverage_train"
+ ],
+ "base_features": [
+  "var_dQ_100_10",
+  "min_dQ_100_10",
+  "slope_2_100",
+  "capacity_cycle_2",
+  "capacity_cycle_100",
+  "cap_ratio_100_2",
+  "mean_charge_time_2_100",
+  "c_rate_1",
+  "c_rate_2",
+  "soc_transition_pct",
+  "batch"
+ ],
+ "behavior_features": [
+  "var_dQ_100_10",
+  "min_dQ_100_10",
+  "cap_ratio_100_2",
+  "slope_2_100"
+ ],
+ "k_neighbors": 5,
+ "scaler": {
+  "behavior": {
+   "mean": [
+    -3.8356668286999733,
+    -1.434065881065478,
+    1.0000844736316816,
+    -2.928354740981362e-05
+   ],
+   "std": [
+    0.3989657396027033,
+    0.1965446150188716,
+    0.01048087665473877,
+    0.0001135110674850032
+   ],
+   "columns": [
+    "var_dQ_100_10",
+    "min_dQ_100_10",
+    "cap_ratio_100_2",
+    "slope_2_100"
+   ]
+  },
+  "condition": {
+   "mean": [
+    5.274583333333333,
+    4.2375,
+    44.34166666666667
+   ],
+   "std": [
+    1.1745211051270592,
+    0.8194065433796176,
+    22.779192198632117
+   ],
+   "columns": [
+    "c_rate_1",
+    "c_rate_2",
+    "soc_transition_pct"
+   ]
+  }
+ },
+ "abstention": {
+  "threshold": 4.080029,
+  "cv_frac_retained": 0.6,
+  "cv_rmse_retained_cycles": 71.98516716969611,
+  "rule": "min retained RMSE among thresholds with retention >= 60%"
+ },
+ "cv_metrics": {
+  "model": "graph_cv",
+  "rmse_log": 0.061494716780838066,
+  "rmse_cycles": 135.1547586489039,
+  "mape_pct": 9.690374685373015
+ },
+ "target": "log10_cycle_life",
+ "note": "graph features at serve time are computed against the neighbor bank; for known instances the cell's own policy group is excluded, mirroring the CV condition the threshold assumes"
+}

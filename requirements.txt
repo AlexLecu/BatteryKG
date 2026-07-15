@@ -1,0 +1,39 @@
+# Core data stack
+numpy>=1.26
+pandas>=2.1
+pyarrow>=15.0          # Parquet I/O
+scipy>=1.11
+
+# Dataset ingestion
+h5py>=3.10             # read MATLAB v7.3 (.mat / HDF5) batch files (MIT/Severson)
+requests>=2.31         # dataset downloads + LLM provider APIs
+tqdm>=4.66             # download / loop progress
+pdfplumber>=0.11       # layout-preserving datasheet text extraction
+openpyxl>=3.1          # Sandia Arbin .xlsx workbooks (src/ingestion/sandia.py)
+xlrd>=2.0              # Sandia legacy .xls workbooks (same loader)
+pyyaml>=6.0            # claims gold-standard files
+
+# Plotting (publication-quality; no seaborn defaults per project convention)
+matplotlib>=3.8
+
+# Notebooks
+jupyter>=1.0
+jupytext>=1.16         # keep notebooks as reviewable .py under version control
+
+# Knowledge graph
+neo4j>=5.15            # Neo4j Python driver
+python-dotenv>=1.0     # read .env credentials
+
+# Demo app
+streamlit>=1.38
+pyvis>=0.3.2           # interactive graph-neighborhood rendering
+
+# ML
+xgboost>=2.0            # degradation predictor + serving path (src/models, app/common.py)
+scikit-learn>=1.4       # required by xgboost's XGBRegressor (sklearn API) at load time
+
+# Testing
+pytest>=8.0
+
+# --- Later phases (agents) — install when needed ---
+# crewai>=0.30

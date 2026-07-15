@@ -1,0 +1,133 @@
+# Hand-extracted 2026-07-11 from the official SANYO/Panasonic full product
+# specification "Specifications of Lithium Ion battery (Cylindrical Type)",
+# File No. NCR18650-068, type NCR18650B-H00BA, issued 2012-05-29 (Tentative).
+# PDF page numbers below; internal document pages are (PDF page - 2), e.g.
+# PDF p.8 = doc p.6/13.
+cell_model: Panasonic NCR18650B
+manufacturer: Panasonic
+source_document: panasonic_ncr18650b_full_spec_sanyo.pdf
+source_url: https://www.dnkpower.com/wp-content/uploads/2022/08/NCR18650B-datasheet.pdf
+retrieved: 2026-07-11
+claims:
+  - property: rated_capacity_ah
+    value: 3.2
+    unit: Ah
+    page: 8
+    stated_conditions:
+      text: "5.1 Rated Capacity (Minimum): 3200mAh, 0.65A discharge at 20°C"
+      temperature_c: 20
+      discharge_current_a: 0.65
+    notes: minimum
+
+  - property: minimum_capacity_ah
+    value: 3.25
+    unit: Ah
+    page: 8
+    stated_conditions:
+      text: "5.2 Nominal Capacity (Minimum): 3250mAh, 0.65A discharge at 25°C"
+      temperature_c: 25
+      discharge_current_a: 0.65
+
+  - property: nominal_capacity_ah
+    value: 3.35
+    unit: Ah
+    page: 8
+    stated_conditions:
+      text: "5.3 Nominal Capacity (Typical): 3350mAh — 'Reference only'"
+
+  - property: nominal_voltage_v
+    value: 3.6
+    unit: V
+    page: 8
+    stated_conditions:
+      text: "5.4 Nominal Voltage: 3.6V, 0.65A discharge"
+      discharge_current_a: 0.65
+
+  - property: discharge_cutoff_v
+    value: 2.5
+    unit: V
+    page: 8
+    stated_conditions:
+      text: "5.5 Discharging End Voltage: 2.5V"
+
+  - property: std_charge_current_a
+    value: 1.625
+    unit: A
+    page: 8
+    stated_conditions:
+      text: "5.6 Charging Current (Std.): 1.625A"
+
+  - property: charge_voltage_v
+    value: 4.2
+    unit: V
+    page: 8
+    stated_conditions:
+      text: "5.7 Charging Voltage: 4.20 ± 0.03V"
+
+  - property: std_charge_time_h
+    value: 4.0
+    unit: h
+    page: 8
+    stated_conditions:
+      text: "5.8 Charging Time (Std.): 4.0 hours"
+
+  - property: max_cont_discharge_a
+    value: 4.875
+    unit: A
+    page: 8
+    stated_conditions:
+      text: "5.9 Continuous Discharging Current (Max.): 4.875A, 0 ~ +40°C —
+             single-cell use; pack assembly may limit further"
+      temperature_range_c_lo: 0
+      temperature_range_c_hi: 40
+    notes: "= 1.5C of rated capacity"
+
+  - property: internal_impedance_mohm
+    value: 100
+    unit: mOhm
+    page: 8
+    stated_conditions:
+      text: "5.10 Internal Resistance: less than 100 mOhm, AC Impedance 1 kHz"
+    notes: upper bound
+
+  - property: mass_g
+    value: 48.5
+    unit: g
+    page: 8
+    stated_conditions:
+      text: "5.11 Weight: less than 48.5g"
+    notes: upper bound
+
+  - property: charge_temp_range_c
+    value: [0, 40]
+    unit: degC
+    page: 8
+    stated_conditions:
+      text: "5.12 Operating Temperature, Charge: 0 ~ +40°C"
+    notes: "the 4-page marketing sheet states +10 ~ +45°C — the two Panasonic
+            documents disagree"
+
+  - property: discharge_temp_range_c
+    value: [-20, 60]
+    unit: degC
+    page: 8
+    stated_conditions:
+      text: "5.12 Operating Temperature, Discharge: -20 ~ +60°C"
+
+  - property: cycle_life_cycles
+    value: 300
+    unit: cycles
+    page: 9
+    stated_conditions:
+      text: "6.3 Cycle Life: 300 charge/discharge cycles (CC-CV 1.625A-4.20V,
+             4.0h charge; CC 3.25A to 2.5V discharge) at 25°C; afterwards the
+             3.25A discharge time must exceed 38 min"
+      temperature_c: 25
+      charge_current_a: 1.625
+      charge_voltage_v: 4.2
+      discharge_current_a: 3.25
+      dod_pct: 100
+      end_condition: "discharge time > 38 min at 3.25A after 300 cycles
+                      (vs 54-min initial-capacity criterion, i.e. ~70% retention)"
+    notes: "this is a pass criterion (>= 300 cycles to ~70%), not a typical-life
+            figure; the ~70% is derived from 38/54 min, not printed"

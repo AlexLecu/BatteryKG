@@ -1,0 +1,37 @@
+# Neo4j for the BatteryKG knowledge graph.
+# Credentials are read from .env (copy .env.example -> .env first).
+# Start:  docker compose up -d neo4j
+# Browser: http://localhost:7474   Bolt: bolt://localhost:7687
+services:
+  neo4j:
+    image: neo4j:5-community
+    container_name: batterykg-neo4j
+    ports:
+      - "7474:7474"   # HTTP browser UI
+      - "7687:7687"   # Bolt protocol (driver)
+    environment:
+      # docker-compose substitutes these from .env
+      NEO4J_AUTH: "${NEO4J_USER}/${NEO4J_PASSWORD}"
+      NEO4J_server_memory_pagecache_size: "512M"
+      NEO4J_server_memory_heap_max__size: "1G"
+    volumes:
+      - ./neo4j/data:/data          # persist graph across restarts
+    restart: unless-stopped
+    # No healthcheck: readiness is handled by src/kg/connection.py's
+    # retry-with-backoff so scripts can wait for start-up cleanly.
+
+  app:
+    build:
+      context: .                    # repo root: the image needs src/ + artifacts
+      dockerfile: app/Dockerfile
+    container_name: batterykg-app
+    ports:
+      - "8501:8501"
+    environment:
+      # inside the compose network the DB host is the service name, not localhost
+      NEO4J_URI: "bolt://neo4j:7687"
+      NEO4J_USER: "${NEO4J_USER}"
+      NEO4J_PASSWORD: "${NEO4J_PASSWORD}"
+    depends_on:
+      - neo4j
+    restart: unless-stopped

@@ -1,0 +1,32 @@
+{
+  "total": 3,
+  "data": [
+    {
+      "paperId": "abc123",
+      "title": "Cycling degradation of NCR18650B cells under partial state of charge",
+      "year": 2025,
+      "venue": "Journal of Energy Storage",
+      "externalIds": {"DOI": "10.1000/test.2025.001"},
+      "abstract": "We cycle 24 NCR18650B cells and publish the dataset.",
+      "authors": [{"name": "A. Author"}, {"name": "B. Author"}]
+    },
+    {
+      "paperId": "def456",
+      "title": "Old paper that must be filtered by year",
+      "year": 2019,
+      "venue": "Somewhere",
+      "externalIds": {},
+      "abstract": "old",
+      "authors": []
+    },
+    {
+      "paperId": "ghi789",
+      "title": "A preprint without DOI",
+      "year": 2024,
+      "venue": "",
+      "externalIds": {"ArXiv": "2401.99999"},
+      "abstract": null,
+      "authors": [{"name": "C. Author"}]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+The standard charge current of the Panasonic NCR18650B is 1620 mA (or 1.62 A, at 25°C, 4.2 V, and 1.8 V cut-off).

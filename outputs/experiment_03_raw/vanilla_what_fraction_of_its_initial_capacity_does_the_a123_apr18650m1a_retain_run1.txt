@@ -1,0 +1,1 @@
+80%, test conditions: 100% depth of discharge, 25°C, according to the A123 Systems datasheet.

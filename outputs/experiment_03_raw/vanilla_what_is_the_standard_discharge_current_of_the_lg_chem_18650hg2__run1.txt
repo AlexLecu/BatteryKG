@@ -1,0 +1,2 @@
+The standard discharge current of the LG Chem 18650HG2 is 20A (continuous), 
+with a pulse discharge current of 30A (test conditions not specified in my knowledge).

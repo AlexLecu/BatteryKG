@@ -1,0 +1,1 @@
+80% capacity retention after 300 cycles, test conditions: 100% DoD, 25°C, per A123 Systems datasheet.

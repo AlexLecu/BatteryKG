@@ -1,0 +1,1 @@
+2A. Test conditions: 25°C, 50% SOC, per A123 Systems datasheet.

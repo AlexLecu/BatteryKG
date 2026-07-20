@@ -1,0 +1,1 @@
+4 hours at 1A, 25°C, to 4.2V, from 2.5V ( Panasonic datasheet )

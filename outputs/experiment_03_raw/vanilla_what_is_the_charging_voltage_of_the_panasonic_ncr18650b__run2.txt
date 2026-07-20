@@ -1,0 +1,1 @@
+4.2 V, at 25°C, charged at 1.25 A or less, to prevent overcharging (as per Panasonic's datasheet).

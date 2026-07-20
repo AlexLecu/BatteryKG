@@ -1,0 +1,1 @@
+Approximately 620 Wh/L (at 0.5C discharge, 20°C, according to the Panasonic datasheet).

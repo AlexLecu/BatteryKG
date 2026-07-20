@@ -1,0 +1,1 @@
+4.2 V, at 25°C, charged at 1.5 A or less, according to the LG Chem datasheet.

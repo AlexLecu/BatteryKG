@@ -1,0 +1,1 @@
+3.7 V (at 50% charge, 20°C, according to the Panasonic datasheet)

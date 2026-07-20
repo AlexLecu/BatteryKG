@@ -1,0 +1,5 @@
+The standard charge current of the A123 APR18650M1A is 1 A. 
+
+Test conditions: Constant Current/Constant Voltage (CC/CV) charge, 25°C. 
+
+Source: A123 Systems specification sheet for APR18650M1A.

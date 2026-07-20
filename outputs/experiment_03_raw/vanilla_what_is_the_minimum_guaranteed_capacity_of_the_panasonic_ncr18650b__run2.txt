@@ -1,0 +1,1 @@
+3200 mAh (at 20°C, 0.5C discharge, according to the Panasonic datasheet).

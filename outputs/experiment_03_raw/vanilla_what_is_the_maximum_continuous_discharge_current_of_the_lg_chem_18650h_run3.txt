@@ -1,0 +1,1 @@
+20 A. Test conditions: at 25°C, to 2.5 V. (Source: LG Chem datasheet)

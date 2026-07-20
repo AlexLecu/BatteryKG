@@ -1,0 +1,5 @@
+The specified fast-discharge current of the LG Chem 18650HG2 is 20A. 
+
+Test conditions: At 25°C, 50% SOC, and a cut-off voltage of 2.5V. 
+
+Source: LG Chem datasheet.

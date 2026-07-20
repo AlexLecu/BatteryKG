@@ -1,0 +1,2 @@
+4 hours at 1.5 A (constant current), 0.5 A (constant voltage) at 25°C, 
+as per the Panasonic datasheet.

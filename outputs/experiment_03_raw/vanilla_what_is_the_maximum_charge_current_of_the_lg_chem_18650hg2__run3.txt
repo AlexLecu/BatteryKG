@@ -1,0 +1,1 @@
+4A (constant current), test conditions: 25°C, 50% state of charge.

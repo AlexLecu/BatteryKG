@@ -1,0 +1,1 @@
+1A (source: A123 Systems specification sheet, test conditions not specified for this particular value but typically at 25°C).

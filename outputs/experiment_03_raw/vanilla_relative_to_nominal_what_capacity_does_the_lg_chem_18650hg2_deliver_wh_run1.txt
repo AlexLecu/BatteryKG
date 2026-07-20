@@ -1,0 +1,1 @@
+I'm not certain of the value. However, according to the LG Chem 18650HG2 datasheet, at -10°C and a discharge current of 0.5C (or 1.3A for this cell), the cell retains about 70% of its nominal capacity at 20°C, but I couldn't find the exact percentage or the specific test conditions in my current knowledge. For precise information, I recommend checking the official datasheet.

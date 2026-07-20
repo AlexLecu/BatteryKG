@@ -1,0 +1,1 @@
+2.5 V, at 0°C to 40°C, according to the Panasonic datasheet.

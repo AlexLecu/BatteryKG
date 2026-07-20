@@ -1,0 +1,1 @@
+3.7 V (at 50% SOC, 20°C, according to the A123 Systems datasheet)

@@ -1,0 +1,2 @@
+The cycle life of the Panasonic NCR18650B is 500 cycles. 
+Test conditions: 20°C, 80% depth of discharge (DOD), charge and discharge at 0.5C (2.55A), according to the Panasonic datasheet.

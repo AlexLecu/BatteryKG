@@ -1,0 +1,1 @@
+135 A. Test conditions: at 25°C, to 3.0 V. (Source: A123 Systems datasheet)

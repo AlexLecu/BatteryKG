@@ -1,0 +1,2 @@
+According to the Panasonic datasheet, the internal resistance (DC) of the NCR18650B is ≤20 mΩ (at 50% SOC, 20°C, after 5 minutes rest). 
+For AC impedance, I am not certain of the value.

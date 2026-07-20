@@ -1,0 +1,1 @@
+4A (at 25°C, 2.5V ≤ V ≤ 4.2V, per LG Chem datasheet).

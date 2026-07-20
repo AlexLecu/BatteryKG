@@ -1,0 +1,1 @@
+According to the Panasonic datasheet, the internal resistance (AC impedance) of the NCR18650B is 35 mΩ (measured at 1 kHz, 20°C).

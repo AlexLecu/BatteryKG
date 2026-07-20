@@ -1,0 +1,1 @@
+2.5 V, at 0.5 A discharge (according to the Panasonic datasheet).

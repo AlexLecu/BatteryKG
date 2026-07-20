@@ -5,11 +5,13 @@ data/processed/*
 data/claims/datasheets/
 data/claims/extracted_text/
 
-# --- Outputs (regenerable, except the two reports the app reads) ---
+# --- Outputs (regenerable, except the app-read reports + experiment-03 eval artifacts) ---
 outputs/*
 !outputs/.gitkeep
 !outputs/experiment_01_prediction.md
 !outputs/experiment_02_extraction.md
+!outputs/experiment_03_vanilla_comparison.md
+!outputs/experiment_03_raw/
 
 # --- Monitor run state ---
 data/monitor/

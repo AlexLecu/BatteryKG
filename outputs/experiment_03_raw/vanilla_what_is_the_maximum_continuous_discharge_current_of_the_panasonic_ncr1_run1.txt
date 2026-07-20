@@ -1,0 +1,1 @@
+10 A (according to the Panasonic datasheet).

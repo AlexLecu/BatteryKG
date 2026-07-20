@@ -1,0 +1,1 @@
+4.2 V, at 25°C, charged to 4.2 V, then reduced to 0.05 C to 4.1 V, as per the Panasonic datasheet.

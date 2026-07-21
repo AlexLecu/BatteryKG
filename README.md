@@ -1,18 +1,57 @@
-# BatteryKG
+<div align="center">
 
-**🔴 [Live demo](https://batterykg.streamlit.app)** — try the predictions,
-the claim-vs-measured gaps, and the document conflicts in your browser
-(no install). · **🎥 [Video overview](https://youtu.be/Fkcdzemw5b0)**
+# 🔋 BatteryKG
+
+### Reconciling What Battery Makers Promise with What Independent Tests Measure — a Provenance-Tracked Knowledge Graph with Prediction that Knows When to Refuse
+
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Docker](https://img.shields.io/badge/docker-compose-2496ED.svg)](https://docs.docker.com/compose/)
+[![Streamlit](https://img.shields.io/badge/streamlit-live%20demo-FF4B4B.svg)](https://batterykg.streamlit.app)
+
+[🌐 Live Demo](https://batterykg.streamlit.app) · [🎥 Video](https://youtu.be/Fkcdzemw5b0) · [📄 Paper](#paper)
+
+<img src="assets/hero.png" alt="BatteryKG system architecture" width="90%">
+
+*Three deliberately conflicting sources — datasheet claims, cycling measurements, independent tests — reconciled in one provenance-tracked graph. LLM components are advisory; deterministic code and a human gate decide.*
+
+</div>
+
+---
+
+## 📖 Overview
 
 BatteryKG builds a knowledge graph of commercial battery cells from
 deliberately conflicting sources — manufacturer datasheet **claims**, cycling
 dataset **measurements**, and independent tests — and reconciles them with
-full provenance. On top of the graph it predicts cycle life for unseen cells
-via graph-mediated transfer (leave-one-cell-out), and **abstains** when graph
-coverage around a query cell is too sparse to trust a prediction. An
-LLM-agent pipeline (extractor → validator → human-gated promotion) keeps the
-claim side of the graph updatable from new documents without letting a model
-write to the graph unreviewed.
+full provenance. On top of the graph, a coverage-gated model predicts cycle
+life for unseen cells and **abstains** when the graph neighborhood is too
+sparse to trust; an LLM pipeline keeps the claim side updatable from new
+documents without ever writing to the graph unreviewed.
+
+| Component | Description |
+|-----------|-------------|
+| 🧠 **Knowledge Graph** | Neo4j; datasheet claims + cycling measurements + independent tests, full provenance on every value |
+| 🎯 **Coverage-Gated Prediction** | XGBoost + graph-neighbor features; abstains below the data-support threshold instead of guessing |
+| 🤖 **Validated LLM Extraction** | Llama-3.3-70B, 3-run consensus + deterministic validator — zero unsourced values reach the graph |
+
+## 📈 Key Results
+
+| Dimension | Result |
+|---|---|
+| Cycle-life prediction | RMSE **135 vs 141 cycles** (graph vs baseline, n.s.) |
+| Abstention | **halves retained RMSE at 60% retention**; zero-shot on HUST refuses all **77** cells (**~83% error avoided**) |
+| Claim extraction | F1 **0.70 → 0.78** with **zero unsourced values** |
+| Spec consistency | **14 of 43** cross-document comparisons conflict |
+
+## 🕹️ Interactive Demo
+
+Three pages to play with at [batterykg.streamlit.app](https://batterykg.streamlit.app):
+
+| Page | What you can do |
+|---|---|
+| 🔋 **Will It Last?** | Design a fast-charging recipe and get a cycle-life prediction — or an honest refusal |
+| ⚖️ **Promise vs Reality** | The datasheet's cycle-life claim drawn over how long the cells actually lasted |
+| 🔍 **Who Is Lying?** | Official spec sheets for the same battery that disagree with each other |
 
 ## Paper
 

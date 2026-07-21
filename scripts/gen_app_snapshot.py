@@ -17,7 +17,9 @@ from app.common import SNAPSHOT_PATH, make_driver, run_query, snapshot_key
 
 # --- Cypher strings, verbatim from the pages -------------------------------------
 
-# app/pages/*Cell_Explorer.py
+# claims/measurements/spec/discrepancy queries — reused verbatim by the demo
+# pages (Promise_vs_Reality, Who_Is_Lying); originally from the Cell Explorer
+# research page, which lives in the development tree
 Q_CELLS = ("MATCH (c:Cell) RETURN c.model AS model, "
            "c.manufacturer AS mfr ORDER BY model")
 
@@ -98,7 +100,8 @@ Q_CENTER_LIFE = """
           (m:Measurement {metric: 'cycle_life_nominal'})
     RETURN m.value AS life"""
 
-# app/pages/*Pipeline_Status.py
+# KG count queries (from the Pipeline Status research page in the development
+# tree) — kept in the snapshot so that page keeps working there; harmless here
 STATUS_LABELS = ["Cell", "CellInstance", "Chemistry", "Source", "Claim",
                  "Measurement", "Discrepancy"]
 

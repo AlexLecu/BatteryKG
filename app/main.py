@@ -34,9 +34,6 @@ with c3:
                    "with each other.")
         st.page_link("pages/3_🔍_Who_Is_Lying.py", label="**Investigate →**")
 
-st.caption("🔬 pages further down the sidebar hold the full research detail "
-           "behind these three.")
-
 st.divider()
 driver, err = make_driver()
 if driver is None:

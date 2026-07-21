@@ -11,8 +11,8 @@ import streamlit.components.v1 as components
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from app.common import make_driver, run_query  # noqa: E402
 
-st.set_page_config(page_title="Graph — BatteryKG", page_icon="🕸️", layout="wide")
-st.title("Graph neighborhood")
+st.set_page_config(page_title="The graph — BatteryKG", page_icon="🕸️", layout="wide")
+st.title("🕸️ The graph")
 
 driver, err = make_driver()
 if driver is None:

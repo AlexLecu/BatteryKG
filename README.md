@@ -1,5 +1,9 @@
 # BatteryKG
 
+**🔴 [Live demo](https://batterykg.streamlit.app)** — try the predictions,
+the claim-vs-measured gaps, and the document conflicts in your browser
+(no install). · **🎥 [Video overview](https://youtu.be/Fkcdzemw5b0)**
+
 BatteryKG builds a knowledge graph of commercial battery cells from
 deliberately conflicting sources — manufacturer datasheet **claims**, cycling
 dataset **measurements**, and independent tests — and reconciles them with
@@ -10,6 +14,12 @@ LLM-agent pipeline (extractor → validator → human-gated promotion) keeps the
 claim side of the graph updatable from new documents without letting a model
 write to the graph unreviewed.
 
+## Paper
+
+> *Reconciling Manufacturer Claims with Measured Degradation: A Self-Updating
+> Knowledge-Graph Multi-Agent System for Trustworthy Battery Cell Life
+> Prediction.* Under review at **Batteries** (MDPI).
+> Citation and DOI will be added on publication.
 
 ## Quickstart
 
@@ -41,12 +51,16 @@ python -m src.kg.independent           # third source -> Neo4j (reconciliation p
 streamlit run app/main.py
 ```
 
-The trained serving artifacts ship in `app/artifacts/`, so the **Prediction
-with Abstention** page works immediately after step 3 — the graph pages light
-up once the KG is loaded. Alternatively `docker compose up --build` runs the
-full stack (Neo4j + app) in containers. Every page follows an honesty rule:
-numbers come from the graph, the artifacts, or a report file — when a source
-is unavailable the page says so instead of mocking data.
+The trained serving artifacts ship in `app/artifacts/`, so the **Will It
+Last** prediction page works immediately after step 3. The graph pages run
+either against a live Neo4j (steps above) or, with no database at all, from
+the bundled read-only snapshot in `data/kg_snapshots/app_snapshot.json` —
+cached Neo4j query results recorded from the live graph (regenerate with
+`scripts/gen_app_snapshot.py`). The hosted demo runs in this snapshot mode.
+Alternatively `docker compose up --build` runs the full stack (Neo4j + app)
+in containers. Every page follows an honesty rule: numbers come from the
+graph, the artifacts, or a report file — when a source is unavailable the
+page says so instead of mocking data.
 
 ## Released gold standard
 
@@ -90,6 +104,7 @@ Shipped artifacts and the script that regenerates each:
 | `outputs/experiment_02_extraction.md` | `python -m src.agents.experiment_02` / `experiment_02b` (LLM claim extraction vs. gold standard; needs `GROQ_API_KEY`) |
 | `data/eval/questions.jsonl` | `python -m src.agents.experiment_03` (one spec question per gold claim; shipped so the eval is exactly reproducible) |
 | `data/kg_snapshots/severson_edges_publication.json` | frozen export of the Severson `SIMILAR_TO` edge lists from the publication KG; read by `src/viz/make_paper_figures.py` so the figures rebuild without a live database |
+| `data/kg_snapshots/app_snapshot.json` | `python -m scripts.gen_app_snapshot` against a live KG (recorded query results that power the app's no-database snapshot mode) |
 | `data/claims/README.md` vocabulary table | `python scripts/gen_claims_vocab.py` (derived from the YAMLs) |
 
 ## Tests

@@ -1,9 +1,9 @@
-# BatteryKG app theme — consistent with the paper's palette
-# (primary = the paper's orange; ink/gray text tones; no custom CSS anywhere)
+# BatteryKG app theme (blue = the paper's primary; ink text tones;
+# no custom CSS anywhere — matplotlib keeps the palette from app/common.py)
 [theme]
-primaryColor = "#ea580c"
+primaryColor = "#2563eb"
 backgroundColor = "#ffffff"
-secondaryBackgroundColor = "#f5f5f4"
+secondaryBackgroundColor = "#f8fafc"
 textColor = "#1f2937"
 font = "sans serif"
 

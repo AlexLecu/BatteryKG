@@ -1,89 +1,90 @@
-# GOLD STANDARD — TEMPLATE GOL, de completat manual.
+# GOLD STANDARD — EMPTY TEMPLATE, to be filled in by hand.
 #
-# Samsung SDI INR18650-25R — datasheet nevazut, pentru evaluarea held-out a
-# pipeline-ului de extractie. NICIUN LLM nu a atins acest document.
+# Samsung SDI INR18650-25R — an unseen datasheet, for the held-out evaluation of
+# the extraction pipeline. NO LLM has touched this document.
 #
-# Format identic cu data/claims/*.yaml (vezi data/claims/README.md).
-# Fisierul sta DELIBERAT in data/gold/, nu in data/claims/: patru module
+# Same format as data/claims/*.yaml (see data/claims/README.md).
+# The file sits DELIBERATELY in data/gold/, not data/claims/: four modules
 # (src/kg/claims.py, src/kg/spec_consistency.py, src/agents/evaluation.py,
-# src/agents/experiment_03.py) fac glob pe data/claims/*.yaml, iar un template
-# cu campuri goale ar fi incarcat ca si claim real si ar corupe graful si
-# tabelele. Se muta in data/claims/ DUPA ce e completat si verificat.
+# src/agents/experiment_03.py) glob data/claims/*.yaml, and a template with
+# empty fields would be loaded as a real claim and corrupt the graph and the
+# tables. Move it to data/claims/ ONLY once filled in and verified.
 #
 # ---------------------------------------------------------------------------
-# CONVENTII (derivate din cele 62 de claims existente — vezi raspunsul asociat)
+# CONVENTIONS (derived from the 62 existing claims)
 #
-#   value        numarul citit din document, in unitatea din `unit`.
-#                Range -> [lo, hi]. Toleranta X±Y -> se scrie DOAR valoarea
-#                centrala X; ±Y ramane exclusiv in `text`.
-#                Bound "Max."/"Min." -> se scrie numarul; cuvantul ramane in
-#                `text` (regula de bound il citeste de acolo).
+#   value        the number as read from the document, in the unit given by
+#                `unit`. Range -> [lo, hi]. A tolerance X±Y -> write ONLY the
+#                central value X; ±Y stays exclusively in `text`.
+#                A bound "Max."/"Min." -> write the number; the word stays in
+#                `text` (the bound rule reads it from there).
 #   unit         Ah | mAh | V | A | C | cycles | pct | degC | g | mohm | Wh/kg …
-#                Se scrie unitatea DUPA normalizare (3200mAh -> 3.2 Ah).
-#   page         pagina din PDF, obligatoriu, ca sa fie re-verificabil.
+#                Write the unit AFTER normalisation (3200mAh -> 3.2 Ah).
+#   page         the PDF page, mandatory, so the claim stays re-checkable.
 #   stated_conditions.text
-#                verbatim/cvasi-verbatim din datasheet. Daca documentul NU
-#                declara conditii: exact sirul `unspecified` — omisiunea e ea
-#                insasi un rezultat, nu se inventeaza conditii.
-#   cond_*       campuri parsate, SETATE DOAR daca sunt declarate explicit.
-#                Un camp absent inseamna "nedeclarat" si NU va genera niciodata
-#                condition_mismatch la reconciliere.
-#   notes        optional; obligatoriu cand valoarea e citita de pe grafic
-#                ("read from graph") sau cand e criteriu de pass, nu tipic.
-#   omissions    proprietati verificat absente din document (dupa parcurgere
-#                exhaustiva) — se scriu doar daca s-a cautat efectiv.
+#                verbatim/near-verbatim from the datasheet. If the document does
+#                NOT state conditions: exactly the string `unspecified` — the
+#                omission is itself a result; never invent conditions.
+#   cond_*       parsed fields, SET ONLY if they are explicitly stated.
+#                An absent field means "not stated" and will NEVER produce a
+#                condition_mismatch during reconciliation.
+#   notes        optional; mandatory when the value is read off a graph
+#                ("read from graph") or when it is a pass criterion rather than
+#                a typical value.
+#   omissions    properties verified absent from the document (after an
+#                exhaustive read) — record them only if you actually searched.
 # ---------------------------------------------------------------------------
 
-cell_model: Samsung INR18650-25R      # exact ca in cell_metadata.py / KG Cell.model
+cell_model: Samsung INR18650-25R      # exactly as in cell_metadata.py / KG Cell.model
 manufacturer: Samsung SDI
 source_document: samsung_inr18650_25r.pdf
-source_url: TODO                      # de unde a fost descarcat PDF-ul
+source_url: TODO                      # where the PDF was downloaded from
 retrieved: TODO                       # YYYY-MM-DD
 
-# Proprietati verificat ABSENTE din document. Se completeaza DUPA ce documentul
-# a fost parcurs exhaustiv; lista goala nu inseamna "nu lipseste nimic", ci
-# "nu s-a verificat". Sterge sectiunea daca nu ai facut verificarea.
+# Properties verified ABSENT from the document. Fill this in AFTER the document
+# has been read exhaustively; an empty list does not mean "nothing is missing",
+# it means "this was not checked". Delete the section if you did not check.
 omissions: []
 #  - property: cycle_life_cycles
-#    note: "motivul + confirmarea ca s-a cautat in tot documentul"
+#    note: "the reason + confirmation that the whole document was searched"
 
 claims:
   # -------------------------------------------------------------------------
-  # Sterge blocurile neutilizate. Vocabularul de proprietati e in
-  # data/claims/README.md (tabel generat de scripts/gen_claims_vocab.py);
-  # daca ai nevoie de o proprietate noua, adaug-o si re-ruleaza scriptul.
+  # Delete the unused blocks. The property vocabulary is in
+  # data/claims/README.md (table generated by scripts/gen_claims_vocab.py);
+  # if you need a new property, add it there and re-run the script.
   # -------------------------------------------------------------------------
 
-  # --- exemplu A: valoare simpla, conditii declarate ------------------------
+  # --- example A: simple value, conditions stated ---------------------------
   - property: nominal_capacity_ah
     value: TODO
     unit: Ah
     page: TODO
     stated_conditions:
-      text: "TODO — verbatim din datasheet, sau: unspecified"
-      temperature_c: TODO           # sterge randul daca nu e declarat
-      discharge_current_a: TODO     # sterge randul daca nu e declarat
+      text: "TODO — verbatim from the datasheet, or: unspecified"
+      temperature_c: TODO           # delete the line if it is not stated
+      discharge_current_a: TODO     # delete the line if it is not stated
 
-  # --- exemplu B: bound (Max./Min.) ----------------------------------------
-  # numarul in `value`; cuvantul Max./Min. ramane in `text`
+  # --- example B: bound (Max./Min.) ----------------------------------------
+  # the number goes in `value`; the word Max./Min. stays in `text`
   - property: max_cont_discharge_a
     value: TODO
     unit: A
     page: TODO
     stated_conditions:
-      text: "TODO — ex: 'Max. Continuous Discharge Current: 20000mA'"
+      text: "TODO — e.g. 'Max. Continuous Discharge Current: 20000mA'"
       temperature_c: TODO
 
-  # --- exemplu C: toleranta X ± Y ------------------------------------------
-  # value = X (valoarea centrala); ±Y NU se pune in value, doar in text
+  # --- example C: tolerance X ± Y ------------------------------------------
+  # value = X (the central value); ±Y does NOT go in value, only in text
   - property: max_charge_voltage_v
     value: TODO
     unit: V
     page: TODO
     stated_conditions:
-      text: "TODO — ex: 'Max. Charge Voltage: 4.20 ± 0.05V'"
+      text: "TODO — e.g. 'Max. Charge Voltage: 4.20 ± 0.05V'"
 
-  # --- exemplu D: range [lo, hi] -------------------------------------------
+  # --- example D: range [lo, hi] -------------------------------------------
   - property: operating_temp_range_c
     value: [TODO, TODO]
     unit: degC
@@ -91,18 +92,19 @@ claims:
     stated_conditions:
       text: "TODO"
 
-  # --- exemplu E: cycle life (conditiile sunt esentiale) -------------------
-  # Daca documentul nu declara regimul de incarcare / temperatura / pragul EOL,
-  # NU le completa: lasa doar `text` si sterge campurile cond_*.
+  # --- example E: cycle life (the conditions are essential) ----------------
+  # If the document does not state the charge regime / temperature / EOL
+  # threshold, do NOT fill them in: leave only `text` and delete the cond_*
+  # fields.
   - property: cycle_life_cycles
     value: TODO
     unit: cycles
     page: TODO
     stated_conditions:
-      text: "TODO — verbatim, sau: unspecified"
+      text: "TODO — verbatim, or: unspecified"
       temperature_c: TODO
       charge_current_a: TODO
       discharge_current_a: TODO
       dod_pct: TODO
-      end_condition: "TODO — ex: 'capacity >= 60% of nominal at cycle 301'"
-    notes: "TODO — ex: 'criteriu de pass, nu viata tipica' / 'read from graph'"
+      end_condition: "TODO — e.g. 'capacity >= 60% of nominal at cycle 301'"
+    notes: "TODO — e.g. 'pass criterion, not typical life' / 'read from graph'"

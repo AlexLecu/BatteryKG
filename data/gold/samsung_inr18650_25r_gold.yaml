@@ -1,32 +1,32 @@
-# GOLD STANDARD — Samsung SDI INR18650-25R, completat manual din
+# GOLD STANDARD — Samsung SDI INR18650-25R, filled in by hand from
 # "Specification of product", Spec. No. INR18650-25R, Version 1.0, Mar. 2014
-# (In-Young Jang). Fisier sursa incarcat: Samsung-INR18650-25R-Datasheet.pdf
+# (In-Young Jang). Source file: Samsung-INR18650-25R-Datasheet.pdf
 #
-# Conventie `page`: pagina FIZICA din PDF (1 = coperta). Footer-ul intern
-# "N/16" corespunde paginii PDF N+1 (ex.: sectiunea 3.0 e pe footer 2/16,
-# deci page: 3).
+# `page` convention: the PHYSICAL PDF page (1 = cover). The document's own
+# "N/16" footer corresponds to PDF page N+1 (e.g. section 3.0 sits on footer
+# 2/16, hence page: 3).
 #
-# Acoperire: 3.0 Nominal specifications (integral) + 7.3–7.12 Characteristics
-# (integral, inclusiv tabelele de dependenta de temperatura si de rata).
-# 6.1 (25±5℃, 65±20% RH) e conditie de test generala, nu proprietate de
-# celula — nu genereaza claim, dar e citata in notes unde e relevanta.
-# 8.x/9.x (mecanic/safety) si 10.0 (warranty 18 luni) sunt criterii de test /
-# termeni comerciali, nu specificatii electrice de celula — excluse deliberat.
+# Coverage: 3.0 Nominal specifications (complete) + 7.3-7.12 Characteristics
+# (complete, including the temperature- and rate-dependence tables).
+# 6.1 (25±5℃, 65±20% RH) is a general test condition, not a cell property — it
+# produces no claim, but is cited in notes where relevant.
+# 8.x/9.x (mechanical/safety) and 10.0 (18-month warranty) are test criteria and
+# commercial terms, not electrical cell specifications — deliberately excluded.
 #
-# Aliniere la regulile exp10/exp11 (re-check aplicat):
-#   R2  o valoare repetata = UN claim, la aparitia cea mai completa
-#       (nominal capacity: pastrat 7.3/page 4; 3.1, nota(1), 3.7 "60%",
-#       handling p.12/13 — doar mentionate in notes)
-#   R4  cross-reference resolution marcata explicit in notes (cycle life)
-#   R5  cycle_life_retention_pct = claim separat, pe langa end_condition
-#   R6  NEVERIFICAT contra data/claims/README.md (indisponibil aici).
-#       Nume candidate, posibil noi sau sinonime de redenumit inainte de
-#       scorare: charge_temp_range_c, discharge_temp_range_c,
-#       storage_temp_range_{1_5yr,3mo,1mo}_c, rel_*_pct (toate cele 17),
+# Alignment with the exp10/exp11 rules (re-check applied):
+#   R2  a repeated value = ONE claim, kept at its most complete occurrence
+#       (nominal capacity: kept at 7.3/page 4; 3.1, note (1), 3.7 "60%",
+#       handling p.12/13 — mentioned in notes only)
+#   R4  cross-reference resolution marked explicitly in notes (cycle life)
+#   R5  cycle_life_retention_pct = a separate claim, alongside end_condition
+#   R6  NOT VERIFIED against data/claims/README.md (unavailable at the time).
+#       Candidate names, possibly new or synonyms to be renamed before scoring:
+#       charge_temp_range_c, discharge_temp_range_c,
+#       storage_temp_range_{1_5yr,3mo,1mo}_c, rel_*_pct (all 17),
 #       cycle_life_retention_pct, storage_recovery_pct, ex_factory_soc_pct,
 #       ex_factory_ocv_range_v, std/rapid_charge_time_min,
-#       max_charge_voltage_v (vs. eventual charge_voltage_v din vocab).
-#       Daca raman noi: rulat scripts/gen_claims_vocab.py.
+#       max_charge_voltage_v (vs. the vocabulary's charge_voltage_v).
+#       If they are still new: run scripts/gen_claims_vocab.py.
 
 cell_model: Samsung INR18650-25R
 manufacturer: Samsung SDI
@@ -34,28 +34,28 @@ source_document: Samsung-INR18650-25R-Datasheet.pdf
 source_url: https://www.dnkpower.com/wp-content/uploads/2018/04/Samsung-INR18650-25R-Datasheet.pdf
 retrieved: 2026-08-06
 
-# Proprietati verificat ABSENTE — document parcurs exhaustiv (toate cele 16
-# pagini, inclusiv Fig.1/Fig.2, handling, remarci si revision history).
+# Properties verified ABSENT — document read exhaustively (all 16 numbered
+# pages, including Fig.1/Fig.2, handling, remarks and revision history).
 omissions:
   - property: nominal_energy_wh
-    note: "energia nominala nu apare nicaieri; doar capacitate (mAh) si tensiune (V) separate — cautat in 3.0 si 7.x"
+    note: "nominal energy appears nowhere; only capacity (mAh) and voltage (V) separately — searched 3.0 and 7.x"
   - property: specific_energy_wh_kg
-    note: "densitatea energetica nu e declarata; doar masa max (3.9) si capacitate — cautat in tot documentul"
+    note: "energy density is not stated; only maximum mass (3.9) and capacity — searched the whole document"
   - property: max_pulse_discharge_a
-    note: "nu exista rating de descarcare in impuls; doar continuu 20A (3.7) — cautat in 3.0, 7.9 si sectiunile de safety"
+    note: "no pulse discharge rating exists; only continuous 20A (3.7) — searched 3.0, 7.9 and the safety sections"
   - property: dc_internal_resistance_mohm
-    note: "doar impedanta AC 1kHz (7.5); rezistenta DC (ex. IEC pulse) nu e specificata"
+    note: "only AC 1kHz impedance (7.5); DC resistance (e.g. IEC pulse) is not specified"
   - property: self_discharge_pct_per_month
-    note: "auto-descarcarea nu e cuantificata; exista doar recuperarea >=90% dupa stocare (3.12 nota 1, 7.11)"
+    note: "self-discharge is not quantified; only the >=90% recovery after storage (3.12 note 1, 7.11)"
 
 claims:
   # ==========================================================================
   # 3.0 Nominal specifications — footer 2/16, page 3
   # ==========================================================================
 
-  # nominal_capacity_ah: afirmata si aici (3.1, cu conditii partiale), dar
-  # per regula 2 e UN singur claim, pastrat la aparitia cea mai completa (7.3,
-  # page 4) — vezi mai jos.
+  # nominal_capacity_ah: stated here as well (3.1, with partial conditions), but
+  # under rule 2 it is ONE claim, kept at its most complete occurrence (7.3,
+  # page 4) — see below.
 
   - property: nominal_voltage_v
     value: 3.6
@@ -77,7 +77,7 @@ claims:
     page: 3
     stated_conditions:
       text: "Standard charge: CCCV, 1.25A, 4.20 ± 0.05 V, 125mA cut-off"
-    notes: "toleranta ±0.05V ramane doar in text; confirmata ca limita si in handling (p. 13: 'Cut-off voltage of charging must be less than 4.2 + 0.05V')"
+    notes: "the ±0.05V tolerance stays in the text only; confirmed as a limit in handling as well (p. 13: 'Cut-off voltage of charging must be less than 4.2 + 0.05V')"
 
   - property: fast_charge_current_a
     value: 4
@@ -85,7 +85,7 @@ claims:
     page: 3
     stated_conditions:
       text: "Rapid charge: CCCV, 4A, 4.20 ± 0.05 V, 100mA cut-off"
-    notes: "in 7.8 apare ca 'Maximum rapid charge 4A' — functioneaza si ca max charge current"
+    notes: "given in 7.8 as 'Maximum rapid charge 4A' — it doubles as the maximum charge current"
 
   - property: std_charge_time_min
     value: 180
@@ -109,7 +109,7 @@ claims:
     stated_conditions:
       text: "Max. continuous discharge (Continuous): 20A(at 25℃), 60% at 250 cycle"
       temperature_c: 25
-    notes: "bound Max; '60% at 250 cycle' leaga rating-ul de criteriul de cycle life din 7.10"
+    notes: "bound Max; '60% at 250 cycle' ties the rating to the cycle-life criterion in 7.10"
 
   - property: discharge_cutoff_v
     value: 2.5
@@ -132,7 +132,7 @@ claims:
     page: 3
     stated_conditions:
       text: "Height : 64.85 ± 0.15mm"
-    notes: "toleranta ±0.15 doar in text; confirmata in Fig.1 (page 7, 'With tube')"
+    notes: "the ±0.15 tolerance stays in the text only; confirmed in Fig.1 (page 7, 'With tube')"
 
   - property: cell_diameter_mm
     value: 18.33
@@ -140,7 +140,7 @@ claims:
     page: 3
     stated_conditions:
       text: "Diameter : 18.33 ± 0.07mm"
-    notes: "toleranta ±0.07 doar in text; confirmata in Fig.1 (page 7, 'With tube')"
+    notes: "the ±0.07 tolerance stays in the text only; confirmed in Fig.1 (page 7, 'With tube')"
 
   - property: charge_temp_range_c
     value: [0, 50]
@@ -148,7 +148,7 @@ claims:
     page: 3
     stated_conditions:
       text: "Operating temperature (surface temperature) — Charge : 0 to 50℃ (recommended recharge release < 45℃)"
-    notes: "temperatura de suprafata a celulei; reconfirmata in handling p. 12 ('Charge temperature ranges : 0℃ ~ 50℃')"
+    notes: "cell surface temperature; reconfirmed in handling p. 12 ('Charge temperature ranges : 0℃ ~ 50℃')"
 
   - property: discharge_temp_range_c
     value: [-20, 75]
@@ -156,7 +156,7 @@ claims:
     page: 3
     stated_conditions:
       text: "Operating temperature (surface temperature) — Discharge: -20 to 75℃ (recommended re-discharge release < 60℃)"
-    notes: "temperatura de suprafata a celulei; reconfirmata in handling p. 12 ('Discharge Temperature ranges : -20℃ ~ 75℃')"
+    notes: "cell surface temperature; reconfirmed in handling p. 12 ('Discharge Temperature ranges : -20℃ ~ 75℃')"
 
   - property: storage_temp_range_c
     value: [-30, 25]
@@ -164,7 +164,7 @@ claims:
     page: 3
     stated_conditions:
       text: "Storage temperature (Recovery 90% after storage): 1.5 year -30~25℃(1*)"
-    notes: "nota (1): ex-factory 50±5% SOC, 25℃; recuperare >90% din capacitatea de descarcare la 10A (100% = 2,450mAh la 25℃, SOC 100% dupa formare)"
+    notes: "note (1): ex-factory 50±5% SOC, 25℃; recovery >90% of the 10A discharge capacity (100% = 2,450mAh at 25℃, SOC 100% after formation)"
 
   - property: storage_temp_range_c
     value: [-30, 45]
@@ -172,7 +172,7 @@ claims:
     page: 3
     stated_conditions:
       text: "Storage temperature (Recovery 90% after storage): 3 months -30~45℃(1*)"
-    notes: "aceeasi nota (1) ca la 1.5 year"
+    notes: "the same note (1) as for 1.5 year"
 
   - property: storage_temp_range_c
     value: [-30, 60]
@@ -180,10 +180,10 @@ claims:
     page: 3
     stated_conditions:
       text: "Storage temperature (Recovery 90% after storage): 1 month -30~60℃(1*)"
-    notes: "aceeasi nota (1) ca la 1.5 year"
+    notes: "the same note (1) as for 1.5 year"
 
   # ==========================================================================
-  # 7.3–7.5 Characteristics — footer 3/16, page 4
+  # 7.3-7.5 Characteristics — footer 3/16, page 4
   # ==========================================================================
 
   - property: nominal_capacity_ah
@@ -194,7 +194,7 @@ claims:
       text: "measured with discharge current of 500mA(0.2C) with 2.5V cut-off at 25℃ within 1hour after the standard charge; Nominal discharge capacity ≥ 2,500mAh"
       temperature_c: 25
       discharge_current_a: 0.5
-    notes: "bound Min (≥), criteriu de pass conform IEC61960 — nu valoare tipica; aceeasi valoare e afirmata si in 3.1 (page 3) cu conditii partiale — un singur claim, pastrat aici la aparitia cea mai completa (regula 2)"
+    notes: "bound Min (≥), a pass criterion per IEC61960 — not a typical value; the same value is also stated in 3.1 (page 3) with partial conditions — one claim, kept here at its most complete occurrence (rule 2)"
 
   - property: rated_capacity_ah
     value: 2.45
@@ -204,7 +204,7 @@ claims:
       text: "measured with discharge current of 10A with 2.5V cut-off at 25℃ within 1hour after the standard charge; Standard rated discharge capacity ≥ 2,450mAh"
       temperature_c: 25
       discharge_current_a: 10
-    notes: "bound Min (≥); aceeasi valoare e referinta de 100% pentru toate tabelele 7.6–7.9 si pentru nota (1) de pe page 3"
+    notes: "bound Min (≥); the same value is the 100% reference for all of tables 7.6-7.9 and for note (1) on page 3"
 
   - property: internal_impedance_mohm
     value: 18
@@ -212,13 +212,13 @@ claims:
     page: 4
     stated_conditions:
       text: "Initial internal impedance measured at AC 1kHz after standard charge; Initial internal impedance ≤ 18mΩ"
-    notes: "bound Max (≤); AC 1kHz, nu rezistenta DC"
+    notes: "bound Max (≤); AC 1kHz, not DC resistance"
 
   # ==========================================================================
   # 7.6 Temperature dependence of discharge capacity
-  # (antet tabel pe page 4, randul de procente pe page 5, footer 4/16)
-  # Conditii comune: descarcare 10A CC, 2.5V cut-off, dupa standard charge;
-  # 100% = descarcarea la 25℃ la 10A (=2,450mAh).
+  # (table header on page 4, the percentage row on page 5, footer 4/16)
+  # Common conditions: 10A CC discharge, 2.5V cut-off, after standard charge;
+  # 100% = the 25℃ discharge at 10A (=2,450mAh).
   # ==========================================================================
 
   - property: rel_discharge_capacity_m20c_pct
@@ -229,7 +229,7 @@ claims:
       text: "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature -20℃"
       temperature_c: -20
       discharge_current_a: 10
-    notes: "citit din tabel; 100% = 2,450mAh la 25℃/10A; la schimbare de temperatura intre charge/discharge, interval de 3h"
+    notes: "read from the table; 100% = 2,450mAh at 25℃/10A; when the temperature changes between charge and discharge, a 3h interval applies"
 
   - property: rel_discharge_capacity_m10c_pct
     value: 75
@@ -239,7 +239,7 @@ claims:
       text: "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature -10℃"
       temperature_c: -10
       discharge_current_a: 10
-    notes: "citit din tabel; 100% = 2,450mAh la 25℃/10A"
+    notes: "read from the table; 100% = 2,450mAh at 25℃/10A"
 
   - property: rel_discharge_capacity_0c_pct
     value: 80
@@ -249,7 +249,7 @@ claims:
       text: "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature 0℃"
       temperature_c: 0
       discharge_current_a: 10
-    notes: "citit din tabel; 100% = 2,450mAh la 25℃/10A"
+    notes: "read from the table; 100% = 2,450mAh at 25℃/10A"
 
   - property: rel_discharge_capacity_25c_pct
     value: 100
@@ -259,7 +259,7 @@ claims:
       text: "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature 25℃"
       temperature_c: 25
       discharge_current_a: 10
-    notes: "punct de referinta al tabelului (100% prin definitie)"
+    notes: "the table's reference point (100% by definition)"
 
   - property: rel_discharge_capacity_60c_pct
     value: 100
@@ -269,13 +269,13 @@ claims:
       text: "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature 60℃"
       temperature_c: 60
       discharge_current_a: 10
-    notes: "citit din tabel; 100% = 2,450mAh la 25℃/10A"
+    notes: "read from the table; 100% = 2,450mAh at 25℃/10A"
 
   # ==========================================================================
   # 7.7 Temperature dependence of charge capacity — footer 4/16, page 5
-  # Conditii comune: incarcare la temperatura indicata, descarcare 10A,
-  # 2.5V cut-off la 25℃; 100% = 2,450mAh (25℃/10A). `temperature_c` de mai
-  # jos este temperatura de INCARCARE (variabila tabelului).
+  # Common conditions: charge at the stated temperature, discharge at 10A,
+  # 2.5V cut-off at 25℃; 100% = 2,450mAh (25℃/10A). The `temperature_c` below
+  # is the CHARGE temperature (the table's variable).
   # ==========================================================================
 
   - property: rel_charge_capacity_0c_pct
@@ -286,7 +286,7 @@ claims:
       text: "charge temperature 0℃, discharge temperature 25℃; discharge constant current 10A and 2.5V cut-off"
       temperature_c: 0
       discharge_current_a: 10
-    notes: "citit din tabel; interval 3h la schimbarea temperaturii intre charge si discharge"
+    notes: "read from the table; 3h interval when the temperature changes between charge and discharge"
 
   - property: rel_charge_capacity_5c_pct
     value: 90
@@ -296,7 +296,7 @@ claims:
       text: "charge temperature 5℃, discharge temperature 25℃; discharge constant current 10A and 2.5V cut-off"
       temperature_c: 5
       discharge_current_a: 10
-    notes: "citit din tabel"
+    notes: "read from the table"
 
   - property: rel_charge_capacity_25c_pct
     value: 100
@@ -306,7 +306,7 @@ claims:
       text: "charge temperature 25℃, discharge temperature 25℃; discharge constant current 10A and 2.5V cut-off"
       temperature_c: 25
       discharge_current_a: 10
-    notes: "punct de referinta al tabelului"
+    notes: "the table's reference point"
 
   - property: rel_charge_capacity_45c_pct
     value: 95
@@ -316,7 +316,7 @@ claims:
       text: "charge temperature 45℃, discharge temperature 25℃; discharge constant current 10A and 2.5V cut-off"
       temperature_c: 45
       discharge_current_a: 10
-    notes: "citit din tabel"
+    notes: "read from the table"
 
   - property: rel_charge_capacity_50c_pct
     value: 95
@@ -326,12 +326,12 @@ claims:
       text: "charge temperature 50℃, discharge temperature 25℃; discharge constant current 10A and 2.5V cut-off"
       temperature_c: 50
       discharge_current_a: 10
-    notes: "citit din tabel"
+    notes: "read from the table"
 
   # ==========================================================================
   # 7.8 Charge rate capabilities — footer 4/16, page 5
-  # Descarcare 10A CC, 2.5V cut-off, dupa incarcare la 4.2V; 100% = 2,450mAh.
-  # `charge_current_a` este variabila tabelului.
+  # 10A CC discharge, 2.5V cut-off, after charging to 4.2V; 100% = 2,450mAh.
+  # `charge_current_a` is the table's variable.
   # ==========================================================================
 
   - property: rel_capacity_std_charge_pct
@@ -342,7 +342,7 @@ claims:
       text: "Charge condition: Standard 1.25A, 125mA cut-off; discharge constant current 10A and 2.5V cut-off after the cell is charged with 4.2V"
       charge_current_a: 1.25
       discharge_current_a: 10
-    notes: "citit din tabel; punct de referinta (100%)"
+    notes: "read from the table; reference point (100%)"
 
   - property: rel_capacity_rapid_charge_pct
     value: 98
@@ -352,11 +352,11 @@ claims:
       text: "Charge condition: Maximum rapid charge 4A, 100mA cut-off; discharge constant current 10A and 2.5V cut-off after the cell is charged with 4.2V"
       charge_current_a: 4
       discharge_current_a: 10
-    notes: "citit din tabel; 100% = 2,450mAh la 25℃/10A"
+    notes: "read from the table; 100% = 2,450mAh at 25℃/10A"
 
   # ==========================================================================
   # 7.9 Discharge rate capabilities — footer 4/16, page 5
-  # 2.5V cut-off dupa standard charge; 100% = 2,450mAh la 25℃/10A.
+  # 2.5V cut-off after standard charge; 100% = 2,450mAh at 25℃/10A.
   # ==========================================================================
 
   - property: rel_discharge_capacity_0_5a_pct
@@ -366,7 +366,7 @@ claims:
     stated_conditions:
       text: "Discharge condition: 0.50A, 2.5V cut-off after the standard charge"
       discharge_current_a: 0.5
-    notes: "citit din tabel; 100% = 2,450mAh la 25℃/10A (de aceea 0.5A poate fi 100%, nu >100%)"
+    notes: "read from the table; 100% = 2,450mAh at 25℃/10A (which is why 0.5A can be 100%, not >100%)"
 
   - property: rel_discharge_capacity_5a_pct
     value: 97
@@ -375,7 +375,7 @@ claims:
     stated_conditions:
       text: "Discharge condition: 5A, 2.5V cut-off after the standard charge"
       discharge_current_a: 5
-    notes: "citit din tabel"
+    notes: "read from the table"
 
   - property: rel_discharge_capacity_10a_pct
     value: 100
@@ -384,7 +384,7 @@ claims:
     stated_conditions:
       text: "Discharge condition: 10A, 2.5V cut-off after the standard charge"
       discharge_current_a: 10
-    notes: "punct de referinta al tabelului"
+    notes: "the table's reference point"
 
   - property: rel_discharge_capacity_15a_pct
     value: 97
@@ -393,7 +393,7 @@ claims:
     stated_conditions:
       text: "Discharge condition: 15A, 2.5V cut-off after the standard charge"
       discharge_current_a: 15
-    notes: "citit din tabel"
+    notes: "read from the table"
 
   - property: rel_discharge_capacity_20a_pct
     value: 95
@@ -402,10 +402,10 @@ claims:
     stated_conditions:
       text: "Discharge condition: 20A, 2.5V cut-off after the standard charge"
       discharge_current_a: 20
-    notes: "citit din tabel"
+    notes: "read from the table"
 
   # ==========================================================================
-  # 7.10–7.12 — footer 4/16, page 5
+  # 7.10-7.12 — footer 4/16, page 5
   # ==========================================================================
 
   - property: cycle_life_cycles
@@ -414,10 +414,10 @@ claims:
     page: 5
     stated_conditions:
       text: "With standard charge and maximum continuous discharge. Capacity after 250cycles, Capacity ≥ 1,500mAh (60% of the nominal capacity at 25℃)"
-      charge_current_a: 1.25        # "standard charge", definit in 7.1 (1,250mA)
-      discharge_current_a: 20       # "maximum continuous discharge", definit in 3.7 (20A)
+      charge_current_a: 1.25        # "standard charge", defined in 7.1 (1,250mA)
+      discharge_current_a: 20       # "maximum continuous discharge", defined in 3.7 (20A)
       end_condition: "capacity >= 1,500mAh (60% of nominal) after 250 cycles"
-    notes: "criteriu de pass, nu viata tipica; charge_current_a/discharge_current_a: cross-reference resolution — defensible ('standard charge' definit in 7.1 = 1,250mA; 'maximum continuous discharge' definit in 3.7 = 20A); temperatura de ciclare nedeclarata (25℃ califica doar masurarea capacitatii); '60% at 250 cycle' din 3.7 = aceeasi afirmatie, un singur claim"
+    notes: "a pass criterion, not typical life; charge_current_a/discharge_current_a: cross-reference resolution — defensible ('standard charge' defined in 7.1 = 1,250mA; 'maximum continuous discharge' defined in 3.7 = 20A); the cycling temperature is not stated (25℃ qualifies only the capacity measurement); the '60% at 250 cycle' in 3.7 is the same assertion, one claim"
 
   - property: cycle_life_retention_pct
     value: 60
@@ -426,7 +426,7 @@ claims:
     stated_conditions:
       text: "Capacity after 250cycles, Capacity ≥ 1,500mAh (60% of the nominal capacity at 25℃)"
       temperature_c: 25
-    notes: "bound Min (≥); pragul e afirmat ca valoare in document, deci claim separat pe langa end_condition-ul din cycle_life_cycles (conventia gold-urilor existente); echivalent absolut: 1,500mAh = 1.5 Ah"
+    notes: "bound Min (≥); the threshold is stated as a value in the document, so it is a separate claim alongside the end_condition of cycle_life_cycles (the convention of the existing golds); absolute equivalent: 1,500mAh = 1.5 Ah"
 
   - property: storage_capacity_recovery_pct
     value: 90
@@ -436,7 +436,7 @@ claims:
       text: "Standard rated discharge capacity after storage for 1 month at 60℃ from the standard charged state is ≥ 90% of the initial 10A discharge capacity at 25℃"
       temperature_c: 60
       discharge_current_a: 10
-    notes: "bound Min (≥); stocare 1 luna la 60℃ din stare standard charged; masurare la 25℃"
+    notes: "bound Min (≥); 1 month of storage at 60℃ from the standard charged state; measured at 25℃"
 
   - property: ex_factory_soc_pct
     value: 50
@@ -444,7 +444,7 @@ claims:
     page: 5
     stated_conditions:
       text: "The cell should be shipped in 50 ± 5% charged state."
-    notes: "toleranta ±5% doar in text; consistent cu nota (1) de pe page 3 (ex-factory 50±5% SOC, 25℃)"
+    notes: "the ±5% tolerance stays in the text only; consistent with note (1) on page 3 (ex-factory 50±5% SOC, 25℃)"
 
   - property: ex_factory_ocv_range_v
     value: [3.600, 3.690]

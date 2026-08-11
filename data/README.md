@@ -86,7 +86,10 @@ One row = one (cell, cycle). Per-cell metadata is denormalised onto every row.
 
 PDFs in `claims/datasheets/` (gitignored, re-downloadable from the URLs below).
 Hand-extracted claims live in `claims/*.yaml` (tracked — the gold standard for
-later LLM extraction; format in `claims/README.md`). All retrieved **2026-07-11**.
+later LLM extraction; format in `claims/README.md`). The first four were
+retrieved **2026-07-11**; the held-out Samsung document on **2026-08-06**, and
+its gold lives in `gold/`, not `claims/`, so the loaders that glob
+`claims/*.yaml` never see it.
 
 | cell | file | source URL | notes |
 |---|---|---|---|
@@ -94,6 +97,7 @@ later LLM extraction; format in `claims/README.md`). All retrieved **2026-07-11*
 | Panasonic NCR18650B | `panasonic_ncr18650b.pdf` | https://www.orbtronic.com/content/NCR18650B-Datasheet-Panasonic-Specifications.pdf | 4-page marketing sheet 2G23X0KYKU; **contains no cycle-life claim** (recorded as an omission). |
 | Panasonic NCR18650B | `panasonic_ncr18650b_full_spec_sanyo.pdf` | https://www.dnkpower.com/wp-content/uploads/2022/08/NCR18650B-datasheet.pdf | official SANYO/Panasonic full spec, File No. NCR18650-068, type NCR18650B-H00BA, issued 2012-05-29 (Tentative); §6.3 holds the formal cycle-life claim. |
 | LG Chem 18650HG2 | `lg_inr18650hg2.pdf` | https://www.batteryspace.com/prod-specs/9989.specs.pdf | LG Chem PRODUCT SPECIFICATION PS-HG2-Rev0 (2015-01-28), 11 pages; §4.2.3 cycle life. |
+| Samsung SDI INR18650-25R | `samsung_inr18650_25r.pdf` | https://www.dnkpower.com/wp-content/uploads/2018/04/Samsung-INR18650-25R-Datasheet.pdf | *Specification of product*, Spec. No. INR18650-25R Version 1.0 (Mar 2014), 17 pages. **Held-out** evaluation document for experiment 11 — it contributed nothing to the extraction prompt, the property vocabulary or the Validator's bounds, all frozen before it was annotated. Page 1 is stamped *SAMSUNG SDI Confidential Proprietary*: neither the PDF nor the extracted text is redistributed; the gold in `gold/` quotes only the short condition strings each claim states. `python -m src.agents.pdf_text` reproduces the frozen snapshot byte for byte from this file. |
 
 Load into the KG: `python -m src.kg.claims` then `python -m src.kg.discrepancy`.
 

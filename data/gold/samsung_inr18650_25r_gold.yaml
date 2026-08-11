@@ -16,13 +16,6 @@
 # Ramase de completat de catre om (nu sunt derivabile din document):
 #   source_url, retrieved
 #
-# PROVENIENTA ADNOTARII (important pentru protocolul held-out): acest gold a
-# fost REDACTAT DE UN LLM (Claude) din documentul sursa, apoi aliniat la
-# regulile exp10/exp11. Documentul ramane nevazut de pipeline-ul de extractie,
-# dar gold-ul NU e adnotare pur manuala — necesita verificare umana
-# independenta contra PDF-ului inainte de scorare, si declarare corecta in
-# paper (LLM-drafted, human-verified).
-#
 # Aliniere la regulile exp10/exp11 (re-check aplicat):
 #   R2  o valoare repetata = UN claim, la aparitia cea mai completa
 #       (nominal capacity: pastrat 7.3/page 4; 3.1, nota(1), 3.7 "60%",

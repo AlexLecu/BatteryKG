@@ -39,7 +39,7 @@ documents without ever writing to the graph unreviewed.
 | Dimension | Result |
 |---|---|
 | Cycle-life prediction | RMSE **135 vs 141 cycles** (graph vs baseline, n.s.) |
-| Abstention | **halves retained RMSE at 60% retention**; zero-shot on HUST refuses all **77** cells (**~83% error avoided**) |
+| Abstention | **cuts retained RMSE by ~40% at 60% retention (135 → 79 cycles)**; zero-shot on HUST refuses all **77** cells (**~83% error avoided**) |
 | Claim extraction | F1 **0.70 → 0.78** with **zero unsourced values** |
 | Spec consistency | **14 of 43** cross-document comparisons conflict |
 

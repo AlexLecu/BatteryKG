@@ -48,7 +48,8 @@ One row = one (cell, cycle). Per-cell metadata is denormalised onto every row.
   batch2 duplicates dropped → **124 cells**.
 - **Note:** cycle 1 is absent for every cell (excluded by the original authors).
 - Batch 4 (`2019-01-24…`, Attia 2020 closed-loop optimisation) is **not** part
-  of Severson 2019 and is left for a later phase (see `download.py`).
+  of Severson 2019 and is never included in the modelling set; it is downloaded
+  on request for experiment 09 (§7).
 
 ## 2. Sandia National Laboratories — Cell Cycle Testing Data  (`study = sandia`)
 
@@ -139,6 +140,40 @@ manufacturer datasheets. Processed output:
 - Used as the **cross-study transfer target** (experiment 04): train on
   Severson, predict HUST.
 
-## Not yet ingested (documented for later phases)
-- Battery Archive **SNL** long-term study (86 cells, NCA/NMC/LFP) — per-cell CSV
-  at https://www.batteryarchive.org/snl_study.html
+## 6. Battery Archive — Sandia SNL LFP study  (`study = snl`, experiment 08)
+
+- **Paper:** Preger et al., *Degradation of Commercial Lithium-Ion Cells as a
+  Function of Chemistry and Cycling Conditions*, J. Electrochem. Soc. 167,
+  120532 (2020); DOI 10.1149/1945-7111/abae37. Same study as §2, published
+  through Battery Archive at per-cycle resolution.
+- **Host:** https://www.batteryarchive.org/snl_study.html
+- **Download (manual — not covered by `src.ingestion.download`):** from the page
+  above take `SNL LFP.zip` (~252 MiB, 60 files = 30 cells × `cycle_data` +
+  `timeseries` CSV) and save it under `BatteryArchive/` in the repo root.
+  **Downloaded 2026-07-15.** `BatteryArchive/` is gitignored.
+- **Cells:** 30 × A123 APR18650M1A (LFP, 1.1 Ah) — the same commercial cell as
+  Severson and HUST, from an independent laboratory: 0.5C CC-CV charge, ageing
+  at 0.5–3C discharge over 0–100/20–80/40–60 % DoD at 15/25/35 °C, EOL at 80 %
+  of the 1.1 Ah nominal.
+- **Build:** the experiment-08 pipeline, which runs the study through the
+  system's own update path rather than a bare loader —
+  `python -m experiments.exp08_snl_ingestion.stage`, then `.snl_ingest`,
+  `.load_snl`, `.coverage`, `.discrepancies`, `.report`. Needs a live Neo4j.
+- Used as a **second, independent measurement source** for a cell whose only
+  prior evidence was Severson.
+- The other archives under `BatteryArchive/` (NCA, NMC, CALCE, HNEI, Oxford,
+  UL-Purdue, Michigan) were downloaded on the same date for feasibility scans
+  (`scripts/snl_feasibility/`) and are not ingested.
+
+## 7. Severson batch 4 — Attia 2020 closed-loop optimisation  (experiment 09)
+
+- **Paper:** Attia et al., *Closed-loop optimization of fast-charging protocols
+  for batteries with machine learning*, Nature 578, 397–402 (2020).
+- **Download:** `python -m src.ingestion.download attia` → `data/raw/severson_mit/
+  2019-01-24_batchdata_updated_struct_errorcorrect.mat` (~2.4 GiB). Deliberately
+  excluded from the `severson` and `all` targets so both stay reproducible as
+  published — batch 4 is **not** part of the Severson 124-cell modelling set.
+- **Cells:** the same A123 APR18650M1A, same laboratory and equipment as
+  Severson, under multi-step charge protocols the graph has never seen.
+- Used as the hardest honest test of the abstention gate (experiment 09):
+  abstention on genuinely novel protocols is the correct outcome, not a failure.

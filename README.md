@@ -1,9 +1,5 @@
 # BatteryKG
 
-**🔴 [Live demo](https://batterykg.streamlit.app)** — try the predictions,
-the claim-vs-measured gaps, and the document conflicts in your browser
-(no install). · **🎥 [Video overview](https://youtu.be/Fkcdzemw5b0)**
-
 BatteryKG builds a knowledge graph of commercial battery cells from
 deliberately conflicting sources — manufacturer datasheet **claims**, cycling
 dataset **measurements**, and independent tests — and reconciles them with
@@ -51,16 +47,12 @@ python -m src.kg.independent           # third source -> Neo4j (reconciliation p
 streamlit run app/main.py
 ```
 
-The trained serving artifacts ship in `app/artifacts/`, so the **Will It
-Last** prediction page works immediately after step 3. The graph pages run
-either against a live Neo4j (steps above) or, with no database at all, from
-the bundled read-only snapshot in `data/kg_snapshots/app_snapshot.json` —
-cached Neo4j query results recorded from the live graph (regenerate with
-`scripts/gen_app_snapshot.py`). The hosted demo runs in this snapshot mode.
-Alternatively `docker compose up --build` runs the full stack (Neo4j + app)
-in containers. Every page follows an honesty rule: numbers come from the
-graph, the artifacts, or a report file — when a source is unavailable the
-page says so instead of mocking data.
+The trained serving artifacts ship in `app/artifacts/`, so the **Prediction
+with Abstention** page works immediately after step 3 — the graph pages light
+up once the KG is loaded. Alternatively `docker compose up --build` runs the
+full stack (Neo4j + app) in containers. Every page follows an honesty rule:
+numbers come from the graph, the artifacts, or a report file — when a source
+is unavailable the page says so instead of mocking data.
 
 ## Released gold standard
 
@@ -71,6 +63,10 @@ page says so instead of mocking data.
   number, and the datasheet's *stated conditions* per claim (an explicitly
   recorded `"unspecified"` when the datasheet states none — that omission is
   itself a finding). Format and property vocabulary: `data/claims/README.md`.
+- `data/gold/*.yaml` — the same, for the **held-out** Samsung SDI INR18650-25R
+  (41 claims), annotated after the extraction prompt, the property vocabulary
+  and the Validator's bounds were frozen, and read only at scoring time
+  (experiment 11).
 
 The manufacturer PDFs themselves are copyrighted and are not redistributed;
 source URLs and retrieval dates are in `data/README.md`. The extraction-input
@@ -88,8 +84,10 @@ src/models/      graph-mediated predictor, graph-free baseline, coverage-gated a
 src/agents/      LLM claim extraction, validator, literature monitor (human-gated)
 src/viz/         publication figure scripts
 app/             Streamlit demo (4 pages) + trained serving artifacts
+experiments/     experiments 05-11 (see below); 01-04 live in src/models/
 tests/           full suite; fixtures stand in for network/copyrighted sources
 data/claims/     released gold standard (see above)
+data/gold/       held-out gold standard for experiment 11
 data/README.md   provenance for every dataset (URLs, download dates)
 ```
 
@@ -104,8 +102,38 @@ Shipped artifacts and the script that regenerates each:
 | `outputs/experiment_02_extraction.md` | `python -m src.agents.experiment_02` / `experiment_02b` (LLM claim extraction vs. gold standard; needs `GROQ_API_KEY`) |
 | `data/eval/questions.jsonl` | `python -m src.agents.experiment_03` (one spec question per gold claim; shipped so the eval is exactly reproducible) |
 | `data/kg_snapshots/severson_edges_publication.json` | frozen export of the Severson `SIMILAR_TO` edge lists from the publication KG; read by `src/viz/make_paper_figures.py` so the figures rebuild without a live database |
-| `data/kg_snapshots/app_snapshot.json` | `python -m scripts.gen_app_snapshot` against a live KG (recorded query results that power the app's no-database snapshot mode) |
-| `data/claims/README.md` vocabulary table | `python scripts/gen_claims_vocab.py` (derived from the YAMLs) |
+| `data/claims/README.md` vocabulary table | `python scripts/gen_claims_vocab.py` (derived from the YAMLs in `data/claims/` and `data/gold/`) |
+| `outputs/experiment_06_quantile_gate/` | `python -m experiments.exp06_quantile_gate.in_study` / `.hust_adaptation` / `.summarize` |
+| `outputs/experiment_07_revision_extras/` | `python -m experiments.exp07_revision_extras.cost_sensitive` / `.survival` / `.target_sensitivity` / `.summarize` |
+| `outputs/experiment_08_snl_ingestion/` | the `experiments.exp08_snl_ingestion.*` pipeline (needs Neo4j + the archive zip) |
+| `outputs/experiment_09_attia_feasibility/` | `python -m experiments.exp09_attia_feasibility.attia` / `.adaptation` / `.partial_acceptance` |
+| `experiments/exp11_heldout_samsung/results.json` | `python -m experiments.exp11_heldout_samsung.rescore` (no LLM calls) |
+| `paper/tables/*.tex`, `paper/figures/*` | written on demand by the experiment above that owns each; the manuscript itself is not part of this repository |
+
+## Revision experiments
+
+Experiments 05–11 back the major revision. Each is a package under
+`experiments/`; every one writes a `README.md` next to its outputs.
+
+| | what it establishes | what it needs |
+|---|---|---|
+| **05** | the absolute coverage gate cannot transfer: its threshold is a distance in Severson's z-scored scaling, not a sample-size problem | Severson + HUST downloads |
+| **06** | the quantile-referenced gate that replaced it — retain when coverage reaches the q=41 percentile of the bank's own leave-one-out distribution, which reproduces the 60 % operating point and is scale-free | Severson + HUST downloads |
+| **07** | cost-sensitive choice of the operating point, Kaplan-Meier survival of the cells, and sensitivity of the conclusions to the 60 % target | Severson download |
+| **08** | an independent measurement source (Sandia/BatteryArchive, 30 cells of a cell the graph already knew) taken end to end through the system's own update path — registration, promotion, staging, entity resolution, load, coverage, discrepancy | live Neo4j **and** `SNL LFP.zip` (see `data/README.md` §6) |
+| **09** | the hardest honest test of the gate: same cell and laboratory as Severson, charge protocols the bank has never seen | `python -m src.ingestion.download attia` (~2.4 GiB) |
+| **10** | the Section 4.4 comparability verdicts re-derived independently, without calling the code that produced them (read-only) | live Neo4j with the KG loaded |
+| **11** | held-out extraction on a datasheet that contributed nothing to the prompt, the vocabulary or the Validator: precise (0.875) and hallucinating nothing, but recovering 34 % of the gold | nothing — scores the frozen predictions; see below |
+
+Experiment 08 cannot be re-run without the archive zip, so its summary in
+`outputs/experiment_08_snl_ingestion/README.md` ships as the evidence.
+
+Experiment 11's re-score runs against shipped artifacts. Its text snapshot is
+derived from a copyrighted datasheet and is not redistributed, so by default the
+script reports the value-stage metrics — which do not read the document — and
+marks the hallucination count and Validator replay **unavailable** rather than
+guessing them. For the complete re-score, rebuild the snapshot first (see
+*Released gold standard* above).
 
 ## Tests
 

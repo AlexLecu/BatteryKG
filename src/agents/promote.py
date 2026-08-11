@@ -21,14 +21,25 @@ _PROMOTE_CYPHER = """
 MATCH (c:CandidateSource {candidate_id: $cid})
 SET c.status = 'promoted', c.promoted_at = $now
 MERGE (s:Source {source_id: $source_id})
-  SET s.type = 'literature', s.citation = c.title, s.url = $url,
+  SET s.type = $source_type,
+      s.citation = coalesce($citation, c.title), s.url = $url,
       s.year = c.year, s.promoted_from = $cid, s.retrieved = c.retrieved
 RETURN c.title AS title
 """
 
 
-def promote(candidate_id: str, confirm: bool) -> str:
-    """Promote one candidate. Raises without explicit confirmation."""
+def promote(candidate_id: str, confirm: bool, source_id: str | None = None,
+            source_type: str = "literature", citation: str | None = None) -> str:
+    """Promote one candidate. Raises without explicit confirmation.
+
+    `source_id`, `source_type` and `citation` default to the historical
+    behaviour (a `lit_<candidate_id>` node of type 'literature' citing the
+    paper title). They are overridable because a promoted candidate is not
+    always a bare literature reference: when the study also ships a dataset
+    that a study loader will attach measurements to, the Source node has to
+    carry the loader's own id and type so both write to ONE node instead of
+    creating a second, disconnected Source for the same study.
+    """
     if not confirm:
         raise SystemExit(
             "Refusing to promote without --confirm. Promotion creates a real "
@@ -48,12 +59,12 @@ def promote(candidate_id: str, confirm: bool) -> str:
     url = (f"https://doi.org/{rec['doi']}" if rec.get("doi")
            else f"https://arxiv.org/abs/{rec['arxiv_id']}" if rec.get("arxiv_id")
            else "")
-    source_id = "lit_" + candidate_id.replace(":", "_").replace("/", "_")
+    source_id = source_id or ("lit_" + candidate_id.replace(":", "_").replace("/", "_"))
     driver = get_driver()
     try:
         with driver.session() as s:
             row = s.run(_PROMOTE_CYPHER, cid=candidate_id, source_id=source_id,
-                        url=url,
+                        url=url, source_type=source_type, citation=citation,
                         now=datetime.now(timezone.utc).isoformat(timespec="seconds")
                         ).single()
             if row is None:

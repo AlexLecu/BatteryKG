@@ -29,6 +29,10 @@ DOCUMENTS = [
     "panasonic_ncr18650b",
     "panasonic_ncr18650b_full_spec_sanyo",
     "lg_inr18650hg2",
+    # held-out evaluation document (experiment 11); its text snapshot is frozen
+    # under data/claims/extracted_text/ — the PDF itself is not redistributable,
+    # so build_all() reports it MISSING and leaves the snapshot untouched.
+    "samsung_inr18650_25r",
 ]
 
 PAGE_MARK = "=== PAGE {n} ==="

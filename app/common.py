@@ -163,8 +163,17 @@ def _zscore_with(values: np.ndarray, mean: list[float], std: list[float]) -> np.
 
 
 def view_neighbors(art: dict, view: str, query_features: dict,
-                   exclude_group: str | None = None, k: int | None = None) -> pd.DataFrame:
+                   exclude_group: str | None = None, k: int | None = None,
+                   exclude_cell_id: str | None = None) -> pd.DataFrame:
     """Top-k bank neighbours of a query point in one similarity view.
+
+    Self-exclusion is by `exclude_cell_id`, never by distance. A bank cell can
+    legitimately sit at distance 0 from the query without being the query — two
+    cells sharing a charge policy are identical in the condition view, and a
+    whole study can share one policy — so treating weight 1.0 as "this is me"
+    silently deletes real neighbours. Callers that know the query's identity
+    must pass it; `exclude_group` remains available for the grouped-CV
+    condition, and already removes the cell's own group (hence itself).
 
     Returns a dataframe with cell_id, weight, cycle_life_nominal, policy."""
     meta, bank = art["meta"], art["bank"]
@@ -181,17 +190,19 @@ def view_neighbors(art: dict, view: str, query_features: dict,
     out["weight"] = w
     if exclude_group is not None:
         out = out[out["policy_group_id"] != exclude_group]
+    if exclude_cell_id is not None:
+        out = out[out["cell_id"] != exclude_cell_id]
     out = out.sort_values(["weight", "cell_id"], ascending=[False, True])
-    # a bank cell identical to the query (self) has weight 1.0 — drop it
-    out = out[out["weight"] < 0.999999]
     return out.head(k).reset_index(drop=True)
 
 
 def graph_features_for_query(art: dict, query_features: dict,
-                             exclude_group: str | None = None) -> dict:
+                             exclude_group: str | None = None,
+                             exclude_cell_id: str | None = None) -> dict:
     feats = {}
     for view in ("condition", "behavior"):
-        nb = view_neighbors(art, view, query_features, exclude_group)
+        nb = view_neighbors(art, view, query_features, exclude_group,
+                            exclude_cell_id=exclude_cell_id)
         w = nb["weight"].to_numpy()
         y = nb["log10_cycle_life"].to_numpy()
         wmean = float(np.sum(w * y) / np.sum(w))
@@ -204,10 +215,11 @@ def graph_features_for_query(art: dict, query_features: dict,
 
 
 def predict_with_gate(art: dict, query_features: dict,
-                      exclude_group: str | None = None) -> dict:
+                      exclude_group: str | None = None,
+                      exclude_cell_id: str | None = None) -> dict:
     """Full serving path: graph features -> gate -> prediction + band."""
     meta = art["meta"]
-    gf = graph_features_for_query(art, query_features, exclude_group)
+    gf = graph_features_for_query(art, query_features, exclude_group, exclude_cell_id)
     coverage = gf["behavior_coverage_train"]
     threshold = meta["abstention"]["threshold"]
     row = {**{c: query_features[c] for c in meta["base_features"]}, **gf}

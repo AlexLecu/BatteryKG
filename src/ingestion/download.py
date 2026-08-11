@@ -118,6 +118,11 @@ def download(which: str) -> None:
     groups = {
         "severson": SEVERSON_FILES,
         "sandia": SANDIA_FILES,
+        # batch 4 is the Attia 2020 closed-loop-optimization study: same cell,
+        # lab and equipment as Severson, new multi-step charge protocols. It is
+        # NOT part of the Severson 124-cell modelling set and is downloaded on
+        # request only, so `severson` and `all` stay reproducible as published.
+        "attia": [SEVERSON_BATCH4],
         "all": SEVERSON_FILES + SANDIA_FILES,
     }
     if which not in groups:

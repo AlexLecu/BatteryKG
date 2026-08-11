@@ -28,9 +28,17 @@ from src.models.common import make_model
 REPORT = OUTPUTS / "experiment_04_cross_study.md"
 PAPER_TABLE = ROOT / "paper" / "tables" / "tab_cross_study.tex"
 
-# in-study reference (experiment 01 / serving meta; canonical outputs)
+# In-study reference (experiment 01 / serving meta; canonical outputs).
+#
+# `retained_rmse` is the DEPLOYED gate's in-study number. The deployed gate is
+# now the quantile-referenced one (retain when coverage reaches the q*=41st
+# percentile of the bank's own leave-one-out coverage distribution), so this is
+# 79.0 and not the 72.0 of the superseded absolute 4.08 threshold. Both retain
+# exactly 72 of 120 cells; they disagree on 2 of them, and one of those carries
+# a large error. Source: outputs/experiment_06_quantile_gate/deployed_gate.json
+# (`rmse_retained_cycles`, and `operating_point_comparison` for the delta).
 IN_STUDY = {"rmse_cycles": 135.2, "mape_pct": 9.69,
-            "retained_frac": 0.60, "retained_rmse": 72.0}
+            "retained_frac": 0.60, "retained_n": 72, "retained_rmse": 79.0}
 
 HUST_POLICY = {"c_rate_1": 5.0, "c_rate_2": 1.0, "soc_transition_pct": 80.0}
 
@@ -53,6 +61,18 @@ def _rmse(t, p):
 def _mape(t, p):
     t, p = np.asarray(t, float), np.asarray(p, float)
     return float(np.mean(np.abs(p - t) / t) * 100)
+
+
+def _cell(v, fmt="{:.1f}", dash="---"):
+    """Render a metric for a table cell.
+
+    A metric over an empty set (the gate retains nothing, so there is no
+    retained RMSE) is undefined, not zero and not a number — print a dash
+    rather than letting a float NaN reach the page as the string 'nan'.
+    """
+    if v is None or not np.isfinite(v):
+        return dash
+    return fmt.format(v)
 
 
 def main() -> None:
@@ -144,13 +164,15 @@ def main() -> None:
     a("| configuration | n | RMSE (cycles) | MAPE (%) |")
     a("|---|---|---|---|")
     a(f"| in-study CV (graph model, exp 01) | 120 | {IN_STUDY['rmse_cycles']:.1f} | {IN_STUDY['mape_pct']:.2f} |")
-    a(f"| in-study CV, gate-retained 60% | 72 | {IN_STUDY['retained_rmse']:.1f} | — |")
+    a(f"| in-study CV, gate-retained {IN_STUDY['retained_frac']:.0%} | "
+      f"{IN_STUDY['retained_n']} | {IN_STUDY['retained_rmse']:.1f} | — |")
     a(f"| HUST zero-shot, graph-free GBM (no gate) | {n} | {stats['baseline_rmse']:.1f} | {stats['baseline_mape']:.1f} |")
     a(f"| HUST zero-shot, graph model (ungated) | {n} | {stats['graph_rmse']:.1f} | {stats['graph_mape']:.1f} |")
     a(f"| HUST zero-shot, gate-RETAINED | {stats['n_retained']} | "
-      f"{stats['retained_rmse']:.1f} | {stats['retained_mape']:.1f} |")
+      f"{_cell(stats['retained_rmse'], dash='—')} | "
+      f"{_cell(stats['retained_mape'], dash='—')} |")
     a(f"| HUST zero-shot, gate-ABSTAINED (error had it answered) | {n - stats['n_retained']} | "
-      f"{stats['abstained_rmse']:.1f} | — |")
+      f"{_cell(stats['abstained_rmse'], dash='—')} | — |")
     a(f"\nAbstention rate on HUST: **{abst_rate:.1%}** (in-study at the same "
       f"threshold: 40%).\n")
     a("## Verdict\n")
@@ -199,14 +221,15 @@ def main() -> None:
         "\\textbf{Configuration} & \\textbf{n} & \\textbf{RMSE (cycles)} & \\textbf{MAPE (\\%)} \\\\",
         "\\midrule",
         f"In-study CV (graph model) & 120 & {IN_STUDY['rmse_cycles']:.1f} & {IN_STUDY['mape_pct']:.2f} \\\\",
-        f"In-study CV, gate-retained 60\\% & 72 & {IN_STUDY['retained_rmse']:.1f} & --- \\\\",
+        f"In-study CV, gate-retained {IN_STUDY['retained_frac'] * 100:.0f}\\% & "
+        f"{IN_STUDY['retained_n']} & {IN_STUDY['retained_rmse']:.1f} & --- \\\\",
         "\\midrule",
         f"HUST zero-shot, graph-free GBM & {n} & {stats['baseline_rmse']:.1f} & {stats['baseline_mape']:.1f} \\\\",
         f"HUST zero-shot, graph model (ungated) & {n} & {stats['graph_rmse']:.1f} & {stats['graph_mape']:.1f} \\\\",
         f"HUST zero-shot, gate-retained & {stats['n_retained']} & "
-        f"{stats['retained_rmse']:.1f} & {stats['retained_mape']:.1f} \\\\",
+        f"{_cell(stats['retained_rmse'])} & {_cell(stats['retained_mape'])} \\\\",
         f"HUST zero-shot, gate-abstained & {n - stats['n_retained']} & "
-        f"{stats['abstained_rmse']:.1f} & --- \\\\",
+        f"{_cell(stats['abstained_rmse'])} & --- \\\\",
         "\\bottomrule",
         "\\end{tabularx}",
         "\\end{table}",

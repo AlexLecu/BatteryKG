@@ -12,11 +12,24 @@ The app NEVER trains; it only loads these artifacts:
 
 Training set: all non-QC-flagged cells (120). Graph features for each training
 cell are computed EXCLUDING its own policy group (mirroring the grouped-CV
-condition the threshold was derived under). The abstention threshold is chosen
-from the grouped-CV risk-coverage sweep: among thresholds retaining >=60% of
-cells, the one minimising retained RMSE.
+condition the threshold was derived under).
 
-Run:  python -m src.models.train_final
+The abstention threshold is the quantile-referenced gate (src.models.
+quantile_gate): the q*=41st percentile of the bank's own leave-one-out coverage
+distribution, which reproduces the paper's 60% in-study retention while being
+scale-free. It replaced an absolute constant picked from the risk-coverage
+sweep, which could not transfer to another study's feature scaling.
+
+The threshold is derived from the FROZEN publication edge snapshot
+(data/kg_snapshots/severson_edges_publication.json), never from a live graph.
+Behaviour-view SIMILAR_TO weights are z-scored over whatever cell population
+the graph holds, so once a second study is loaded every Severson weight shifts
+and the artifacts would silently stop matching the published model. Only the
+CV/model path reads the live KG, and it must be run against a Severson-only
+graph; --abstention-only rewrites the threshold alone and needs no database.
+
+Run:  python -m src.models.train_final                   # full retrain (Severson-only KG)
+      python -m src.models.train_final --abstention-only # rewrite the gate in meta.json
 """
 from __future__ import annotations
 
@@ -29,15 +42,16 @@ import pandas as pd
 
 from src.config import ROOT
 from src.kg.features import similarity, zscore
-from src.models.abstention import risk_coverage_sweep
 from src.models.common import XGB_PARAMS, make_model, metric_table
 from src.models.dataset import BASE_FEATURES, TARGET, build_dataset
 from src.models.graph_model import fetch_edges, graph_feature_columns, run_graph_model
+from src.models.quantile_gate import (BEHAVIOR_VIEW, Q_STAR, fold_loo_distributions,
+                                      keep_mask_for_q, loo_coverage, threshold_at_q)
+from src.viz.make_paper_figures import publication_edges
 
 ARTIFACT_DIR = ROOT / "app" / "artifacts"
 BEHAVIOR_FEATURES = ["var_dQ_100_10", "min_dQ_100_10", "cap_ratio_100_2", "slope_2_100"]
 K_NEIGHBORS = 5
-MIN_RETENTION = 0.60
 
 
 def _graph_features_xgroup(df: pd.DataFrame, k: int = K_NEIGHBORS) -> pd.DataFrame:
@@ -68,18 +82,61 @@ def _graph_features_xgroup(df: pd.DataFrame, k: int = K_NEIGHBORS) -> pd.DataFra
     return pd.DataFrame(out, index=df.index)
 
 
-def select_threshold(graph_preds: pd.DataFrame, min_retention: float = MIN_RETENTION) -> dict:
-    """Abstention threshold from the CV risk-coverage sweep: among thresholds
-    retaining >= min_retention, the one with minimal retained RMSE."""
-    sweep = risk_coverage_sweep(graph_preds["behavior_coverage_train"].to_numpy(),
-                                graph_preds["y_true_log"].to_numpy(),
-                                graph_preds["y_pred_log"].to_numpy(), n_random=0)
-    ok = sweep[sweep["frac_retained"] >= min_retention]
-    row = ok.loc[ok["rmse_retained"].idxmin()]
-    return {"threshold": float(row["threshold"]),
-            "cv_frac_retained": float(row["frac_retained"]),
-            "cv_rmse_retained_cycles": float(row["rmse_retained"]),
-            "rule": f"min retained RMSE among thresholds with retention >= {min_retention:.0%}"}
+def select_threshold(df: pd.DataFrame, graph_preds: pd.DataFrame, edges_view: dict,
+                     q: float = Q_STAR, k: int = K_NEIGHBORS) -> dict:
+    """The deployed quantile-referenced gate, as an absolute serving threshold.
+
+    Two different LOO distributions are involved, for two different questions.
+
+    The SERVED threshold is the q-th percentile of the FULL bank's LOO coverage
+    distribution: at serve time the bank is all the model has, so that is the
+    population a query cell is being compared against.
+
+    The reported CV numbers use PER-FOLD distributions instead, so that no test
+    cell contributes to the percentile that judges it. They are the honest
+    in-study retention and retained RMSE, and they are what the paper quotes.
+    """
+    groups = dict(zip(df["cell_id"], df["policy_group_id"]))
+    threshold = threshold_at_q(loo_coverage(df["cell_id"], groups, edges_view, k), q)
+
+    keep = keep_mask_for_q(graph_preds, fold_loo_distributions(df, edges_view, k), q)
+    t = 10.0 ** graph_preds["y_true_log"].to_numpy(float)[keep]
+    p = 10.0 ** graph_preds["y_pred_log"].to_numpy(float)[keep]
+    return {"threshold": threshold,
+            "q_star": float(q),
+            "cv_n_retained": int(keep.sum()),
+            "cv_frac_retained": float(keep.mean()),
+            "cv_rmse_retained_cycles": float(np.sqrt(((t - p) ** 2).mean())),
+            "rule": (f"coverage >= the q={q:g} percentile of the bank's "
+                     "leave-one-out coverage distribution (quantile-referenced "
+                     "gate; retention and retained RMSE are grouped-CV, "
+                     "per-fold thresholds)"),
+            "derived_from": "data/kg_snapshots/severson_edges_publication.json"}
+
+
+def rewrite_abstention() -> None:
+    """Recompute only the abstention block of an existing meta.json.
+
+    The rest of the artifact — model, quantile models, bank, scaler, CV metrics —
+    is the publication training run and is left byte-for-byte alone. This path
+    reads the frozen edge snapshot and needs no database.
+    """
+    meta_path = ARTIFACT_DIR / "meta.json"
+    meta = json.loads(meta_path.read_text())
+    data = build_dataset()
+    df = data[~data["is_anomalous"]].reset_index(drop=True)
+    edges = publication_edges()
+    preds = run_graph_model(df, edges)
+    old, thr = meta.get("abstention", {}), select_threshold(df, preds, edges[BEHAVIOR_VIEW])
+    meta["abstention"] = thr
+    meta["abstention_rewritten_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    meta_path.write_text(json.dumps(meta, indent=1))
+    print(f"[train_final] abstention: threshold {old.get('threshold', float('nan')):.6f} "
+          f"-> {thr['threshold']:.6f}, retained "
+          f"{old.get('cv_rmse_retained_cycles', float('nan')):.1f} -> "
+          f"{thr['cv_rmse_retained_cycles']:.1f} cycles RMSE "
+          f"({thr['cv_n_retained']} of {len(df)} cells)")
+    print(f"[train_final] rule: {thr['rule']}")
 
 
 def main() -> None:
@@ -87,11 +144,16 @@ def main() -> None:
     data = build_dataset()
     df = data[~data["is_anomalous"]].reset_index(drop=True)
 
-    # --- CV (for honest metrics + threshold selection) ------------------------
+    # --- CV (for honest metrics) ----------------------------------------------
     edges = fetch_edges()
     cv_preds = run_graph_model(df, edges)
     cv_metrics = metric_table(cv_preds, "graph_cv")
-    thr = select_threshold(cv_preds)
+
+    # The gate comes from the frozen publication snapshot, not from `edges`: a
+    # live graph holding a second study re-z-scores the behaviour view and moves
+    # every Severson weight, which would move the threshold with it.
+    pub = publication_edges()
+    thr = select_threshold(df, run_graph_model(df, pub), pub[BEHAVIOR_VIEW])
 
     # --- final fit on all 120 cells (x-group graph features) -------------------
     gf = _graph_features_xgroup(df)
@@ -147,4 +209,10 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    p.add_argument("--abstention-only", action="store_true",
+                   help="recompute only the abstention block of meta.json "
+                        "(frozen edge snapshot; no database, no retrain)")
+    rewrite_abstention() if p.parse_args().abstention_only else main()

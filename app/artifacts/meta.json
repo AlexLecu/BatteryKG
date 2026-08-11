@@ -82,10 +82,13 @@
   }
  },
  "abstention": {
-  "threshold": 4.080029,
+  "threshold": 4.08260124,
+  "q_star": 41.0,
+  "cv_n_retained": 72,
   "cv_frac_retained": 0.6,
-  "cv_rmse_retained_cycles": 71.98516716969611,
-  "rule": "min retained RMSE among thresholds with retention >= 60%"
+  "cv_rmse_retained_cycles": 79.03976422294078,
+  "rule": "coverage >= the q=41 percentile of the bank's leave-one-out coverage distribution (quantile-referenced gate; retention and retained RMSE are grouped-CV, per-fold thresholds)",
+  "derived_from": "data/kg_snapshots/severson_edges_publication.json"
  },
  "cv_metrics": {
   "model": "graph_cv",
@@ -94,5 +97,6 @@
   "mape_pct": 9.690374685373015
  },
  "target": "log10_cycle_life",
- "note": "graph features at serve time are computed against the neighbor bank; for known instances the cell's own policy group is excluded, mirroring the CV condition the threshold assumes"
+ "note": "graph features at serve time are computed against the neighbor bank; for known instances the cell's own policy group is excluded, mirroring the CV condition the threshold assumes",
+ "abstention_rewritten_at": "2026-08-11T16:51:15+00:00"
 }

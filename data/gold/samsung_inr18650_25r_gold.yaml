@@ -19,14 +19,8 @@
 #       handling p.12/13 — mentioned in notes only)
 #   R4  cross-reference resolution marked explicitly in notes (cycle life)
 #   R5  cycle_life_retention_pct = a separate claim, alongside end_condition
-#   R6  NOT VERIFIED against data/claims/README.md (unavailable at the time).
-#       Candidate names, possibly new or synonyms to be renamed before scoring:
-#       charge_temp_range_c, discharge_temp_range_c,
-#       storage_temp_range_{1_5yr,3mo,1mo}_c, rel_*_pct (all 17),
-#       cycle_life_retention_pct, storage_recovery_pct, ex_factory_soc_pct,
-#       ex_factory_ocv_range_v, std/rapid_charge_time_min,
-#       max_charge_voltage_v (vs. the vocabulary's charge_voltage_v).
-#       If they are still new: run scripts/gen_claims_vocab.py.
+#   R6  verified — property names aligned to the canonical vocabulary
+#       (exp11 v3); gen_claims_vocab.py covers data/gold/.
 
 cell_model: Samsung INR18650-25R
 manufacturer: Samsung SDI

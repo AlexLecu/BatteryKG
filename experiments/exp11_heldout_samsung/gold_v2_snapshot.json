@@ -1,0 +1,416 @@
+{
+ "_note": "Scoring-relevant snapshot of gold v2 (convention-alignment revision: duplicate nominal_capacity_ah removed, cycle_life_retention_pct added; no property renamed). Taken verbatim from the file before the v3 canonical-name renames. Verified by replay in rescore.py.",
+ "claims": [
+  {
+   "property": "nominal_voltage_v",
+   "value": 3.6,
+   "unit": "V",
+   "page": 3,
+   "conditions_text": "unspecified",
+   "parsed": {}
+  },
+  {
+   "property": "std_charge_current_a",
+   "value": 1.25,
+   "unit": "A",
+   "page": 3,
+   "conditions_text": "Standard charge: CCCV, 1.25A, 4.20 \u00b1 0.05 V, 125mA cut-off",
+   "parsed": {}
+  },
+  {
+   "property": "max_charge_voltage_v",
+   "value": 4.2,
+   "unit": "V",
+   "page": 3,
+   "conditions_text": "Standard charge: CCCV, 1.25A, 4.20 \u00b1 0.05 V, 125mA cut-off",
+   "parsed": {}
+  },
+  {
+   "property": "rapid_charge_current_a",
+   "value": 4,
+   "unit": "A",
+   "page": 3,
+   "conditions_text": "Rapid charge: CCCV, 4A, 4.20 \u00b1 0.05 V, 100mA cut-off",
+   "parsed": {}
+  },
+  {
+   "property": "std_charge_time_min",
+   "value": 180,
+   "unit": "min",
+   "page": 3,
+   "conditions_text": "Standard charge : 180min / 125mA cut-off",
+   "parsed": {}
+  },
+  {
+   "property": "rapid_charge_time_min",
+   "value": 60,
+   "unit": "min",
+   "page": 3,
+   "conditions_text": "Rapid charge: 60min (at 25\u2103) / 100mA cut-off",
+   "parsed": {
+    "temperature_c": 25
+   }
+  },
+  {
+   "property": "max_cont_discharge_a",
+   "value": 20,
+   "unit": "A",
+   "page": 3,
+   "conditions_text": "Max. continuous discharge (Continuous): 20A(at 25\u2103), 60% at 250 cycle",
+   "parsed": {
+    "temperature_c": 25
+   }
+  },
+  {
+   "property": "discharge_cutoff_voltage_v",
+   "value": 2.5,
+   "unit": "V",
+   "page": 3,
+   "conditions_text": "Discharge cut-off voltage / End of discharge: 2.5V",
+   "parsed": {}
+  },
+  {
+   "property": "cell_weight_g",
+   "value": 45.0,
+   "unit": "g",
+   "page": 3,
+   "conditions_text": "Cell weight: 45.0g max",
+   "parsed": {}
+  },
+  {
+   "property": "cell_height_mm",
+   "value": 64.85,
+   "unit": "mm",
+   "page": 3,
+   "conditions_text": "Height : 64.85 \u00b1 0.15mm",
+   "parsed": {}
+  },
+  {
+   "property": "cell_diameter_mm",
+   "value": 18.33,
+   "unit": "mm",
+   "page": 3,
+   "conditions_text": "Diameter : 18.33 \u00b1 0.07mm",
+   "parsed": {}
+  },
+  {
+   "property": "charge_temp_range_c",
+   "value": [
+    0,
+    50
+   ],
+   "unit": "degC",
+   "page": 3,
+   "conditions_text": "Operating temperature (surface temperature) \u2014 Charge : 0 to 50\u2103 (recommended recharge release < 45\u2103)",
+   "parsed": {}
+  },
+  {
+   "property": "discharge_temp_range_c",
+   "value": [
+    -20,
+    75
+   ],
+   "unit": "degC",
+   "page": 3,
+   "conditions_text": "Operating temperature (surface temperature) \u2014 Discharge: -20 to 75\u2103 (recommended re-discharge release < 60\u2103)",
+   "parsed": {}
+  },
+  {
+   "property": "storage_temp_range_1_5yr_c",
+   "value": [
+    -30,
+    25
+   ],
+   "unit": "degC",
+   "page": 3,
+   "conditions_text": "Storage temperature (Recovery 90% after storage): 1.5 year -30~25\u2103(1*)",
+   "parsed": {}
+  },
+  {
+   "property": "storage_temp_range_3mo_c",
+   "value": [
+    -30,
+    45
+   ],
+   "unit": "degC",
+   "page": 3,
+   "conditions_text": "Storage temperature (Recovery 90% after storage): 3 months -30~45\u2103(1*)",
+   "parsed": {}
+  },
+  {
+   "property": "storage_temp_range_1mo_c",
+   "value": [
+    -30,
+    60
+   ],
+   "unit": "degC",
+   "page": 3,
+   "conditions_text": "Storage temperature (Recovery 90% after storage): 1 month -30~60\u2103(1*)",
+   "parsed": {}
+  },
+  {
+   "property": "nominal_capacity_ah",
+   "value": 2.5,
+   "unit": "Ah",
+   "page": 4,
+   "conditions_text": "measured with discharge current of 500mA(0.2C) with 2.5V cut-off at 25\u2103 within 1hour after the standard charge; Nominal discharge capacity \u2265 2,500mAh",
+   "parsed": {
+    "temperature_c": 25,
+    "discharge_current_a": 0.5
+   }
+  },
+  {
+   "property": "rated_capacity_ah",
+   "value": 2.45,
+   "unit": "Ah",
+   "page": 4,
+   "conditions_text": "measured with discharge current of 10A with 2.5V cut-off at 25\u2103 within 1hour after the standard charge; Standard rated discharge capacity \u2265 2,450mAh",
+   "parsed": {
+    "temperature_c": 25,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "initial_impedance_mohm",
+   "value": 18,
+   "unit": "mohm",
+   "page": 4,
+   "conditions_text": "Initial internal impedance measured at AC 1kHz after standard charge; Initial internal impedance \u2264 18m\u03a9",
+   "parsed": {}
+  },
+  {
+   "property": "rel_discharge_capacity_m20c_pct",
+   "value": 60,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature -20\u2103",
+   "parsed": {
+    "temperature_c": -20,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_discharge_capacity_m10c_pct",
+   "value": 75,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature -10\u2103",
+   "parsed": {
+    "temperature_c": -10,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_discharge_capacity_0c_pct",
+   "value": 80,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature 0\u2103",
+   "parsed": {
+    "temperature_c": 0,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_discharge_capacity_25c_pct",
+   "value": 100,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature 25\u2103",
+   "parsed": {
+    "temperature_c": 25,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_discharge_capacity_60c_pct",
+   "value": 100,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature 60\u2103",
+   "parsed": {
+    "temperature_c": 60,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_charge_capacity_0c_pct",
+   "value": 80,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "charge temperature 0\u2103, discharge temperature 25\u2103; discharge constant current 10A and 2.5V cut-off",
+   "parsed": {
+    "temperature_c": 0,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_charge_capacity_5c_pct",
+   "value": 90,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "charge temperature 5\u2103, discharge temperature 25\u2103; discharge constant current 10A and 2.5V cut-off",
+   "parsed": {
+    "temperature_c": 5,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_charge_capacity_25c_pct",
+   "value": 100,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "charge temperature 25\u2103, discharge temperature 25\u2103; discharge constant current 10A and 2.5V cut-off",
+   "parsed": {
+    "temperature_c": 25,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_charge_capacity_45c_pct",
+   "value": 95,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "charge temperature 45\u2103, discharge temperature 25\u2103; discharge constant current 10A and 2.5V cut-off",
+   "parsed": {
+    "temperature_c": 45,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_charge_capacity_50c_pct",
+   "value": 95,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "charge temperature 50\u2103, discharge temperature 25\u2103; discharge constant current 10A and 2.5V cut-off",
+   "parsed": {
+    "temperature_c": 50,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_capacity_std_charge_pct",
+   "value": 100,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "Charge condition: Standard 1.25A, 125mA cut-off; discharge constant current 10A and 2.5V cut-off after the cell is charged with 4.2V",
+   "parsed": {
+    "charge_current_a": 1.25,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_capacity_rapid_charge_pct",
+   "value": 98,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "Charge condition: Maximum rapid charge 4A, 100mA cut-off; discharge constant current 10A and 2.5V cut-off after the cell is charged with 4.2V",
+   "parsed": {
+    "charge_current_a": 4,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_discharge_capacity_0_5a_pct",
+   "value": 100,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "Discharge condition: 0.50A, 2.5V cut-off after the standard charge",
+   "parsed": {
+    "discharge_current_a": 0.5
+   }
+  },
+  {
+   "property": "rel_discharge_capacity_5a_pct",
+   "value": 97,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "Discharge condition: 5A, 2.5V cut-off after the standard charge",
+   "parsed": {
+    "discharge_current_a": 5
+   }
+  },
+  {
+   "property": "rel_discharge_capacity_10a_pct",
+   "value": 100,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "Discharge condition: 10A, 2.5V cut-off after the standard charge",
+   "parsed": {
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "rel_discharge_capacity_15a_pct",
+   "value": 97,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "Discharge condition: 15A, 2.5V cut-off after the standard charge",
+   "parsed": {
+    "discharge_current_a": 15
+   }
+  },
+  {
+   "property": "rel_discharge_capacity_20a_pct",
+   "value": 95,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "Discharge condition: 20A, 2.5V cut-off after the standard charge",
+   "parsed": {
+    "discharge_current_a": 20
+   }
+  },
+  {
+   "property": "cycle_life_cycles",
+   "value": 250,
+   "unit": "cycles",
+   "page": 5,
+   "conditions_text": "With standard charge and maximum continuous discharge. Capacity after 250cycles, Capacity \u2265 1,500mAh (60% of the nominal capacity at 25\u2103)",
+   "parsed": {
+    "charge_current_a": 1.25,
+    "discharge_current_a": 20,
+    "end_condition": "capacity >= 1,500mAh (60% of nominal) after 250 cycles"
+   }
+  },
+  {
+   "property": "cycle_life_retention_pct",
+   "value": 60,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "Capacity after 250cycles, Capacity \u2265 1,500mAh (60% of the nominal capacity at 25\u2103)",
+   "parsed": {
+    "temperature_c": 25
+   }
+  },
+  {
+   "property": "storage_recovery_pct",
+   "value": 90,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "Standard rated discharge capacity after storage for 1 month at 60\u2103 from the standard charged state is \u2265 90% of the initial 10A discharge capacity at 25\u2103",
+   "parsed": {
+    "temperature_c": 60,
+    "discharge_current_a": 10
+   }
+  },
+  {
+   "property": "ex_factory_soc_pct",
+   "value": 50,
+   "unit": "pct",
+   "page": 5,
+   "conditions_text": "The cell should be shipped in 50 \u00b1 5% charged state.",
+   "parsed": {}
+  },
+  {
+   "property": "ex_factory_ocv_range_v",
+   "value": [
+    3.6,
+    3.69
+   ],
+   "unit": "V",
+   "page": 5,
+   "conditions_text": "In this case [50 \u00b1 5% charged state], OCV is from 3.600V to 3.690V.",
+   "parsed": {}
+  }
+ ]
+}

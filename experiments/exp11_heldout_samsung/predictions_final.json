@@ -1,0 +1,256 @@
+[
+ {
+  "property": "nominal_capacity_ah",
+  "value": 2.5,
+  "unit": "Ah",
+  "page": 3,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "charge_current_a": 1.25,
+   "charge_mode": "CCCV",
+   "charge_voltage_v": 4.2,
+   "discharge_c_rate": 0.2,
+   "discharge_cutoff_v": 2.5,
+   "temperature_c": 25,
+   "text": "Charge: 1.25A, 4.20V,CCCV 125mA cut-off, Discharge: 0.2C, 2.5V discharge cut-off"
+  }
+ },
+ {
+  "property": "nominal_voltage_v",
+  "value": 3.6,
+  "unit": "V",
+  "page": 3,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "text": "unspecified"
+  }
+ },
+ {
+  "property": "charge_voltage_v",
+  "value": 4.2,
+  "unit": "V",
+  "page": 3,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "charge_current_a": 1.25,
+   "charge_mode": "CCCV",
+   "charge_voltage_v": 4.2,
+   "discharge_cutoff_v": 2.5,
+   "text": "Charge: 1.25A, 4.20V,CCCV 125mA cut-off"
+  }
+ },
+ {
+  "property": "max_charge_voltage_v",
+  "value": 4.2,
+  "unit": "V",
+  "page": 3,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "charge_current_a": 1.25,
+   "charge_mode": "CCCV",
+   "charge_voltage_v": 4.2,
+   "end_condition": "125mA cut-off",
+   "text": "Charge: 1.25A, 4.20V,CCCV 125mA cut-off"
+  }
+ },
+ {
+  "property": "discharge_cutoff_v",
+  "value": 2.5,
+  "unit": "V",
+  "page": 3,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "discharge_current_a": 0.2,
+   "discharge_cutoff_v": 2.5,
+   "text": "Discharge: 0.2C, 2.5V discharge cut-off"
+  }
+ },
+ {
+  "property": "std_charge_current_a",
+  "value": 1.25,
+  "unit": "A",
+  "page": 3,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "charge_current_a": 1.25,
+   "charge_mode": "CCCV",
+   "charge_time_min": 180,
+   "charge_voltage_v": 4.2,
+   "discharge_c_rate": 0.2,
+   "discharge_cutoff_v": 2.5,
+   "temperature_c": 25,
+   "text": "Charge: 1.25A, 4.20V,CCCV 125mA cut-off"
+  }
+ },
+ {
+  "property": "fast_charge_current_a",
+  "value": 4,
+  "unit": "A",
+  "page": 3,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "text": "unspecified"
+  }
+ },
+ {
+  "property": "max_cont_discharge_a",
+  "value": 20,
+  "unit": "A",
+  "page": 3,
+  "stated_conditions": {
+   "text": "at 25\u00b0C"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "discharge_current_a": 20,
+   "temperature_c": 25,
+   "text": "20A(at 25\u00b0\u2009)"
+  }
+ },
+ {
+  "property": "mass_g",
+  "value": 45,
+  "unit": "g",
+  "page": 3,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "text": "unspecified"
+  }
+ },
+ {
+  "property": "charge_temp_range_c",
+  "value": [
+   0,
+   50
+  ],
+  "unit": "\u00b0C",
+  "page": 3,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "text": "unspecified"
+  }
+ },
+ {
+  "property": "discharge_temp_range_c",
+  "value": [
+   -20,
+   75
+  ],
+  "unit": "\u00b0C",
+  "page": 3,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "text": "unspecified"
+  }
+ },
+ {
+  "property": "storage_temp_range_c",
+  "value": [
+   -30,
+   25
+  ],
+  "unit": "\u00b0C",
+  "page": 3,
+  "stated_conditions": {
+   "text": "for 1.5 years"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "text": "unspecified"
+  }
+ },
+ {
+  "property": "cycle_life_cycles",
+  "value": 250,
+  "unit": "cycles",
+  "page": 5,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "charge_current_a": 1.25,
+   "charge_voltage_v": 4.2,
+   "discharge_current_a": 10,
+   "discharge_cutoff_v": 2.5,
+   "end_condition": "Capacity \u2265 60% of the nominal capacity at 25\u2103",
+   "temperature_c": 25,
+   "text": "With standard charge and maximum continuous discharge."
+  }
+ },
+ {
+  "property": "cycle_life_retention_pct",
+  "value": 60,
+  "unit": "%",
+  "page": 5,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "temperature_c": 25,
+   "text": "With standard charge and maximum continuous discharge"
+  }
+ },
+ {
+  "property": "internal_impedance_mohm",
+  "value": 18,
+  "unit": "m\u03a9",
+  "page": 5,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "text": "unspecified"
+  }
+ },
+ {
+  "property": "storage_capacity_remaining_pct",
+  "value": 90,
+  "unit": "%",
+  "page": 5,
+  "stated_conditions": {
+   "text": "after 1 month at 60\u00b0C"
+  },
+  "consensus_level": 3,
+  "conditions": {
+   "charge_mode": "standard",
+   "discharge_current_a": 10,
+   "discharge_cutoff_v": 2.5,
+   "dod_pct": 0,
+   "temperature_c": 60,
+   "text": "storage for 1 month at 60\u2103 from the standard charged state"
+  }
+ }
+]

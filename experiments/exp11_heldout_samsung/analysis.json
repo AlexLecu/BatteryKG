@@ -1,0 +1,167 @@
+{
+ "gold_version": "v3",
+ "gold_revision_note": "gold property names aligned to the canonical vocabulary after blind extraction; names only \u2014 values, pages and conditions untouched; predictions unchanged",
+ "resolved_by_gold_revision": {
+  "note": "gold property names aligned to the canonical vocabulary after blind extraction; names only \u2014 values, pages and conditions untouched; predictions unchanged",
+  "baseline": "v2",
+  "gold_diff": {
+   "added": 0,
+   "removed": 0,
+   "renamed": 8,
+   "conditions_changed": 0,
+   "unchanged": 33
+  },
+  "fp_resolved": [
+   "FP   [samsung_inr18650_25r] discharge_cutoff_v=2.5 V: value exists in document but is not a gold claim (over-extraction or wrong property name)",
+   "FP   [samsung_inr18650_25r] fast_charge_current_a=4 A: value exists in document but is not a gold claim (over-extraction or wrong property name)",
+   "FP   [samsung_inr18650_25r] internal_impedance_mohm=18 m\u03a9: value exists in document but is not a gold claim (over-extraction or wrong property name)",
+   "FP   [samsung_inr18650_25r] mass_g=45 g: value exists in document but is not a gold claim (over-extraction or wrong property name)",
+   "FP   [samsung_inr18650_25r] storage_temp_range_c=[-30, 25] \u00b0C: value exists in document but is not a gold claim (over-extraction or wrong property name)"
+  ],
+  "fn_resolved": [
+   "FN   [samsung_inr18650_25r] cell_diameter_mm=18.33 mm: value found under different property (['internal_impedance_mohm'])",
+   "FN   [samsung_inr18650_25r] cell_weight_g=45.0 g: value found under different property (['mass_g'])",
+   "FN   [samsung_inr18650_25r] discharge_cutoff_voltage_v=2.5 V: value found under different property (['discharge_cutoff_v'])",
+   "FN   [samsung_inr18650_25r] initial_impedance_mohm=18 mohm: value found under different property (['internal_impedance_mohm'])",
+   "FN   [samsung_inr18650_25r] rapid_charge_current_a=4 A: value found under different property (['fast_charge_current_a'])",
+   "FN   [samsung_inr18650_25r] rated_capacity_ah=2.45 Ah: value found under different property (['discharge_cutoff_v'])",
+   "FN   [samsung_inr18650_25r] storage_recovery_pct=90 pct: value found under different property (['storage_capacity_remaining_pct'])",
+   "FN   [samsung_inr18650_25r] storage_temp_range_1_5yr_c=[-30, 25] degC: value found under different property (['storage_temp_range_c'])",
+   "FN   [samsung_inr18650_25r] storage_temp_range_1mo_c=[-30, 60] degC: not extracted at all",
+   "FN   [samsung_inr18650_25r] storage_temp_range_3mo_c=[-30, 45] degC: not extracted at all"
+  ],
+  "fp_new": [],
+  "fn_new": [
+   "FN   [samsung_inr18650_25r] cell_diameter_mm=18.33 mm: not extracted at all",
+   "FN   [samsung_inr18650_25r] rated_capacity_ah=2.45 Ah: not extracted at all",
+   "FN   [samsung_inr18650_25r] storage_capacity_recovery_pct=90 pct: value found under different property (['storage_capacity_remaining_pct'])",
+   "FN   [samsung_inr18650_25r] storage_temp_range_c=[-30, 45] degC: property predicted but value differs (gold [-30, 45] degC; pred [[-30, 25]])",
+   "FN   [samsung_inr18650_25r] storage_temp_range_c=[-30, 60] degC: property predicted but value differs (gold [-30, 60] degC; pred [[-30, 25]])"
+  ],
+  "delta": {
+   "tp": 5,
+   "fp": -5,
+   "fn": -5,
+   "f1": 0.1754
+  }
+ },
+ "paper_metric": {
+  "raw_single_run": {
+   "config": "raw_single_run",
+   "gold": 41,
+   "pred": 16,
+   "tp": 14,
+   "fp": 2,
+   "fn": 27,
+   "precision": 0.875,
+   "recall": 0.3415,
+   "f1": 0.4912,
+   "conditions_acc": 0.7857,
+   "hallucinations": 0
+  },
+  "consensus_only": {
+   "config": "consensus_only",
+   "gold": 41,
+   "pred": 16,
+   "tp": 14,
+   "fp": 2,
+   "fn": 27,
+   "precision": 0.875,
+   "recall": 0.3415,
+   "f1": 0.4912,
+   "conditions_acc": 0.7857,
+   "hallucinations": 0
+  },
+  "consensus_validator": {
+   "config": "consensus_validator",
+   "gold": 41,
+   "pred": 16,
+   "tp": 14,
+   "fp": 2,
+   "fn": 27,
+   "precision": 0.875,
+   "recall": 0.3415,
+   "f1": 0.4912,
+   "conditions_acc": 0.7857,
+   "hallucinations": 0
+  }
+ },
+ "diagnostic_alias_normalised": {
+  "note": "post-hoc property-name alias map; NOT the paper metric",
+  "aliases": {
+   "storage_capacity_recovery_pct": "storage_capacity_remaining_pct"
+  },
+  "tp": 15,
+  "fp": 1,
+  "fn": 26,
+  "precision": 0.9375,
+  "recall": 0.3659,
+  "f1": 0.5263,
+  "hallucinations": 0
+ },
+ "diagnostic_value_only": {
+  "note": "property-agnostic value match; recall upper bound only",
+  "tp": 15,
+  "gold": 41,
+  "pred": 16,
+  "recall": 0.3659,
+  "precision": 0.9375
+ },
+ "error_buckets": {
+  "fn_total": 27,
+  "fn_property_rename": 1,
+  "fn_missed_table_cells": 17,
+  "fn_missed_spec_rows": 9,
+  "fp_total": 2,
+  "fp_property_rename": 1,
+  "fp_genuine_over_extraction": 1,
+  "hallucinations": 0
+ },
+ "catalog": {
+  "fn_property_rename": [
+   "FN   [samsung_inr18650_25r] storage_capacity_recovery_pct=90 pct: value found under different property (['storage_capacity_remaining_pct'])"
+  ],
+  "fn_missed_table_cells": [
+   "FN   [samsung_inr18650_25r] rel_discharge_capacity_m20c_pct=60 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_discharge_capacity_m10c_pct=75 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_discharge_capacity_0c_pct=80 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_discharge_capacity_25c_pct=100 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_discharge_capacity_60c_pct=100 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_charge_capacity_0c_pct=80 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_charge_capacity_5c_pct=90 pct: value found under different property (['storage_capacity_remaining_pct'])",
+   "FN   [samsung_inr18650_25r] rel_charge_capacity_25c_pct=100 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_charge_capacity_45c_pct=95 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_charge_capacity_50c_pct=95 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_capacity_std_charge_pct=100 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_capacity_rapid_charge_pct=98 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_discharge_capacity_0_5a_pct=100 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_discharge_capacity_5a_pct=97 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_discharge_capacity_10a_pct=100 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_discharge_capacity_15a_pct=97 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] rel_discharge_capacity_20a_pct=95 pct: not extracted at all"
+  ],
+  "fn_missed_spec_rows": [
+   "FN   [samsung_inr18650_25r] std_charge_time_min=180 min: not extracted at all",
+   "FN   [samsung_inr18650_25r] rapid_charge_time_min=60 min: not extracted at all",
+   "FN   [samsung_inr18650_25r] cell_height_mm=64.85 mm: not extracted at all",
+   "FN   [samsung_inr18650_25r] cell_diameter_mm=18.33 mm: not extracted at all",
+   "FN   [samsung_inr18650_25r] storage_temp_range_c=[-30, 45] degC: property predicted but value differs (gold [-30, 45] degC; pred [[-30, 25]])",
+   "FN   [samsung_inr18650_25r] storage_temp_range_c=[-30, 60] degC: property predicted but value differs (gold [-30, 60] degC; pred [[-30, 25]])",
+   "FN   [samsung_inr18650_25r] rated_capacity_ah=2.45 Ah: not extracted at all",
+   "FN   [samsung_inr18650_25r] ex_factory_soc_pct=50 pct: not extracted at all",
+   "FN   [samsung_inr18650_25r] ex_factory_ocv_range_v=[3.6, 3.69] V: not extracted at all"
+  ],
+  "fp_property_rename": [
+   "FP   [samsung_inr18650_25r] storage_capacity_remaining_pct=90 %: value exists in document but is not a gold claim (over-extraction or wrong property name)"
+  ],
+  "fp_genuine_over_extraction": [
+   "FP   [samsung_inr18650_25r] charge_voltage_v=4.2 V: value exists in document but is not a gold claim (over-extraction or wrong property name)"
+  ],
+  "conditions": [
+   "COND [std_charge_current_a=1.25] gold 'Standard charge: CCCV, 1.25A, 4.20 \u00b1 0.05 V, 125mA cut-off' | parsed {} | pred2 {'charge_current_a': 1.25, 'charge_mode': 'CCCV', 'charge_time_min': 180, 'charge_voltage_v': 4.2, 'discharge_c_rate': 0.2, 'discharge_cutoff_v': 2.5, 'temperature_c': 25}",
+   "COND [discharge_cutoff_v=2.5] gold 'Discharge cut-off voltage / End of discharge: 2.5V' | parsed {} | pred2 {'discharge_current_a': 0.2, 'discharge_cutoff_v': 2.5}",
+   "COND [nominal_capacity_ah=2.5] gold 'measured with discharge current of 500mA(0.2C) with 2.5V cut-off at 25\u2103 within 1' | parsed {'temperature_c': 25, 'discharge_current_a': 0.5} | pred2 {'charge_current_a': 1.25, 'charge_mode': 'CCCV', 'charge_voltage_v': 4.2, 'discharge_c_rate': 0.2, 'discharge_cutoff_v': 2.5, 'temperature_c': 25}",
+   "COND [cycle_life_cycles=250] gold 'With standard charge and maximum continuous discharge. Capacity after 250cycles,' | parsed {'charge_current_a': 1.25, 'discharge_current_a': 20, 'end_condition': 'capacity >= 1,500mAh (60% of nominal) after 250 cycles'} | pred2 {'charge_current_a': 1.25, 'charge_voltage_v': 4.2, 'discharge_current_a': 10, 'discharge_cutoff_v': 2.5, 'end_condition': 'Capacity \u2265 60% of the nominal capacity at 25\u2103', 'temperature_c': 25}"
+  ]
+ }
+}

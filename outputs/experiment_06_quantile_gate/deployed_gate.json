@@ -1,0 +1,22 @@
+{
+ "operating_point_comparison": {
+  "n_retained_abs": 72,
+  "n_retained_quantile": 72,
+  "rmse_abs": 71.9851671696961,
+  "rmse_quantile": 79.03976422294076,
+  "delta_rmse": 7.054597053244663,
+  "n_cells_swapped": 2
+ },
+ "q_star": 41.0,
+ "target_retention": 0.6,
+ "achieved_retention": 0.6,
+ "n_retained": 72,
+ "rmse_retained_cycles": 79.03976422294076,
+ "median_fold_threshold_at_q_star": 4.0812662799999995,
+ "min_fold_threshold": 4.074947600000001,
+ "max_fold_threshold": 4.094533279999999,
+ "old_absolute_threshold": 4.080029,
+ "selected_on": "Severson in-study CV only; no HUST information used",
+ "k_neighbors": 5,
+ "view": "behavior"
+}

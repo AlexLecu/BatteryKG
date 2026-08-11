@@ -1,0 +1,73 @@
+{
+ "n_cells": 124,
+ "n_events": 46,
+ "n_censored": 78,
+ "median_survival_cycles": NaN,
+ "naive_median_complete_cases_only": 493.12941503431915,
+ "logrank_all_batches": {
+  "chi2": 180.94988712163178,
+  "df": 2,
+  "p_value": 5.0960216105311156e-40,
+  "observed": {
+   "1": 3.0,
+   "2": 43.0,
+   "3": 0.0
+  },
+  "expected": {
+   "1": 18.4,
+   "2": 8.69,
+   "3": 18.92
+  }
+ },
+ "logrank_batch1_vs_2": {
+  "chi2": 99.137377180524,
+  "df": 1,
+  "p_value": 2.3557978578882205e-23
+ },
+ "by_batch": {
+  "1": {
+   "n": 41,
+   "events": 3,
+   "median_survival": NaN
+  },
+  "2": {
+   "n": 43,
+   "events": 43,
+   "median_survival": 492.1205156805271
+  },
+  "3": {
+   "n": 40,
+   "events": 0,
+   "median_survival": NaN
+  }
+ },
+ "censoring_diagnostic": {
+  "note": "censoring is administrative (test stopped) and batch-dependent; the KM independent-censoring assumption is violated across batches",
+  "by_batch": {
+   "1": {
+    "n": 41,
+    "events": 3,
+    "median_final_capacity_ah": 0.8807,
+    "median_threshold_initial_ah": 0.8639,
+    "median_threshold_nominal_ah": 0.88,
+    "median_observed_cycles": 841.0
+   },
+   "2": {
+    "n": 43,
+    "events": 43,
+    "median_final_capacity_ah": 0.8261,
+    "median_threshold_initial_ah": 0.8583,
+    "median_threshold_nominal_ah": 0.88,
+    "median_observed_cycles": 492.1
+   },
+   "3": {
+    "n": 40,
+    "events": 0,
+    "median_final_capacity_ah": 0.8804,
+    "median_threshold_initial_ah": 0.8531,
+    "median_threshold_nominal_ah": 0.88,
+    "median_observed_cycles": 963.5
+   }
+  }
+ }
+}

@@ -13,6 +13,31 @@ outputs/*
 !outputs/experiment_03_vanilla_comparison.md
 !outputs/experiment_03_raw/
 
+# Revision experiments: the summaries and the JSON the paper cites by path.
+# Experiment 08 cannot be re-run without a Neo4j instance and the BatteryArchive
+# zips, so its summary IS the evidence; the rest of each directory regenerates.
+!outputs/experiment_06_quantile_gate/
+outputs/experiment_06_quantile_gate/*
+!outputs/experiment_06_quantile_gate/README.md
+!outputs/experiment_06_quantile_gate/deployed_gate.json
+!outputs/experiment_07_revision_extras/
+outputs/experiment_07_revision_extras/*
+!outputs/experiment_07_revision_extras/README.md
+!outputs/experiment_07_revision_extras/survival_summary.json
+!outputs/experiment_08_snl_ingestion/
+outputs/experiment_08_snl_ingestion/*
+!outputs/experiment_08_snl_ingestion/README.md
+!outputs/experiment_08_snl_ingestion/graph_stats_before_after.json
+!outputs/experiment_09_attia_feasibility/
+outputs/experiment_09_attia_feasibility/*
+!outputs/experiment_09_attia_feasibility/PARTIAL_ACCEPTANCE.md
+!outputs/experiment_09_attia_feasibility/attia_partial_acceptance.json
+
+# --- Manuscript (excluded from the public release) ---
+# The experiment scripts write their LaTeX tables and figures to paper/, which
+# they create on demand. The manuscript itself is not part of this repository.
+paper/
+
 # --- Monitor run state ---
 data/monitor/
 

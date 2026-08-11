@@ -1,0 +1,112 @@
+{
+ "ingested_at": "2026-08-06T07:57:07+00:00",
+ "source_id": "snl_preger_2020",
+ "candidate_id": "doi:10.1149/1945-7111/abae37",
+ "instances": 30,
+ "before": {
+  "nodes": 973,
+  "relationships": 5656,
+  "labels": {
+   "CandidateSource": 1,
+   "Cell": 3,
+   "CellInstance": 201,
+   "Chemistry": 3,
+   "Claim": 62,
+   "Discrepancy": 81,
+   "Measurement": 613,
+   "Source": 9
+  },
+  "relationship_types": {
+   "ABOUT": 756,
+   "ASSERTED_BY": 62,
+   "CONTRASTS": 1,
+   "HAS_CHEMISTRY": 3,
+   "INSTANCE_OF": 201,
+   "MEASURED_BY": 613,
+   "SIMILAR_TO": 4020
+  },
+  "sources": {
+   "datasheet_a123_apr18650m1a": 0,
+   "datasheet_lg_inr18650hg2": 0,
+   "datasheet_panasonic_ncr18650b": 0,
+   "datasheet_panasonic_ncr18650b_full_spec_sanyo": 0,
+   "hust_2022": 231,
+   "lygte_a123_apr18650m1a": 3,
+   "lygte_lg_18650hg2": 4,
+   "lygte_panasonic_ncr18650b": 3,
+   "severson_mit_2019": 372
+  },
+  "cell_instances_by_study": {
+   "(unset)": 201
+  },
+  "cells_with_measurements": 1,
+  "measurements_by_metric": {
+   "cycle_life_initial": 201,
+   "cycle_life_nominal": 201,
+   "initial_capacity_ah": 201,
+   "measured_capacity_ah": 3,
+   "measured_cell_temp_c": 2,
+   "measured_energy_wh": 3,
+   "measured_sustained_current_a": 1,
+   "test_discharge_cutoff_v": 1
+  }
+ },
+ "after": {
+  "nodes": 1095,
+  "relationships": 5866,
+  "labels": {
+   "CandidateSource": 2,
+   "Cell": 3,
+   "CellInstance": 231,
+   "Chemistry": 3,
+   "Claim": 62,
+   "Discrepancy": 81,
+   "Measurement": 703,
+   "Source": 10
+  },
+  "relationship_types": {
+   "ABOUT": 846,
+   "ASSERTED_BY": 62,
+   "CONTRASTS": 1,
+   "HAS_CHEMISTRY": 3,
+   "INSTANCE_OF": 231,
+   "MEASURED_BY": 703,
+   "SIMILAR_TO": 4020
+  },
+  "sources": {
+   "datasheet_a123_apr18650m1a": 0,
+   "datasheet_lg_inr18650hg2": 0,
+   "datasheet_panasonic_ncr18650b": 0,
+   "datasheet_panasonic_ncr18650b_full_spec_sanyo": 0,
+   "hust_2022": 231,
+   "lygte_a123_apr18650m1a": 3,
+   "lygte_lg_18650hg2": 4,
+   "lygte_panasonic_ncr18650b": 3,
+   "severson_mit_2019": 372,
+   "snl_preger_2020": 90
+  },
+  "cell_instances_by_study": {
+   "snl_lfp": 30,
+   "(unset)": 201
+  },
+  "cells_with_measurements": 1,
+  "measurements_by_metric": {
+   "cycle_life_initial": 231,
+   "cycle_life_nominal": 231,
+   "initial_capacity_ah": 231,
+   "measured_capacity_ah": 3,
+   "measured_cell_temp_c": 2,
+   "measured_energy_wh": 3,
+   "measured_sustained_current_a": 1,
+   "test_discharge_cutoff_v": 1
+  }
+ },
+ "idempotency": {
+  "nodes_match": true,
+  "relationships_match": true,
+  "second_run": {
+   "nodes": 1095,
+   "relationships": 5866
+  }
+ }
+}

@@ -1,0 +1,113 @@
+{
+ "config": {
+  "model": "deployed Severson-trained artifacts, unchanged",
+  "bank_cells": 120,
+  "attia_added_to_bank": 0,
+  "models_retrained": 0,
+  "q_star": 41.0,
+  "gate_rule": "study-stratified percentile, whole-bank fallback",
+  "threshold": 4.070295767410672,
+  "ape_cutoff_pct": 30.0
+ },
+ "feature_completeness": {
+  "n_features": 19,
+  "fully_missing_for_attia": 8,
+  "missing": [
+   "batch",
+   "c_rate_1",
+   "c_rate_2",
+   "condition_coverage_train",
+   "condition_nbr_mean_weight",
+   "condition_nbr_wmean_log_life",
+   "condition_nbr_wstd_log_life",
+   "soc_transition_pct"
+  ],
+  "note": "policy grammar cannot express Attia's four-step CC protocols; the condition similarity view follows from those features"
+ },
+ "population": {
+  "n": 45,
+  "reached_eol": 45,
+  "cycle_life": {
+   "min": 442.39202394830386,
+   "median": 773.6698876702635,
+   "max": 1165.7767275747506
+  }
+ },
+ "gate": {
+  "retained": 17,
+  "abstained": 28,
+  "retention_pct": 37.8
+ },
+ "retained": {
+  "n": 17,
+  "rmse": 141.7119774520536,
+  "mape": 21.489216424905525,
+  "false_acceptance": 4,
+  "worst_ape": 39.36291970834434
+ },
+ "abstained": {
+  "n": 28,
+  "rmse_had_it_answered": 197.83722101400787,
+  "mape_had_it_answered": 19.085069558232156,
+  "unnecessary_rejection": 21
+ },
+ "ungated_graph_model_all": {
+  "n": 45,
+  "rmse": 178.71807008846727,
+  "mape": 19.993302818975433,
+  "would_be_false_acceptance": 11
+ },
+ "ungated_graph_free_baseline_all": {
+  "n": 45,
+  "rmse": 168.18721610422992,
+  "mape": 18.787636084634418
+ },
+ "calibration_q16_q84": {
+  "retained": {
+   "n": 17,
+   "empirical_coverage": 0.058823529411764705,
+   "nominal_coverage": 0.68,
+   "median_band_width_cycles": 94.39935302734375,
+   "actual_above_band_model_underpredicted": 0,
+   "actual_below_band_model_overpredicted": 16
+  },
+  "abstained": {
+   "n": 28,
+   "empirical_coverage": 0.32142857142857145,
+   "nominal_coverage": 0.68,
+   "median_band_width_cycles": 277.8448181152344,
+   "actual_above_band_model_underpredicted": 0,
+   "actual_below_band_model_overpredicted": 19
+  },
+  "all": {
+   "n": 45,
+   "empirical_coverage": 0.2222222222222222,
+   "nominal_coverage": 0.68,
+   "median_band_width_cycles": 211.495849609375,
+   "actual_above_band_model_underpredicted": 0,
+   "actual_below_band_model_overpredicted": 35
+  }
+ },
+ "correlations": {
+  "spearman_coverage_vs_abs_error_retained": {
+   "rho": -0.12745098039215688,
+   "p": 0.6259301508467394
+  },
+  "spearman_coverage_vs_abs_error_all": {
+   "rho": 0.002108036890645586,
+   "p": 0.9890348502321256
+  },
+  "lifetime_proxy_coverage_vs_cycle_life": {
+   "rho": -0.6434782608695652,
+   "p": 1.8627850247759579e-06,
+   "in_study_reference_rho": 0.055,
+   "note": "experiment 01 ran this confound check in-study and found rho=0.055 (coverage is not a lifetime proxy); this is the same test on Attia"
+  }
+ },
+ "data_quality": {
+  "length_mismatch_handled": [
+   "b4c31"
+  ],
+  "feature_skipped": []
+ }
+}

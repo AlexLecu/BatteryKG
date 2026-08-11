@@ -43,12 +43,16 @@ Generated from the gold-standard YAMLs by `scripts/gen_claims_vocab.py`
 | property | meaning |
 |---|---|
 | `capacity_retention_at_temp_pct` | capacity retained at a stated temperature |
+| `cell_diameter_mm` | cell diameter (± tolerance in conditions) |
+| `cell_height_mm` | cell height (± tolerance in conditions) |
 | `charge_temp_range_c` | allowed charge temperature range `[lo, hi]` |
 | `charge_voltage_v` | CV charge voltage (± tolerance in conditions) |
 | `cycle_life_cycles` | cycle life claim (conditions are essential) |
 | `cycle_life_retention_pct` | capacity retention the cycle-life claim is defined at |
 | `discharge_cutoff_v` | end-of-discharge voltage |
 | `discharge_temp_range_c` | allowed discharge temperature range `[lo, hi]` |
+| `ex_factory_ocv_range_v` | open-circuit voltage range at the shipping state `[lo, hi]` |
+| `ex_factory_soc_pct` | state of charge the cell is shipped at |
 | `fast_charge_current_a` | fast/max charge rate |
 | `fast_discharge_current_a` | fast discharge rate |
 | `gravimetric_energy_density_wh_kg` | energy density by mass |
@@ -61,9 +65,28 @@ Generated from the gold-standard YAMLs by `scripts/gen_claims_vocab.py`
 | `nominal_capacity_ah` | rated/nominal capacity |
 | `nominal_voltage_v` | nominal cell voltage |
 | `operating_temp_range_c` | allowed operating temperature range `[lo, hi]` |
+| `rapid_charge_time_min` | fast/rapid charge duration, where stated in minutes |
 | `rated_capacity_ah` | rated capacity where stated separately from nominal |
+| `rel_capacity_rapid_charge_pct` | capacity after rapid charge, % of reference |
+| `rel_capacity_std_charge_pct` | capacity after standard charge, % of reference |
+| `rel_charge_capacity_0c_pct` | capacity after charging at 0 °C, % of reference |
+| `rel_charge_capacity_25c_pct` | capacity after charging at 25 °C, % of reference |
+| `rel_charge_capacity_45c_pct` | capacity after charging at 45 °C, % of reference |
+| `rel_charge_capacity_50c_pct` | capacity after charging at 50 °C, % of reference |
+| `rel_charge_capacity_5c_pct` | capacity after charging at 5 °C, % of reference |
+| `rel_discharge_capacity_0_5a_pct` | discharge capacity at 0.5 A, % of reference |
+| `rel_discharge_capacity_0c_pct` | discharge capacity at 0 °C, % of reference |
+| `rel_discharge_capacity_10a_pct` | discharge capacity at 10 A, % of reference |
+| `rel_discharge_capacity_15a_pct` | discharge capacity at 15 A, % of reference |
+| `rel_discharge_capacity_20a_pct` | discharge capacity at 20 A, % of reference |
+| `rel_discharge_capacity_25c_pct` | discharge capacity at 25 °C, % of reference |
+| `rel_discharge_capacity_5a_pct` | discharge capacity at 5 A, % of reference |
+| `rel_discharge_capacity_60c_pct` | discharge capacity at 60 °C, % of reference |
+| `rel_discharge_capacity_m10c_pct` | discharge capacity at -10 °C, % of reference |
+| `rel_discharge_capacity_m20c_pct` | discharge capacity at -20 °C, % of reference |
 | `std_charge_current_a` | standard charge current |
 | `std_charge_time_h` | standard charge duration |
+| `std_charge_time_min` | standard charge duration, where stated in minutes |
 | `std_discharge_current_a` | standard discharge current |
 | `storage_capacity_recovery_pct` | capacity recoverable after stated storage |
 | `storage_capacity_remaining_pct` | capacity remaining after stated storage |

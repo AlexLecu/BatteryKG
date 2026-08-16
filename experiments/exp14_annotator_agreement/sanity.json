@@ -1,0 +1,47 @@
+[
+  {
+    "document": "A123 APR18650M1A",
+    "file": "a123_apr18650m1a_annotation.yaml",
+    "n_claims": 18,
+    "pdf_pages": 1,
+    "errors": [],
+    "warnings": [],
+    "infos": []
+  },
+  {
+    "document": "LG Chem 18650HG2",
+    "file": "lg_inr18650hg2_annotation.yaml",
+    "n_claims": 35,
+    "pdf_pages": 11,
+    "errors": [],
+    "warnings": [],
+    "infos": []
+  },
+  {
+    "document": "Panasonic NCR18650B (marketing sheet, image-only)",
+    "file": "panasonic_ncr18650b_annotation.yaml",
+    "n_claims": 31,
+    "pdf_pages": 4,
+    "errors": [],
+    "warnings": [],
+    "infos": []
+  },
+  {
+    "document": "Panasonic NCR18650B (SANYO full specification)",
+    "file": "panasonic_ncr18650b_full_spec_annotation.yaml",
+    "n_claims": 34,
+    "pdf_pages": 16,
+    "errors": [],
+    "warnings": [],
+    "infos": []
+  },
+  {
+    "document": "Samsung INR18650-25R (held out)",
+    "file": "samsung_inr18650_25r_annotation.yaml",
+    "n_claims": 46,
+    "pdf_pages": 17,
+    "errors": [],
+    "warnings": [],
+    "infos": []
+  }
+]

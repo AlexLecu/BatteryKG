@@ -1,0 +1,425 @@
+# Second-annotator extraction from the 4-page Panasonic NCR18650B marketing
+# datasheet (doc code 2G23X0KYKU). Image-only PDF with no text layer, so every
+# value was read from the rendered pages. `page` = physical PDF page.
+cell_model: Panasonic NCR18650B
+manufacturer: Panasonic
+source_document: panasonic_ncr18650b.pdf
+
+annotator: A2
+annotated_date: 2026-08-14
+
+new_properties:
+  - name: diameter_mm
+    meaning: cell outer diameter stated as a specification value
+  - name: height_mm
+    meaning: cell height stated as a specification value
+  - name: terminal_diameter_mm
+    meaning: diameter of the raised positive terminal / top cap, the dimension labelled "d" on the drawing
+  - name: discharge_capacity_ah
+    meaning: capacity delivered to the stated end voltage under stated discharge conditions, read off a discharge curve
+  - name: charge_capacity_ah
+    meaning: capacity accepted during a full CC-CV charge at a stated temperature, read off a charge curve
+  - name: std_charge_end_current_a
+    meaning: charge-termination cut-off current of the standard charge, converted mA to A
+
+# ---------------------------------------------------------------------------
+# CLAIMS
+# ---------------------------------------------------------------------------
+claims:
+
+  # === Page 1 — Specifications table =======================================
+
+  - property: rated_capacity_ah
+    value: 3.2
+    unit: Ah
+    page: 1
+    stated_conditions:
+      text: "Specifications: Rated Capacity (at 20°C) | Min.3200mAh"
+      temperature_c: 20
+    notes: "lower bound; document says 'Min.'."
+
+  - property: nominal_capacity_ah
+    value: 3.25
+    unit: Ah
+    page: 1
+    stated_conditions:
+      text: "Specifications: Nominal Capacity (at 25°C) | Min.3250mAh"
+      temperature_c: 25
+    notes: "lower bound; document says 'Min.'."
+
+  - property: nominal_capacity_ah
+    value: 3.35
+    unit: Ah
+    page: 1
+    stated_conditions:
+      text: "Specifications: Nominal Capacity (at 25°C) | Typ.3350mAh"
+      temperature_c: 25
+  - property: nominal_voltage_v
+    value: 3.6
+    unit: V
+    page: 1
+    stated_conditions:
+      text: "Specifications: Nominal Voltage | 3.6V"
+
+  - property: charge_voltage_v
+    value: 4.2
+    unit: V
+    page: 1
+    stated_conditions:
+      text: "Specifications: Charging Voltage | 4.2V (Charging Method: Constant
+             Current-Constant Voltage)"
+    notes: "named charge_voltage_v, not max_charge_voltage_v: the document says
+            'Charging Voltage', never 'Max.'."
+
+  - property: std_charge_current_a
+    value: 1.625
+    unit: A
+    page: 1
+    stated_conditions:
+      text: "Specifications: Charging Current | Std.1625mA"
+    notes: "mA converted to A."
+
+  - property: std_charge_time_h
+    value: 4.0
+    unit: h
+    page: 1
+    stated_conditions:
+      text: "Specifications: Charging Time | 4.0hrs."
+    notes: "printed in hours, so recorded in hours with no conversion."
+
+  - property: charge_temp_range_c
+    value: [10, 45]
+    unit: degC
+    page: 1
+    stated_conditions:
+      text: "Specifications: Ambient Temperature | Charge | +10~+45°C"
+    notes: "the document scopes these three ranges to AMBIENT temperature, unlike
+            the LG sheet which specifies cell surface temperature"
+
+  - property: discharge_temp_range_c
+    value: [-20, 60]
+    unit: degC
+    page: 1
+    stated_conditions:
+      text: "Specifications: Ambient Temperature | Discharge | -20~+60°C"
+
+  - property: storage_temp_range_c
+    value: [-20, 50]
+    unit: degC
+    page: 1
+    stated_conditions:
+      text: "Specifications: Ambient Temperature | Storage | -20~+50°C"
+    notes: "no storage duration is attached to this range, unlike the LG sheet which
+            gives different limits for 1 month / 3 months / 1 year"
+
+  - property: mass_g
+    value: 47.5
+    unit: g
+    page: 1
+    stated_conditions:
+      text: "Specifications: Weight (Max.) | 47.5g"
+    notes: "upper bound"
+
+  - property: diameter_mm
+    value: 18.25
+    unit: mm
+    page: 1
+    stated_conditions:
+      text: "Specifications: Dimensions (Max.) — 'Maximum size without tube' | (D) | 18.25mm"
+    notes: "upper bound; coined name."
+
+  - property: height_mm
+    value: 65.10
+    unit: mm
+    page: 1
+    stated_conditions:
+      text: "Specifications: Dimensions (Max.) — 'Maximum size without tube' | (H) | 65.10mm"
+    notes: "upper bound; coined name."
+
+  - property: volumetric_energy_density_wh_l
+    value: 676
+    unit: Wh/L
+    page: 1
+    stated_conditions:
+      text: "Specifications: Volumetric Energy Density | 676Wh/l"
+    notes: "no basis is stated — the document does not say which capacity, voltage
+            or volume the figure is computed from"
+
+  - property: gravimetric_energy_density_wh_kg
+    value: 243
+    unit: Wh/kg
+    page: 1
+    stated_conditions:
+      text: "Specifications: Gravimetric Energy Density | 243Wh/kg"
+    notes: "no basis is stated."
+
+  - property: height_mm
+    value: 64.93
+    unit: mm
+    page: 1
+    stated_conditions:
+      text: "Drawing area: 'Dimensions(Typ.) of Bare Cell — Discharged State after
+             Assembling' | H | 64.93mm"
+    notes: "typical value, not a bound."
+
+  - property: diameter_mm
+    value: 18.2
+    unit: mm
+    page: 1
+    stated_conditions:
+      text: "Drawing area: 'Dimensions(Typ.) of Bare Cell — Discharged State after
+             Assembling' | D | 18.2mm"
+    notes: "typical bare-cell diameter, distinct from the 18.25 mm maximum without
+            tube above"
+
+  - property: terminal_diameter_mm
+    value: 7.9
+    unit: mm
+    page: 1
+    stated_conditions:
+      text: "Drawing area: 'Dimensions(Typ.) of Bare Cell — Discharged State after
+             Assembling' | d | 7.9mm"
+  # === Page 2 — Discharge Rate Characteristics plot =================
+
+  - property: std_charge_end_current_a
+    value: 0.065
+    unit: A
+    page: 2
+    stated_conditions:
+      text: "Plot caption 'Discharge Rate Characteristics for NCR18650B':
+             Charge:CC-CV:1.625A-4.2V (65.0mA cut)"
+      charge_current_a: 1.625
+      charge_voltage_v: 4.2
+    notes: "coined name; 65.0mA converted to A. Printed in the plot caption, not
+            read from the curve."
+
+  - property: discharge_capacity_ah
+    value: 3.31
+    unit: Ah
+    page: 2
+    stated_conditions:
+      text: "Plot 'Discharge Rate Characteristics for NCR18650B', Temp:25°C,
+             Charge:CC-CV:1.625A-4.2V (65.0mA cut), Discharge:CC:Variable Current
+             (E.V.:2.50V): the 0.2CA curve reaches 2.50 V at approximately
+             3310 mAh"
+      temperature_c: 25
+      discharge_c_rate: 0.2
+      discharge_cutoff_v: 2.50
+      charge_current_a: 1.625
+      charge_voltage_v: 4.2
+      end_current_ma: 65
+    notes: "read from graph; uncertainty about ±0.05 Ah."
+
+  - property: discharge_capacity_ah
+    value: 3.24
+    unit: Ah
+    page: 2
+    stated_conditions:
+      text: "Plot 'Discharge Rate Characteristics for NCR18650B': the 0.5CA curve
+             reaches 2.50 V at approximately 3240 mAh"
+      temperature_c: 25
+      discharge_c_rate: 0.5
+      discharge_cutoff_v: 2.50
+      charge_current_a: 1.625
+      charge_voltage_v: 4.2
+      end_current_ma: 65
+    notes: "read from graph."
+
+  - property: discharge_capacity_ah
+    value: 3.28
+    unit: Ah
+    page: 2
+    stated_conditions:
+      text: "Plot 'Discharge Rate Characteristics for NCR18650B': the 1.0CA curve
+             reaches 2.50 V at approximately 3280 mAh"
+      temperature_c: 25
+      discharge_c_rate: 1.0
+      discharge_cutoff_v: 2.50
+      charge_current_a: 1.625
+      charge_voltage_v: 4.2
+      end_current_ma: 65
+    notes: "read from graph"
+
+  - property: discharge_capacity_ah
+    value: 3.29
+    unit: Ah
+    page: 2
+    stated_conditions:
+      text: "Plot 'Discharge Rate Characteristics for NCR18650B': the 2.0CA curve
+             reaches 2.50 V at approximately 3290 mAh"
+      temperature_c: 25
+      discharge_c_rate: 2.0
+      discharge_cutoff_v: 2.50
+      charge_current_a: 1.625
+      charge_voltage_v: 4.2
+      end_current_ma: 65
+    notes: "read from graph."
+
+  # === Page 3 — Discharge Temperature Characteristics plot ==========
+
+  - property: discharge_capacity_ah
+    value: 3.34
+    unit: Ah
+    page: 3
+    stated_conditions:
+      text: "Plot 'Discharge Temperature Characteristics for NCR18650B',
+             Charge:CC-CV:1.625A-4.20V(65.0mA cut), Discharge:CC:3.25A
+             (E.V.:2.50V): the 40°C curve reaches 2.50 V at approximately 3340 mAh"
+      discharge_temperature_c: 40
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.50
+      charge_current_a: 1.625
+      charge_voltage_v: 4.20
+      end_current_ma: 65
+    notes: "read from graph; uncertainty about ±0.05 Ah."
+
+  - property: discharge_capacity_ah
+    value: 3.28
+    unit: Ah
+    page: 3
+    stated_conditions:
+      text: "Plot 'Discharge Temperature Characteristics for NCR18650B': the 25°C
+             curve reaches 2.50 V at approximately 3280 mAh"
+      discharge_temperature_c: 25
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.50
+      charge_current_a: 1.625
+      charge_voltage_v: 4.20
+      end_current_ma: 65
+    notes: "read from graph"
+
+  - property: discharge_capacity_ah
+    value: 3.01
+    unit: Ah
+    page: 3
+    stated_conditions:
+      text: "Plot 'Discharge Temperature Characteristics for NCR18650B': the 0°C
+             curve reaches 2.50 V at approximately 3010 mAh"
+      discharge_temperature_c: 0
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.50
+      charge_current_a: 1.625
+      charge_voltage_v: 4.20
+      end_current_ma: 65
+    notes: "read from graph"
+
+  - property: discharge_capacity_ah
+    value: 2.89
+    unit: Ah
+    page: 3
+    stated_conditions:
+      text: "Plot 'Discharge Temperature Characteristics for NCR18650B': the -10°C
+             curve reaches 2.50 V at approximately 2890 mAh"
+      discharge_temperature_c: -10
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.50
+      charge_current_a: 1.625
+      charge_voltage_v: 4.20
+      end_current_ma: 65
+    notes: "read from graph"
+
+  - property: discharge_capacity_ah
+    value: 2.60
+    unit: Ah
+    page: 3
+    stated_conditions:
+      text: "Plot 'Discharge Temperature Characteristics for NCR18650B': the -20°C
+             curve reaches 2.50 V at approximately 2600 mAh"
+      discharge_temperature_c: -20
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.50
+      charge_current_a: 1.625
+      charge_voltage_v: 4.20
+      end_current_ma: 65
+    notes: "read from graph."
+
+  # === Page 4 — Charge Characteristics plot =========================
+
+  - property: charge_capacity_ah
+    value: 3.27
+    unit: Ah
+    page: 4
+    stated_conditions:
+      text: "Plot 'Charge Characteristics for NCR18650B',
+             Charge:CC-CV:1.625A-4.20V(65.0mA cut): the 45°C capacity trace
+             plateaus at approximately 3270 mAh on the right-hand Capacity axis"
+      charge_temperature_c: 45
+      charge_current_a: 1.625
+      charge_voltage_v: 4.20
+      end_current_ma: 65
+    notes: "read from graph; coined name."
+
+  - property: charge_capacity_ah
+    value: 3.38
+    unit: Ah
+    page: 4
+    stated_conditions:
+      text: "Plot 'Charge Characteristics for NCR18650B': the 25°C capacity trace
+             plateaus at approximately 3380 mAh on the right-hand Capacity axis"
+      charge_temperature_c: 25
+      charge_current_a: 1.625
+      charge_voltage_v: 4.20
+      end_current_ma: 65
+    notes: "read from graph."
+
+  - property: charge_capacity_ah
+    value: 3.06
+    unit: Ah
+    page: 4
+    stated_conditions:
+      text: "Plot 'Charge Characteristics for NCR18650B': the 0°C capacity trace
+             plateaus at approximately 3060 mAh on the right-hand Capacity axis"
+      charge_temperature_c: 0
+      charge_current_a: 1.625
+      charge_voltage_v: 4.20
+      end_current_ma: 65
+    notes: "read from graph."
+
+# ---------------------------------------------------------------------------
+# OMISSIONS — properties actively searched for and confirmed ABSENT.
+# ---------------------------------------------------------------------------
+omissions:
+
+  - property: cycle_life_cycles
+    note: "THE MAJOR ABSENCE IN THIS DOCUMENT: there is no cycle-life claim of any
+           kind. No cycle count, no fade curve, no life projection. Searched every
+           row of the page-1 specification table, the drawing area, and the titles,
+           captions, axes and legends of all three plots on pages 2-4 — the three
+           plots are rate, temperature and charge characteristics, none of them a
+           cycling test. For a cell datasheet this is the property a reader would
+           most expect, and its absence is the headline finding for this file"
+
+  - property: cycle_life_retention_pct
+    note: "absent as a consequence of the above — with no cycle-life claim there is
+           no end-of-life capacity threshold either. Searched the same places"
+
+  - property: max_cont_discharge_a
+    note: "no maximum continuous discharge current is stated. The sheet plots
+           discharge at up to 2.0CA (about 6.5 A) on page 2 and at 3.25 A on page
+           3, but never states a permitted maximum, so a reader cannot tell what
+           discharge current the cell is rated for. Searched the page-1 table
+           (which has no discharge-current row at all) and the plot captions"
+
+  - property: max_charge_current_a
+    note: "no maximum charge current is stated. The table gives 'Charging Current |
+           Std.1625mA' — the 'Std.' qualifier implies a maximum exists, but none is
+           given. Searched the page-1 table and the page-4 charge plot caption"
+
+  - property: internal_impedance_mohm
+    note: "no AC or DC internal resistance figure. Searched the page-1 table and
+           all three plot captions; the charge plot on page 4 shows a current
+           trace but no impedance value is stated anywhere"
+
+  - property: storage_capacity_remaining_pct
+    note: "no storage performance claim. Page 1 gives a storage AMBIENT TEMPERATURE
+           range (-20~+50°C) but attaches no duration and no retained-capacity
+           figure to it, so the sheet says where cells may be stored but not what
+           happens to them if they are. Searched the page-1 table and all plots;
+           storage_capacity_recovery_pct is absent for the same reason"
+
+  - property: discharge_cutoff_v
+    note: "partial absence, recorded because of where the value lives: the end
+           voltage 2.50 V appears only inside the plot captions on pages 2 and 3
+           ('E.V.:2.50V'). The page-1 specification table has no discharge cut-off
+           row, so the capacities it states (3200/3250/3350 mAh) are given with no
+           end voltage attached to them at all. Searched every row of the table"

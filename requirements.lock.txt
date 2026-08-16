@@ -91,6 +91,7 @@ packaging==26.2
 pandas==3.0.3
 pandocfilters==1.5.1
 parso==0.8.7
+pdf2image==1.17.0
 pdfminer.six==20260107
 pdfplumber==0.11.10
 pexpect==4.9.0
@@ -109,6 +110,7 @@ pydeck==0.9.3
 Pygments==2.20.0
 pyparsing==3.3.2
 pypdfium2==5.12.1
+pytesseract==0.3.13
 pytest==9.1.1
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.2

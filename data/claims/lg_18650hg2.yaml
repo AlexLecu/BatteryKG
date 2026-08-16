@@ -6,6 +6,8 @@ manufacturer: LG Chem
 source_document: lg_inr18650hg2.pdf
 source_url: https://www.batteryspace.com/prod-specs/9989.specs.pdf
 retrieved: 2026-07-11
+annotator: A1
+annotated_date: 2026-07-11
 claims:
   - property: nominal_capacity_ah
     value: 3.0

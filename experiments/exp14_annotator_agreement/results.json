@@ -1,0 +1,1803 @@
+{
+  "second_set_dir": "data/gold/second_annotator",
+  "annotators": [
+    "A2"
+  ],
+  "overall": {
+    "n_ref": 103,
+    "n_sec": 164,
+    "exact_matched": 76,
+    "value_matched": 101,
+    "exact_f1": 0.5693,
+    "value_f1": 0.7566,
+    "coverage": {
+      "ref_covered": 101,
+      "n_ref": 103,
+      "share": 0.9806
+    },
+    "coverage_sec": {
+      "sec_covered": 101,
+      "n_sec": 164,
+      "share": 0.6159
+    },
+    "kappa_naming": 0.744,
+    "kappa_naming_grids_excluded": 0.895,
+    "alpha_naming": 0.744,
+    "raw_agreement_conditions": 0.95,
+    "value_disagreements": 1,
+    "naming_only": 25,
+    "ref_only": 1,
+    "sec_only": 62
+  },
+  "overall_kappa": {
+    "property": {
+      "n": 101,
+      "po": 0.752,
+      "pe": 0.034,
+      "kappa": 0.744
+    },
+    "property_excl_grids": {
+      "n": 80,
+      "po": 0.9,
+      "pe": 0.045,
+      "kappa": 0.895
+    },
+    "conditions_stated": {
+      "n": 101,
+      "po": 0.95,
+      "pe": 0.95,
+      "kappa": 0.0
+    }
+  },
+  "overall_alpha": {
+    "alpha_property": {
+      "n_items": 166,
+      "alpha": 0.427,
+      "d_o": 0.5422,
+      "d_e": 0.9457,
+      "observed": 0.458,
+      "categories": 72
+    },
+    "alpha_presence": {
+      "n_items": 166,
+      "alpha": -0.24,
+      "d_o": 0.3916,
+      "d_e": 0.3159,
+      "observed": 0.608,
+      "categories": 2
+    },
+    "alpha_naming": {
+      "n_items": 101,
+      "alpha": 0.744,
+      "d_o": 0.2475,
+      "d_e": 0.9666,
+      "observed": 0.752,
+      "categories": 55
+    },
+    "n_items": 166
+  },
+  "documents": [
+    {
+      "key": "a123",
+      "label": "A123 APR18650M1A",
+      "ref_file": "data/claims/a123_apr18650m1a.yaml",
+      "sec_file": "a123_apr18650m1a_annotation.yaml",
+      "n_ref": 12,
+      "n_sec": 18,
+      "exact": {
+        "matched": 11,
+        "f1": 0.733,
+        "jaccard": 0.579
+      },
+      "value_level": {
+        "matched": 12,
+        "f1": 0.8,
+        "jaccard": 0.667
+      },
+      "naming_only": 1,
+      "value_disagreements": 0,
+      "ref_only": 0,
+      "sec_only": 6,
+      "conditions": {
+        "identical": 10,
+        "both_unspecified": 0,
+        "ref_only_conditions": 0,
+        "sec_only_conditions": 1,
+        "ref_richer": 0,
+        "sec_richer": 0,
+        "conflicting": 2,
+        "conflicts": [
+          {
+            "property": "cycle_life_cycles",
+            "page_ref": 1,
+            "page_sec": 1,
+            "fields": {
+              "discharge_c_rate": [
+                5.0,
+                5
+              ]
+            }
+          },
+          {
+            "property": "cycle_life_retention_pct",
+            "page_ref": 1,
+            "page_sec": 1,
+            "fields": {
+              "charge_c_rate": [
+                1.0,
+                1
+              ],
+              "discharge_c_rate": [
+                1.0,
+                1
+              ]
+            }
+          }
+        ]
+      },
+      "kappa": {
+        "property": {
+          "n": 12,
+          "po": 0.917,
+          "pe": 0.076,
+          "kappa": 0.91
+        },
+        "property_excl_grids": {
+          "n": 12,
+          "po": 0.917,
+          "pe": 0.076,
+          "kappa": 0.91
+        },
+        "conditions_stated": {
+          "n": 12,
+          "po": 0.917,
+          "pe": 0.917,
+          "kappa": 0.0
+        }
+      },
+      "alpha": {
+        "alpha_property": {
+          "n_items": 18,
+          "alpha": 0.592,
+          "d_o": 0.3889,
+          "d_e": 0.9524,
+          "observed": 0.611,
+          "categories": 17
+        },
+        "alpha_presence": {
+          "n_items": 18,
+          "alpha": -0.167,
+          "d_o": 0.3333,
+          "d_e": 0.2857,
+          "observed": 0.667,
+          "categories": 2
+        },
+        "alpha_naming": {
+          "n_items": 12,
+          "alpha": 0.913,
+          "d_o": 0.0833,
+          "d_e": 0.9601,
+          "observed": 0.917,
+          "categories": 13
+        },
+        "n_items": 18
+      },
+      "omissions": {
+        "ref_n": 0,
+        "sec_n": 7,
+        "both": [],
+        "ref_only": [],
+        "sec_only": [
+          "charge_temp_range_c",
+          "cycle_life_retention_pct",
+          "discharge_temp_range_c",
+          "gravimetric_energy_density_wh_kg",
+          "internal_impedance_mohm",
+          "minimum_capacity_ah",
+          "std_discharge_current_a"
+        ],
+        "ref_has_block": false,
+        "sec_has_block": true
+      },
+      "strata_ref": {
+        "specification row": {
+          "total": 11,
+          "matched": 11
+        },
+        "read from graph": {
+          "total": 1,
+          "matched": 1
+        }
+      },
+      "strata_sec": {
+        "specification row": {
+          "total": 13,
+          "matched": 11
+        },
+        "read from graph": {
+          "total": 5,
+          "matched": 1
+        }
+      },
+      "disagreements": {
+        "naming_only": [
+          {
+            "kind": "naming-only",
+            "ref": "cycle_life_retention_pct = 93 pct (p.1)",
+            "sec": "capacity_retention_at_cycle_pct = 94 pct (p.1)",
+            "ref_property": "cycle_life_retention_pct",
+            "sec_property": "capacity_retention_at_cycle_pct",
+            "ref_value": "93",
+            "sec_value": "94",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 1,
+            "sec_page": 1,
+            "ref_conditions": "Projected Cycle Life graph: 100% DOD, 1C/1C, Room Temperature \u2014 ~93% of initial capacity after ~1700 cycles",
+            "sec_conditions": "Plot 'Projected Cycle Life, 100% DOD, 1C/1C, Room Temperature': the curve ends at approximately 94% of initial capacity at approximately 1700 cycles, the right-hand end of the plotted data"
+          }
+        ],
+        "value": [],
+        "ref_only": [],
+        "sec_only": [
+          {
+            "kind": "second-only",
+            "sec": "std_charge_time_min = 45 min (p.1)",
+            "sec_property": "std_charge_time_min",
+            "sec_value": "45",
+            "sec_unit": "min",
+            "sec_page": 1,
+            "stratum": "specification row",
+            "sec_conditions": "Recommended standard charge method: 1.5A to 3.6V CCCV, 45 min"
+          },
+          {
+            "kind": "second-only",
+            "sec": "fast_charge_time_min = 15 min (p.1)",
+            "sec_property": "fast_charge_time_min",
+            "sec_value": "15",
+            "sec_unit": "min",
+            "sec_page": 1,
+            "stratum": "specification row",
+            "sec_conditions": "Recommended fast charge current: 4A to 3.6V CCCV, 15 min"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_capacity_ah = 1.03 Ah (p.1)",
+            "sec_property": "discharge_capacity_ah",
+            "sec_value": "1.03",
+            "sec_unit": "Ah",
+            "sec_page": 1,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Discharge Characteristics, Room Temperature': the 5A curve reaches the 2.0 V bottom of the voltage axis at approximately 1.03 Ah on the capacity axis"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_capacity_ah = 1.03 Ah (p.1)",
+            "sec_property": "discharge_capacity_ah",
+            "sec_value": "1.03",
+            "sec_unit": "Ah",
+            "sec_page": 1,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Discharge Characteristics, Room Temperature': the 10A curve reaches the 2.0 V bottom of the voltage axis at approximately 1.03 Ah on the capacity axis"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_capacity_ah = 1.01 Ah (p.1)",
+            "sec_property": "discharge_capacity_ah",
+            "sec_value": "1.01",
+            "sec_unit": "Ah",
+            "sec_page": 1,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Discharge Characteristics, Room Temperature': the 20A curve reaches the 2.0 V bottom of the voltage axis at approximately 1.01 Ah on the capacity axis"
+          },
+          {
+            "kind": "second-only",
+            "sec": "capacity_retention_at_cycle_pct = 95 pct (p.1)",
+            "sec_property": "capacity_retention_at_cycle_pct",
+            "sec_value": "95",
+            "sec_unit": "pct",
+            "sec_page": 1,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Projected Cycle Life, 100% DOD, 1C/1C, Room Temperature': the curve is at approximately 95% of initial capacity at 1000 cycles"
+          }
+        ]
+      }
+    },
+    {
+      "key": "lg",
+      "label": "LG Chem 18650HG2",
+      "ref_file": "data/claims/lg_18650hg2.yaml",
+      "sec_file": "lg_inr18650hg2_annotation.yaml",
+      "n_ref": 22,
+      "n_sec": 35,
+      "exact": {
+        "matched": 21,
+        "f1": 0.737,
+        "jaccard": 0.583
+      },
+      "value_level": {
+        "matched": 21,
+        "f1": 0.737,
+        "jaccard": 0.583
+      },
+      "naming_only": 0,
+      "value_disagreements": 1,
+      "ref_only": 0,
+      "sec_only": 13,
+      "conditions": {
+        "identical": 7,
+        "both_unspecified": 0,
+        "ref_only_conditions": 0,
+        "sec_only_conditions": 0,
+        "ref_richer": 0,
+        "sec_richer": 12,
+        "conflicting": 2,
+        "conflicts": [
+          {
+            "property": "cycle_life_cycles",
+            "page_ref": 6,
+            "page_sec": 6,
+            "fields": {
+              "end_condition": [
+                "capacity >= 60% of nominal at cycle 301",
+                "301st cycle discharge capacity >= 60% of Cnom"
+              ]
+            }
+          },
+          {
+            "property": "cycle_life_cycles",
+            "page_ref": 6,
+            "page_sec": 6,
+            "fields": {
+              "end_condition": [
+                "capacity >= 60% of nominal at cycle 201",
+                "201st cycle discharge capacity >= 60% of Cnom"
+              ]
+            }
+          }
+        ]
+      },
+      "kappa": {
+        "property": {
+          "n": 21,
+          "po": 1.0,
+          "pe": 0.079,
+          "kappa": 1.0
+        },
+        "property_excl_grids": {
+          "n": 17,
+          "po": 1.0,
+          "pe": 0.066,
+          "kappa": 1.0
+        },
+        "conditions_stated": {
+          "n": 21,
+          "po": 1.0,
+          "pe": 1.0,
+          "kappa": null
+        }
+      },
+      "alpha": {
+        "alpha_property": {
+          "n_items": 36,
+          "alpha": 0.555,
+          "d_o": 0.4167,
+          "d_e": 0.9366,
+          "observed": 0.583,
+          "categories": 29
+        },
+        "alpha_presence": {
+          "n_items": 36,
+          "alpha": -0.246,
+          "d_o": 0.4167,
+          "d_e": 0.3345,
+          "observed": 0.583,
+          "categories": 2
+        },
+        "alpha_naming": {
+          "n_items": 21,
+          "alpha": 1.0,
+          "d_o": 0.0,
+          "d_e": 0.9431,
+          "observed": 1.0,
+          "categories": 17
+        },
+        "n_items": 36
+      },
+      "omissions": {
+        "ref_n": 0,
+        "sec_n": 5,
+        "both": [],
+        "ref_only": [],
+        "sec_only": [
+          "capacity_retention_at_temp_pct",
+          "gravimetric_energy_density_wh_kg",
+          "minimum_capacity_ah",
+          "std_charge_time_h",
+          "volumetric_energy_density_wh_l"
+        ],
+        "ref_has_block": false,
+        "sec_has_block": true
+      },
+      "strata_ref": {
+        "specification row": {
+          "total": 18,
+          "matched": 17
+        },
+        "characteristic grid": {
+          "total": 4,
+          "matched": 4
+        }
+      },
+      "strata_sec": {
+        "specification row": {
+          "total": 31,
+          "matched": 17
+        },
+        "characteristic grid": {
+          "total": 4,
+          "matched": 4
+        }
+      },
+      "disagreements": {
+        "naming_only": [],
+        "value": [
+          {
+            "kind": "value",
+            "ref": "fast_discharge_current_a = [10, 20] A (p.4)",
+            "sec": "fast_discharge_current_a = 10 A (p.4)",
+            "ref_property": "fast_discharge_current_a",
+            "sec_property": "fast_discharge_current_a",
+            "ref_value": "[10, 20]",
+            "sec_value": "10",
+            "ref_unit": "A",
+            "sec_unit": "A",
+            "ref_page": 4,
+            "sec_page": 4,
+            "ref_conditions": "2.6.2 Fast Discharge: CC 10000mA, 20000mA; end voltage 2.0V",
+            "sec_conditions": "2.6.2 Fast Discharge (Refer to 4.1.3) | Constant current | 10000mA , 20000mA | End voltage(Cut off) 2.0V"
+          }
+        ],
+        "ref_only": [],
+        "sec_only": [
+          {
+            "kind": "second-only",
+            "sec": "charge_voltage_v = 4.2 V (p.4)",
+            "sec_property": "charge_voltage_v",
+            "sec_value": "4.2",
+            "sec_unit": "V",
+            "sec_page": 4,
+            "stratum": "specification row",
+            "sec_conditions": "2.3.1 Standard Charge (Refer to 4.1.1) | Constant voltage | 4.2V"
+          },
+          {
+            "kind": "second-only",
+            "sec": "std_charge_end_current_a = 0.05 A (p.4)",
+            "sec_property": "std_charge_end_current_a",
+            "sec_value": "0.05",
+            "sec_unit": "A",
+            "sec_page": 4,
+            "stratum": "specification row",
+            "sec_conditions": "2.3.1 Standard Charge (Refer to 4.1.1) | End condition(Cut off) | 50mA"
+          },
+          {
+            "kind": "second-only",
+            "sec": "fast_charge_end_current_a = 0.1 A (p.4)",
+            "sec_property": "fast_charge_end_current_a",
+            "sec_value": "0.1",
+            "sec_unit": "A",
+            "sec_page": 4,
+            "stratum": "specification row",
+            "sec_conditions": "2.3.2 Fast charge (Refer to 4.1.3) | End condition(Cut off) | 100mA"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_cutoff_v = 2 V (p.4)",
+            "sec_property": "discharge_cutoff_v",
+            "sec_value": "2",
+            "sec_unit": "V",
+            "sec_page": 4,
+            "stratum": "specification row",
+            "sec_conditions": "2.6.1 Standard Discharge (Refer to 4.1.2) | End voltage(Cut off) | 2.0V"
+          },
+          {
+            "kind": "second-only",
+            "sec": "fast_discharge_current_a = 20 A (p.4)",
+            "sec_property": "fast_discharge_current_a",
+            "sec_value": "20",
+            "sec_unit": "A",
+            "sec_page": 4,
+            "stratum": "specification row",
+            "sec_conditions": "2.6.2 Fast Discharge (Refer to 4.1.3) | Constant current | 10000mA , 20000mA | End voltage(Cut off) 2.0V"
+          },
+          {
+            "kind": "second-only",
+            "sec": "storage_temp_range_c = [-20, 60] degC (p.4)",
+            "sec_property": "storage_temp_range_c",
+            "sec_value": "[-20, 60]",
+            "sec_unit": "degC",
+            "sec_page": 4,
+            "stratum": "specification row",
+            "sec_conditions": "2.10 Storage Temperature (for shipping state) | 1 month | -20 ~ 60\u2103"
+          },
+          {
+            "kind": "second-only",
+            "sec": "storage_temp_range_c = [-20, 45] degC (p.4)",
+            "sec_property": "storage_temp_range_c",
+            "sec_value": "[-20, 45]",
+            "sec_unit": "degC",
+            "sec_page": 4,
+            "stratum": "specification row",
+            "sec_conditions": "2.10 Storage Temperature (for shipping state) | 3 month | -20 ~ 45\u2103"
+          },
+          {
+            "kind": "second-only",
+            "sec": "shipping_state_soc_pct = 40 pct (p.4)",
+            "sec_property": "shipping_state_soc_pct",
+            "sec_value": "40",
+            "sec_unit": "pct",
+            "sec_page": 4,
+            "stratum": "specification row",
+            "sec_conditions": "footnote to section 2: '* Shipping state : About 40% capacity of fully charged state'"
+          },
+          {
+            "kind": "second-only",
+            "sec": "diameter_mm = 18.3 mm (p.5)",
+            "sec_property": "diameter_mm",
+            "sec_value": "18.3",
+            "sec_unit": "mm",
+            "sec_page": 5,
+            "stratum": "specification row",
+            "sec_conditions": "3.2 Dimension \u2014 Diameter: 18.3 + 0.2/-0.3 mm ( Max. 18.5 mm ). 'Diameter is defined as the largest data value measured on the \"A\" area of a cylindrical cell.'"
+          },
+          {
+            "kind": "second-only",
+            "sec": "height_mm = 65 mm (p.5)",
+            "sec_property": "height_mm",
+            "sec_value": "65",
+            "sec_unit": "mm",
+            "sec_page": 5,
+            "stratum": "specification row",
+            "sec_conditions": "3.2 Dimension \u2014 Height: 65.0 \u00b1 0.2 mm ( Max. 65.2 mm )"
+          },
+          {
+            "kind": "second-only",
+            "sec": "initial_capacity_ah = 3 Ah (p.6)",
+            "sec_property": "initial_capacity_ah",
+            "sec_value": "3",
+            "sec_unit": "Ah",
+            "sec_page": 6,
+            "stratum": "specification row",
+            "sec_conditions": "4.2.2 Initial Capacity | Cell shall be charged per 4.1.1 and discharged per 4.1.2 within 1h after full charge | 3000 mAh (Cnom)"
+          },
+          {
+            "kind": "second-only",
+            "sec": "cycle_life_retention_pct = 60 pct (p.6)",
+            "sec_property": "cycle_life_retention_pct",
+            "sec_value": "60",
+            "sec_unit": "pct",
+            "sec_page": 6,
+            "stratum": "specification row",
+            "sec_conditions": "4.2.3 Cycle Life | end-of-life threshold for both rates: \u2265 60 % (of Cnom in 2.1)"
+          },
+          {
+            "kind": "second-only",
+            "sec": "thermal_shock_capacity_recovery_pct = 80 pct (p.7)",
+            "sec_property": "thermal_shock_capacity_recovery_pct",
+            "sec_value": "80",
+            "sec_unit": "pct",
+            "sec_page": 7,
+            "stratum": "specification row",
+            "sec_conditions": "4.3.3 Thermal Shock Test | 72\u00baC (8h) \u2190 3hrs \u2192 -20\u00baC (8h) for 8 cycles with cells charged per 4.1.1. After test, cells are discharged per 4.1.2 and cycled per 4.1.1 and 4.1.2 for 3 cycles to obtain recovered capacity | No leakage, Capacity recovery rate \u2265 80% (of Cnom in 2.1)"
+          }
+        ]
+      }
+    },
+    {
+      "key": "panasonic_mkt",
+      "label": "Panasonic NCR18650B (marketing sheet, image-only)",
+      "ref_file": "data/claims/panasonic_ncr18650b.yaml",
+      "sec_file": "panasonic_ncr18650b_annotation.yaml",
+      "n_ref": 14,
+      "n_sec": 31,
+      "exact": {
+        "matched": 12,
+        "f1": 0.533,
+        "jaccard": 0.364
+      },
+      "value_level": {
+        "matched": 13,
+        "f1": 0.578,
+        "jaccard": 0.406
+      },
+      "naming_only": 1,
+      "value_disagreements": 0,
+      "ref_only": 1,
+      "sec_only": 18,
+      "conditions": {
+        "identical": 13,
+        "both_unspecified": 0,
+        "ref_only_conditions": 0,
+        "sec_only_conditions": 3,
+        "ref_richer": 0,
+        "sec_richer": 0,
+        "conflicting": 0,
+        "conflicts": []
+      },
+      "kappa": {
+        "property": {
+          "n": 13,
+          "po": 0.923,
+          "pe": 0.077,
+          "kappa": 0.917
+        },
+        "property_excl_grids": {
+          "n": 13,
+          "po": 0.923,
+          "pe": 0.077,
+          "kappa": 0.917
+        },
+        "conditions_stated": {
+          "n": 13,
+          "po": 0.769,
+          "pe": 0.769,
+          "kappa": 0.0
+        }
+      },
+      "alpha": {
+        "alpha_property": {
+          "n_items": 32,
+          "alpha": 0.296,
+          "d_o": 0.625,
+          "d_e": 0.8879,
+          "observed": 0.375,
+          "categories": 21
+        },
+        "alpha_presence": {
+          "n_items": 32,
+          "alpha": -0.4,
+          "d_o": 0.5938,
+          "d_e": 0.4241,
+          "observed": 0.406,
+          "categories": 2
+        },
+        "alpha_naming": {
+          "n_items": 13,
+          "alpha": 0.92,
+          "d_o": 0.0769,
+          "d_e": 0.9569,
+          "observed": 0.923,
+          "categories": 13
+        },
+        "n_items": 32
+      },
+      "omissions": {
+        "ref_n": 1,
+        "sec_n": 7,
+        "both": [
+          "cycle_life_cycles"
+        ],
+        "ref_only": [],
+        "sec_only": [
+          "cycle_life_retention_pct",
+          "discharge_cutoff_v",
+          "internal_impedance_mohm",
+          "max_charge_current_a",
+          "max_cont_discharge_a",
+          "storage_capacity_remaining_pct"
+        ],
+        "ref_has_block": true,
+        "sec_has_block": true
+      },
+      "strata_ref": {
+        "specification row": {
+          "total": 13,
+          "matched": 13
+        },
+        "read from graph": {
+          "total": 1,
+          "matched": 0
+        }
+      },
+      "strata_sec": {
+        "specification row": {
+          "total": 19,
+          "matched": 13
+        },
+        "read from graph": {
+          "total": 12,
+          "matched": 0
+        }
+      },
+      "disagreements": {
+        "naming_only": [
+          {
+            "kind": "naming-only",
+            "ref": "minimum_capacity_ah = 3.25 Ah (p.1)",
+            "sec": "nominal_capacity_ah = 3.25 Ah (p.1)",
+            "ref_property": "minimum_capacity_ah",
+            "sec_property": "nominal_capacity_ah",
+            "ref_value": "3.25",
+            "sec_value": "3.25",
+            "ref_unit": "Ah",
+            "sec_unit": "Ah",
+            "ref_page": 1,
+            "sec_page": 1,
+            "ref_conditions": "Nominal Capacity (at 25\u00b0C): Min. 3250mAh",
+            "sec_conditions": "Specifications: Nominal Capacity (at 25\u00b0C) | Min.3250mAh"
+          }
+        ],
+        "value": [],
+        "ref_only": [
+          {
+            "kind": "reference-only",
+            "ref": "discharge_cutoff_v = 2.5 V (p.2)",
+            "ref_property": "discharge_cutoff_v",
+            "ref_value": "2.5",
+            "ref_unit": "V",
+            "ref_page": 2,
+            "stratum": "read from graph",
+            "ref_conditions": "graph annotation: 'Discharge: CC: Variable Current (E.V.:2.50V)'"
+          }
+        ],
+        "sec_only": [
+          {
+            "kind": "second-only",
+            "sec": "diameter_mm = 18.25 mm (p.1)",
+            "sec_property": "diameter_mm",
+            "sec_value": "18.25",
+            "sec_unit": "mm",
+            "sec_page": 1,
+            "stratum": "specification row",
+            "sec_conditions": "Specifications: Dimensions (Max.) \u2014 'Maximum size without tube' | (D) | 18.25mm"
+          },
+          {
+            "kind": "second-only",
+            "sec": "height_mm = 65.1 mm (p.1)",
+            "sec_property": "height_mm",
+            "sec_value": "65.1",
+            "sec_unit": "mm",
+            "sec_page": 1,
+            "stratum": "specification row",
+            "sec_conditions": "Specifications: Dimensions (Max.) \u2014 'Maximum size without tube' | (H) | 65.10mm"
+          },
+          {
+            "kind": "second-only",
+            "sec": "height_mm = 64.93 mm (p.1)",
+            "sec_property": "height_mm",
+            "sec_value": "64.93",
+            "sec_unit": "mm",
+            "sec_page": 1,
+            "stratum": "specification row",
+            "sec_conditions": "Drawing area: 'Dimensions(Typ.) of Bare Cell \u2014 Discharged State after Assembling' | H | 64.93mm"
+          },
+          {
+            "kind": "second-only",
+            "sec": "diameter_mm = 18.2 mm (p.1)",
+            "sec_property": "diameter_mm",
+            "sec_value": "18.2",
+            "sec_unit": "mm",
+            "sec_page": 1,
+            "stratum": "specification row",
+            "sec_conditions": "Drawing area: 'Dimensions(Typ.) of Bare Cell \u2014 Discharged State after Assembling' | D | 18.2mm"
+          },
+          {
+            "kind": "second-only",
+            "sec": "terminal_diameter_mm = 7.9 mm (p.1)",
+            "sec_property": "terminal_diameter_mm",
+            "sec_value": "7.9",
+            "sec_unit": "mm",
+            "sec_page": 1,
+            "stratum": "specification row",
+            "sec_conditions": "Drawing area: 'Dimensions(Typ.) of Bare Cell \u2014 Discharged State after Assembling' | d | 7.9mm"
+          },
+          {
+            "kind": "second-only",
+            "sec": "std_charge_end_current_a = 0.065 A (p.2)",
+            "sec_property": "std_charge_end_current_a",
+            "sec_value": "0.065",
+            "sec_unit": "A",
+            "sec_page": 2,
+            "stratum": "specification row",
+            "sec_conditions": "Plot caption 'Discharge Rate Characteristics for NCR18650B': Charge:CC-CV:1.625A-4.2V (65.0mA cut)"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_capacity_ah = 3.31 Ah (p.2)",
+            "sec_property": "discharge_capacity_ah",
+            "sec_value": "3.31",
+            "sec_unit": "Ah",
+            "sec_page": 2,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Discharge Rate Characteristics for NCR18650B', Temp:25\u00b0C, Charge:CC-CV:1.625A-4.2V (65.0mA cut), Discharge:CC:Variable Current (E.V.:2.50V): the 0.2CA curve reaches 2.50 V at approximately 3310 mAh"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_capacity_ah = 3.24 Ah (p.2)",
+            "sec_property": "discharge_capacity_ah",
+            "sec_value": "3.24",
+            "sec_unit": "Ah",
+            "sec_page": 2,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Discharge Rate Characteristics for NCR18650B': the 0.5CA curve reaches 2.50 V at approximately 3240 mAh"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_capacity_ah = 3.28 Ah (p.2)",
+            "sec_property": "discharge_capacity_ah",
+            "sec_value": "3.28",
+            "sec_unit": "Ah",
+            "sec_page": 2,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Discharge Rate Characteristics for NCR18650B': the 1.0CA curve reaches 2.50 V at approximately 3280 mAh"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_capacity_ah = 3.29 Ah (p.2)",
+            "sec_property": "discharge_capacity_ah",
+            "sec_value": "3.29",
+            "sec_unit": "Ah",
+            "sec_page": 2,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Discharge Rate Characteristics for NCR18650B': the 2.0CA curve reaches 2.50 V at approximately 3290 mAh"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_capacity_ah = 3.34 Ah (p.3)",
+            "sec_property": "discharge_capacity_ah",
+            "sec_value": "3.34",
+            "sec_unit": "Ah",
+            "sec_page": 3,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Discharge Temperature Characteristics for NCR18650B', Charge:CC-CV:1.625A-4.20V(65.0mA cut), Discharge:CC:3.25A (E.V.:2.50V): the 40\u00b0C curve reaches 2.50 V at approximately 3340 mAh"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_capacity_ah = 3.28 Ah (p.3)",
+            "sec_property": "discharge_capacity_ah",
+            "sec_value": "3.28",
+            "sec_unit": "Ah",
+            "sec_page": 3,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Discharge Temperature Characteristics for NCR18650B': the 25\u00b0C curve reaches 2.50 V at approximately 3280 mAh"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_capacity_ah = 3.01 Ah (p.3)",
+            "sec_property": "discharge_capacity_ah",
+            "sec_value": "3.01",
+            "sec_unit": "Ah",
+            "sec_page": 3,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Discharge Temperature Characteristics for NCR18650B': the 0\u00b0C curve reaches 2.50 V at approximately 3010 mAh"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_capacity_ah = 2.89 Ah (p.3)",
+            "sec_property": "discharge_capacity_ah",
+            "sec_value": "2.89",
+            "sec_unit": "Ah",
+            "sec_page": 3,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Discharge Temperature Characteristics for NCR18650B': the -10\u00b0C curve reaches 2.50 V at approximately 2890 mAh"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_capacity_ah = 2.6 Ah (p.3)",
+            "sec_property": "discharge_capacity_ah",
+            "sec_value": "2.6",
+            "sec_unit": "Ah",
+            "sec_page": 3,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Discharge Temperature Characteristics for NCR18650B': the -20\u00b0C curve reaches 2.50 V at approximately 2600 mAh"
+          },
+          {
+            "kind": "second-only",
+            "sec": "charge_capacity_ah = 3.27 Ah (p.4)",
+            "sec_property": "charge_capacity_ah",
+            "sec_value": "3.27",
+            "sec_unit": "Ah",
+            "sec_page": 4,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Charge Characteristics for NCR18650B', Charge:CC-CV:1.625A-4.20V(65.0mA cut): the 45\u00b0C capacity trace plateaus at approximately 3270 mAh on the right-hand Capacity axis"
+          },
+          {
+            "kind": "second-only",
+            "sec": "charge_capacity_ah = 3.38 Ah (p.4)",
+            "sec_property": "charge_capacity_ah",
+            "sec_value": "3.38",
+            "sec_unit": "Ah",
+            "sec_page": 4,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Charge Characteristics for NCR18650B': the 25\u00b0C capacity trace plateaus at approximately 3380 mAh on the right-hand Capacity axis"
+          },
+          {
+            "kind": "second-only",
+            "sec": "charge_capacity_ah = 3.06 Ah (p.4)",
+            "sec_property": "charge_capacity_ah",
+            "sec_value": "3.06",
+            "sec_unit": "Ah",
+            "sec_page": 4,
+            "stratum": "read from graph",
+            "sec_conditions": "Plot 'Charge Characteristics for NCR18650B': the 0\u00b0C capacity trace plateaus at approximately 3060 mAh on the right-hand Capacity axis"
+          }
+        ]
+      }
+    },
+    {
+      "key": "panasonic_full",
+      "label": "Panasonic NCR18650B (SANYO full specification)",
+      "ref_file": "data/claims/panasonic_ncr18650b_full_spec.yaml",
+      "sec_file": "panasonic_ncr18650b_full_spec_annotation.yaml",
+      "n_ref": 14,
+      "n_sec": 34,
+      "exact": {
+        "matched": 13,
+        "f1": 0.542,
+        "jaccard": 0.371
+      },
+      "value_level": {
+        "matched": 14,
+        "f1": 0.583,
+        "jaccard": 0.412
+      },
+      "naming_only": 1,
+      "value_disagreements": 0,
+      "ref_only": 0,
+      "sec_only": 20,
+      "conditions": {
+        "identical": 8,
+        "both_unspecified": 0,
+        "ref_only_conditions": 0,
+        "sec_only_conditions": 0,
+        "ref_richer": 1,
+        "sec_richer": 4,
+        "conflicting": 1,
+        "conflicts": [
+          {
+            "property": "cycle_life_cycles",
+            "page_ref": 9,
+            "page_sec": 9,
+            "fields": {
+              "end_condition": [
+                "discharge time > 38 min at 3.25A after 300 cycles (vs 54-min initial-capacity criterion, i.e. ~70% retention)",
+                "discharge time > 38 min measured per 6.2 (2) after 300 cycles"
+              ]
+            }
+          }
+        ]
+      },
+      "kappa": {
+        "property": {
+          "n": 14,
+          "po": 0.929,
+          "pe": 0.071,
+          "kappa": 0.923
+        },
+        "property_excl_grids": {
+          "n": 14,
+          "po": 0.929,
+          "pe": 0.071,
+          "kappa": 0.923
+        },
+        "conditions_stated": {
+          "n": 14,
+          "po": 1.0,
+          "pe": 1.0,
+          "kappa": null
+        }
+      },
+      "alpha": {
+        "alpha_property": {
+          "n_items": 34,
+          "alpha": 0.311,
+          "d_o": 0.6176,
+          "d_e": 0.8964,
+          "observed": 0.382,
+          "categories": 26
+        },
+        "alpha_presence": {
+          "n_items": 34,
+          "alpha": -0.396,
+          "d_o": 0.5882,
+          "d_e": 0.4214,
+          "observed": 0.412,
+          "categories": 2
+        },
+        "alpha_naming": {
+          "n_items": 14,
+          "alpha": 0.926,
+          "d_o": 0.0714,
+          "d_e": 0.9603,
+          "observed": 0.929,
+          "categories": 14
+        },
+        "n_items": 34
+      },
+      "omissions": {
+        "ref_n": 0,
+        "sec_n": 7,
+        "both": [],
+        "ref_only": [],
+        "sec_only": [
+          "charge_temp_range_c",
+          "cycle_life_retention_pct",
+          "diameter_mm",
+          "gravimetric_energy_density_wh_kg",
+          "max_charge_voltage_v",
+          "minimum_capacity_ah",
+          "volumetric_energy_density_wh_l"
+        ],
+        "ref_has_block": false,
+        "sec_has_block": true
+      },
+      "strata_ref": {
+        "specification row": {
+          "total": 14,
+          "matched": 14
+        }
+      },
+      "strata_sec": {
+        "specification row": {
+          "total": 34,
+          "matched": 14
+        }
+      },
+      "disagreements": {
+        "naming_only": [
+          {
+            "kind": "naming-only",
+            "ref": "minimum_capacity_ah = 3.25 Ah (p.8)",
+            "sec": "nominal_capacity_ah = 3.25 Ah (p.8)",
+            "ref_property": "minimum_capacity_ah",
+            "sec_property": "nominal_capacity_ah",
+            "ref_value": "3.25",
+            "sec_value": "3.25",
+            "ref_unit": "Ah",
+            "sec_unit": "Ah",
+            "ref_page": 8,
+            "sec_page": 8,
+            "ref_conditions": "5.2 Nominal Capacity (Minimum): 3250mAh, 0.65A discharge at 25\u00b0C",
+            "sec_conditions": "5.2 Nominal Capacity (Minimum) | 3250mAh | Notes: 0.65A discharge at 25\u2103"
+          }
+        ],
+        "value": [],
+        "ref_only": [],
+        "sec_only": [
+          {
+            "kind": "second-only",
+            "sec": "storage_temp_range_c = [-20, 50] degC (p.8)",
+            "sec_property": "storage_temp_range_c",
+            "sec_value": "[-20, 50]",
+            "sec_unit": "degC",
+            "sec_page": 8,
+            "stratum": "specification row",
+            "sec_conditions": "5.13 Storing Conditions | less than 1 month | -20 ~ +50\u2103"
+          },
+          {
+            "kind": "second-only",
+            "sec": "storage_temp_range_c = [-20, 40] degC (p.8)",
+            "sec_property": "storage_temp_range_c",
+            "sec_value": "[-20, 40]",
+            "sec_unit": "degC",
+            "sec_page": 8,
+            "stratum": "specification row",
+            "sec_conditions": "5.13 Storing Conditions | less than 3 months | -20 ~ +40\u2103"
+          },
+          {
+            "kind": "second-only",
+            "sec": "storage_temp_range_c = [-20, 20] degC (p.8)",
+            "sec_property": "storage_temp_range_c",
+            "sec_value": "[-20, 20]",
+            "sec_unit": "degC",
+            "sec_page": 8,
+            "stratum": "specification row",
+            "sec_conditions": "5.13 Storing Conditions | less than 1 year | -20 ~ + 20\u2103"
+          },
+          {
+            "kind": "second-only",
+            "sec": "storage_capacity_recovery_pct = 80 pct (p.8)",
+            "sec_property": "storage_capacity_recovery_pct",
+            "sec_value": "80",
+            "sec_unit": "pct",
+            "sec_page": 8,
+            "stratum": "specification row",
+            "sec_conditions": "5.13 Storing Conditions, Notes column (spanning all three duration rows): 'Percentage of recoverable capacity 80%\u203b2'. \u203b2: 'Percentage of recoverable capacity = (Discharging time after storage / Initial discharging time) \u00d7100. The discharging time is measured by the discharge current of 0.65A until 2.5V of end voltage after the battery is fully charged at 25\u2103.'"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_time_min = 300 min (p.9)",
+            "sec_property": "discharge_time_min",
+            "sec_value": "300",
+            "sec_unit": "min",
+            "sec_page": 9,
+            "stratum": "specification row",
+            "sec_conditions": "6.2 Capacity \u2460 'Within 1 hour, after fully charged at 25\u2103, the battery is discharged with 0.65A continuously until 2.5V of end voltage at 25\u2103.' Criteria: More than 300min."
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_time_min = 54 min (p.9)",
+            "sec_property": "discharge_time_min",
+            "sec_value": "54",
+            "sec_unit": "min",
+            "sec_page": 9,
+            "stratum": "specification row",
+            "sec_conditions": "6.2 Capacity \u2461 'Within 1 hour, after fully charged at 25\u2103, the battery is discharged with 3.25A continuously until 2.5V of end voltage at 25\u2103.' Criteria: More than 54min."
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_time_min = 38 min (p.9)",
+            "sec_property": "discharge_time_min",
+            "sec_value": "38",
+            "sec_unit": "min",
+            "sec_page": 9,
+            "stratum": "specification row",
+            "sec_conditions": "6.3 Cycle Life, criteria: 'More than 38min.' \u2014 the discharge time measured per Item 6.2.\u2461 after 300 charge/discharge cycles at 25\u2103"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_time_min = 30 min (p.9)",
+            "sec_property": "discharge_time_min",
+            "sec_value": "30",
+            "sec_unit": "min",
+            "sec_page": 9,
+            "stratum": "specification row",
+            "sec_conditions": "6.4 Temperature Characteristics \u2460 'Within 1 hour, after fully charged at 25\u2103, the battery is stored at 0 \u2103 for 3 hours. After that, the discharge time is measured Item 6.2.\u2461 at 0 \u2103.' Criteria: More than 30min."
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_time_min = 50 min (p.9)",
+            "sec_property": "discharge_time_min",
+            "sec_value": "50",
+            "sec_unit": "min",
+            "sec_page": 9,
+            "stratum": "specification row",
+            "sec_conditions": "6.4 Temperature Characteristics \u2461 'Within 1 hour, after fully charged at 25\u2103, the battery is stored at 60 \u2103 for 3 hours. After that, the discharge time is measured Item 6.2.\u2461 at 60 \u2103.' Criteria: More than 50min."
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_time_min = 30 min (p.9)",
+            "sec_property": "discharge_time_min",
+            "sec_value": "30",
+            "sec_unit": "min",
+            "sec_page": 9,
+            "stratum": "specification row",
+            "sec_conditions": "6.5 Storage at Fully Charged State 'After fully charged at 25\u2103, the battery is stored for 20 days at 60 \u2103. After the storage, the battery is set in 25\u2103 for 3 hours. Then, the discharge time is measured Item 6.2.\u2461.' Criteria: More than 30min."
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_time_min = 40 min (p.9)",
+            "sec_property": "discharge_time_min",
+            "sec_value": "40",
+            "sec_unit": "min",
+            "sec_page": 9,
+            "stratum": "specification row",
+            "sec_conditions": "6.5 Storage at Fully Charged State, second criterion: 'Then, the same battery is fully charged again and checked the second discharge time by the Item 6.2 \u2461 at 25 \u2103.' Criteria: More than 40min"
+          },
+          {
+            "kind": "second-only",
+            "sec": "discharge_time_min = 50 min (p.10)",
+            "sec_property": "discharge_time_min",
+            "sec_value": "50",
+            "sec_unit": "min",
+            "sec_page": 10,
+            "stratum": "specification row",
+            "sec_conditions": "6.6 Storage at Full Discharged State 'After fully charged at 25\u2103, the battery is discharged by the Item 6.2.\u2461. Then, the battery is stored for 20 days at 60 \u2103. After the storage, the battery is set in 25\u2103 for 3 hours. Then, the discharge time is measured by the Item 6.2.\u2461 at 25\u2103.' Criteria: More than 50min."
+          },
+          {
+            "kind": "second-only",
+            "sec": "shipping_state_soc_pct = 40 pct (p.11)",
+            "sec_property": "shipping_state_soc_pct",
+            "sec_value": "40",
+            "sec_unit": "pct",
+            "sec_page": 11,
+            "stratum": "specification row",
+            "sec_conditions": "9. Shipping Charge: 'The battery is shipped out with the approximately 40%\uff0a charged state. *The 40% capacity is the condition in which SANYO ships the battery but it's not the condition when Fey Elektronik GmbH receives the battery.'"
+          },
+          {
+            "kind": "second-only",
+            "sec": "max_charge_current_a = 1.625 A (p.11)",
+            "sec_property": "max_charge_current_a",
+            "sec_value": "1.625",
+            "sec_unit": "A",
+            "sec_page": 11,
+            "stratum": "specification row",
+            "sec_conditions": "10-1(1) Charge: 'Regarding NCR18650B, the charging current should not exceed 1.625A /cell.'"
+          },
+          {
+            "kind": "second-only",
+            "sec": "max_charge_voltage_v = 4.2 V (p.11)",
+            "sec_property": "max_charge_voltage_v",
+            "sec_value": "4.2",
+            "sec_unit": "V",
+            "sec_page": 11,
+            "stratum": "specification row",
+            "sec_conditions": "10-1(1) Charge: 'The charging voltage should not exceed 4.20V /cell.'"
+          },
+          {
+            "kind": "second-only",
+            "sec": "precharge_threshold_voltage_v = 3 V (p.11)",
+            "sec_property": "precharge_threshold_voltage_v",
+            "sec_value": "3",
+            "sec_unit": "V",
+            "sec_page": 11,
+            "stratum": "specification row",
+            "sec_conditions": "10-1(1) Charge: 'If battery voltage goes down to less than 3.0V/cell, the battery should be charged by pre-charge current of maximum 0.32A. Once, the battery reached more than 3.0V/cell by the pre-charging, the charger can resume the standard charging method.'"
+          },
+          {
+            "kind": "second-only",
+            "sec": "precharge_current_a = 0.32 A (p.11)",
+            "sec_property": "precharge_current_a",
+            "sec_value": "0.32",
+            "sec_unit": "A",
+            "sec_page": 11,
+            "stratum": "specification row",
+            "sec_conditions": "10-1(1) Charge: 'the battery should be charged by pre-charge current of maximum 0.32A'"
+          },
+          {
+            "kind": "second-only",
+            "sec": "over_discharge_limit_v = 2 V (p.11)",
+            "sec_property": "over_discharge_limit_v",
+            "sec_value": "2",
+            "sec_unit": "V",
+            "sec_page": 11,
+            "stratum": "specification row",
+            "sec_conditions": "10-1(3) Over discharge: 'Do not discharge the battery less than 2.0V/cell.'"
+          },
+          {
+            "kind": "second-only",
+            "sec": "storage_humidity_max_pct = 70 pct (p.13)",
+            "sec_property": "storage_humidity_max_pct",
+            "sec_value": "70",
+            "sec_unit": "pct",
+            "sec_page": 13,
+            "stratum": "specification row",
+            "sec_conditions": "11-1 Storage Temperature and Humidity (Within 3 months): 'Cells should be stored between -20\u2103 to +40\u2103 in a low humidity condition (less than 70 %RH) without any corrosive gases.' 11-2 Long Duration Storage repeats 'less than 70%RH'."
+          },
+          {
+            "kind": "second-only",
+            "sec": "series_discharge_cutoff_v = 2.75 V (p.13)",
+            "sec_property": "series_discharge_cutoff_v",
+            "sec_value": "2.75",
+            "sec_unit": "V",
+            "sec_page": 13,
+            "stratum": "specification row",
+            "sec_conditions": "12-1 Series Connections Precautions: 'If cells are connected in series, the discharge end voltage should be set more than 2.75V/cell.'"
+          }
+        ]
+      }
+    },
+    {
+      "key": "samsung",
+      "label": "Samsung INR18650-25R (held out)",
+      "ref_file": "data/gold/samsung_inr18650_25r_gold.yaml",
+      "sec_file": "samsung_inr18650_25r_annotation.yaml",
+      "n_ref": 41,
+      "n_sec": 46,
+      "exact": {
+        "matched": 19,
+        "f1": 0.437,
+        "jaccard": 0.279
+      },
+      "value_level": {
+        "matched": 41,
+        "f1": 0.943,
+        "jaccard": 0.891
+      },
+      "naming_only": 22,
+      "value_disagreements": 0,
+      "ref_only": 0,
+      "sec_only": 5,
+      "conditions": {
+        "identical": 9,
+        "both_unspecified": 0,
+        "ref_only_conditions": 0,
+        "sec_only_conditions": 1,
+        "ref_richer": 0,
+        "sec_richer": 20,
+        "conflicting": 2,
+        "conflicts": [
+          {
+            "property": "cycle_life_cycles",
+            "page_ref": 5,
+            "page_sec": 5,
+            "fields": {
+              "end_condition": [
+                "capacity >= 1,500mAh (60% of nominal) after 250 cycles",
+                "capacity >= 1500 mAh, i.e. 60% of nominal capacity, at cycle 250"
+              ]
+            }
+          },
+          {
+            "property": "storage_capacity_recovery_pct",
+            "page_ref": 5,
+            "page_sec": 3,
+            "fields": {
+              "temperature_c": [
+                60,
+                25
+              ]
+            }
+          }
+        ]
+      },
+      "kappa": {
+        "property": {
+          "n": 41,
+          "po": 0.463,
+          "pe": 0.015,
+          "kappa": 0.455
+        },
+        "property_excl_grids": {
+          "n": 24,
+          "po": 0.792,
+          "pe": 0.043,
+          "kappa": 0.782
+        },
+        "conditions_stated": {
+          "n": 41,
+          "po": 0.976,
+          "pe": 0.976,
+          "kappa": 0.0
+        }
+      },
+      "alpha": {
+        "alpha_property": {
+          "n_items": 46,
+          "alpha": 0.398,
+          "d_o": 0.587,
+          "d_e": 0.9744,
+          "observed": 0.413,
+          "categories": 52
+        },
+        "alpha_presence": {
+          "n_items": 46,
+          "alpha": -0.046,
+          "d_o": 0.1087,
+          "d_e": 0.1039,
+          "observed": 0.891,
+          "categories": 2
+        },
+        "alpha_naming": {
+          "n_items": 41,
+          "alpha": 0.447,
+          "d_o": 0.5366,
+          "d_e": 0.9708,
+          "observed": 0.463,
+          "categories": 46
+        },
+        "n_items": 46
+      },
+      "omissions": {
+        "ref_n": 5,
+        "sec_n": 6,
+        "both": [],
+        "ref_only": [
+          "dc_internal_resistance_mohm",
+          "max_pulse_discharge_a",
+          "nominal_energy_wh",
+          "self_discharge_pct_per_month",
+          "specific_energy_wh_kg"
+        ],
+        "sec_only": [
+          "cycle_life_cycles",
+          "gravimetric_energy_density_wh_kg",
+          "max_charge_current_a",
+          "max_charge_voltage_v",
+          "storage_capacity_remaining_pct",
+          "volumetric_energy_density_wh_l"
+        ],
+        "ref_has_block": true,
+        "sec_has_block": true
+      },
+      "strata_ref": {
+        "specification row": {
+          "total": 24,
+          "matched": 24
+        },
+        "characteristic grid": {
+          "total": 17,
+          "matched": 17
+        }
+      },
+      "strata_sec": {
+        "specification row": {
+          "total": 29,
+          "matched": 24
+        },
+        "characteristic grid": {
+          "total": 17,
+          "matched": 17
+        }
+      },
+      "disagreements": {
+        "naming_only": [
+          {
+            "kind": "naming-only",
+            "ref": "max_charge_voltage_v = 4.2 V (p.3)",
+            "sec": "charge_voltage_v = 4.2 V (p.3)",
+            "ref_property": "max_charge_voltage_v",
+            "sec_property": "charge_voltage_v",
+            "ref_value": "4.2",
+            "sec_value": "4.2",
+            "ref_unit": "V",
+            "sec_unit": "V",
+            "ref_page": 3,
+            "sec_page": 3,
+            "ref_conditions": "Standard charge: CCCV, 1.25A, 4.20 \u00b1 0.05 V, 125mA cut-off",
+            "sec_conditions": "3.3 Standard charge | CCCV, 1.25A, 4.20 \u00b1 0.05 V, 125mA cut-off"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rapid_charge_time_min = 60 min (p.3)",
+            "sec": "fast_charge_time_min = 60 min (p.3)",
+            "ref_property": "rapid_charge_time_min",
+            "sec_property": "fast_charge_time_min",
+            "ref_value": "60",
+            "sec_value": "60",
+            "ref_unit": "min",
+            "sec_unit": "min",
+            "ref_page": 3,
+            "sec_page": 3,
+            "ref_conditions": "Rapid charge: 60min (at 25\u2103) / 100mA cut-off",
+            "sec_conditions": "3.6 Charging time | Rapid charge: 60min (at 25\u2103) / 100mA cut-off"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "cell_height_mm = 64.85 mm (p.3)",
+            "sec": "height_mm = 64.85 mm (p.3)",
+            "ref_property": "cell_height_mm",
+            "sec_property": "height_mm",
+            "ref_value": "64.85",
+            "sec_value": "64.85",
+            "ref_unit": "mm",
+            "sec_unit": "mm",
+            "ref_page": 3,
+            "sec_page": 3,
+            "ref_conditions": "Height : 64.85 \u00b1 0.15mm",
+            "sec_conditions": "3.10 Cell dimension | Height : 64.85 \u00b1 0.15mm. Repeated on Fig.1 (physical page 7) as '64.85\u00b1 0.15' with 'Unit : mm' and 'With tube'"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "cell_diameter_mm = 18.33 mm (p.3)",
+            "sec": "diameter_mm = 18.33 mm (p.3)",
+            "ref_property": "cell_diameter_mm",
+            "sec_property": "diameter_mm",
+            "ref_value": "18.33",
+            "sec_value": "18.33",
+            "ref_unit": "mm",
+            "sec_unit": "mm",
+            "ref_page": 3,
+            "sec_page": 3,
+            "ref_conditions": "Diameter : 18.33 \u00b1 0.07mm",
+            "sec_conditions": "3.10 Cell dimension | Diameter : 18.33 \u00b1 0.07mm. Repeated on Fig.1 (physical page 7) as '18.33\u00b10.07' with 'Unit : mm' and 'With tube'"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_discharge_capacity_m20c_pct = 60 pct (p.5)",
+            "sec": "capacity_retention_at_temp_pct = 60 pct (p.5)",
+            "ref_property": "rel_discharge_capacity_m20c_pct",
+            "sec_property": "capacity_retention_at_temp_pct",
+            "ref_value": "60",
+            "sec_value": "60",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature -20\u2103",
+            "sec_conditions": "7.6 Temperature dependence of discharge capacity: 'Capacity comparison at each temperature, measured with discharge constant current 10A and 2.5V cut-off after the standard charge.' Discharge temperature -20\u2103 \u2192 60%. Note: 'Percentage index of the discharge at 25\u2103 at 10A (=2,450mAh) is 100%.' 'If charge temperature and discharge temperature is not the same, the interval for temperature change is 3 hours.'"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_discharge_capacity_m10c_pct = 75 pct (p.5)",
+            "sec": "capacity_retention_at_temp_pct = 75 pct (p.5)",
+            "ref_property": "rel_discharge_capacity_m10c_pct",
+            "sec_property": "capacity_retention_at_temp_pct",
+            "ref_value": "75",
+            "sec_value": "75",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature -10\u2103",
+            "sec_conditions": "7.6 Temperature dependence of discharge capacity: discharge temperature -10\u2103 \u2192 75%, measured at 10A to 2.5V after the standard charge; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_discharge_capacity_0c_pct = 80 pct (p.5)",
+            "sec": "capacity_retention_at_temp_pct = 80 pct (p.5)",
+            "ref_property": "rel_discharge_capacity_0c_pct",
+            "sec_property": "capacity_retention_at_temp_pct",
+            "ref_value": "80",
+            "sec_value": "80",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature 0\u2103",
+            "sec_conditions": "7.6 Temperature dependence of discharge capacity: discharge temperature 0\u2103 \u2192 80%, measured at 10A to 2.5V after the standard charge; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_discharge_capacity_25c_pct = 100 pct (p.5)",
+            "sec": "capacity_retention_at_temp_pct = 100 pct (p.5)",
+            "ref_property": "rel_discharge_capacity_25c_pct",
+            "sec_property": "capacity_retention_at_temp_pct",
+            "ref_value": "100",
+            "sec_value": "100",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature 25\u2103",
+            "sec_conditions": "7.6 Temperature dependence of discharge capacity: discharge temperature 25\u2103 \u2192 100%, measured at 10A to 2.5V after the standard charge; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_discharge_capacity_60c_pct = 100 pct (p.5)",
+            "sec": "capacity_retention_at_temp_pct = 100 pct (p.5)",
+            "ref_property": "rel_discharge_capacity_60c_pct",
+            "sec_property": "capacity_retention_at_temp_pct",
+            "ref_value": "100",
+            "sec_value": "100",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "discharge constant current 10A and 2.5V cut-off after the standard charge; discharge temperature 60\u2103",
+            "sec_conditions": "7.6 Temperature dependence of discharge capacity: discharge temperature 60\u2103 \u2192 100%, measured at 10A to 2.5V after the standard charge; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_charge_capacity_0c_pct = 80 pct (p.5)",
+            "sec": "capacity_retention_at_temp_pct = 80 pct (p.5)",
+            "ref_property": "rel_charge_capacity_0c_pct",
+            "sec_property": "capacity_retention_at_temp_pct",
+            "ref_value": "80",
+            "sec_value": "80",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "charge temperature 0\u2103, discharge temperature 25\u2103; discharge constant current 10A and 2.5V cut-off",
+            "sec_conditions": "7.7 Temperature dependence of charge capacity: 'Capacity comparison at each temperature, measured with discharge constant current 10A and 2.5V cut-off after the standard charge.' Charge temperature 0\u2103, discharge temperature 25\u2103 \u2192 relative capacity 80%. 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_charge_capacity_5c_pct = 90 pct (p.5)",
+            "sec": "capacity_retention_at_temp_pct = 90 pct (p.5)",
+            "ref_property": "rel_charge_capacity_5c_pct",
+            "sec_property": "capacity_retention_at_temp_pct",
+            "ref_value": "90",
+            "sec_value": "90",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "charge temperature 5\u2103, discharge temperature 25\u2103; discharge constant current 10A and 2.5V cut-off",
+            "sec_conditions": "7.7 Temperature dependence of charge capacity: charge temperature 5\u2103, discharge temperature 25\u2103 \u2192 relative capacity 90%; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_charge_capacity_25c_pct = 100 pct (p.5)",
+            "sec": "capacity_retention_at_temp_pct = 100 pct (p.5)",
+            "ref_property": "rel_charge_capacity_25c_pct",
+            "sec_property": "capacity_retention_at_temp_pct",
+            "ref_value": "100",
+            "sec_value": "100",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "charge temperature 25\u2103, discharge temperature 25\u2103; discharge constant current 10A and 2.5V cut-off",
+            "sec_conditions": "7.7 Temperature dependence of charge capacity: charge temperature 25\u2103, discharge temperature 25\u2103 \u2192 relative capacity 100%; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_charge_capacity_45c_pct = 95 pct (p.5)",
+            "sec": "capacity_retention_at_temp_pct = 95 pct (p.5)",
+            "ref_property": "rel_charge_capacity_45c_pct",
+            "sec_property": "capacity_retention_at_temp_pct",
+            "ref_value": "95",
+            "sec_value": "95",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "charge temperature 45\u2103, discharge temperature 25\u2103; discharge constant current 10A and 2.5V cut-off",
+            "sec_conditions": "7.7 Temperature dependence of charge capacity: charge temperature 45\u2103, discharge temperature 25\u2103 \u2192 relative capacity 95%; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_charge_capacity_50c_pct = 95 pct (p.5)",
+            "sec": "capacity_retention_at_temp_pct = 95 pct (p.5)",
+            "ref_property": "rel_charge_capacity_50c_pct",
+            "sec_property": "capacity_retention_at_temp_pct",
+            "ref_value": "95",
+            "sec_value": "95",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "charge temperature 50\u2103, discharge temperature 25\u2103; discharge constant current 10A and 2.5V cut-off",
+            "sec_conditions": "7.7 Temperature dependence of charge capacity: charge temperature 50\u2103, discharge temperature 25\u2103 \u2192 relative capacity 95%; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_capacity_std_charge_pct = 100 pct (p.5)",
+            "sec": "relative_discharge_capacity_pct = 100 pct (p.5)",
+            "ref_property": "rel_capacity_std_charge_pct",
+            "sec_property": "relative_discharge_capacity_pct",
+            "ref_value": "100",
+            "sec_value": "100",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "Charge condition: Standard 1.25A, 125mA cut-off; discharge constant current 10A and 2.5V cut-off after the cell is charged with 4.2V",
+            "sec_conditions": "7.8 Charge rate capabilities: 'Discharge capacity is measured with constant current 10A and 2.5V cut-off after the cell is charged with 4.2V as follows.' Charge condition Standard 1.25A / cut-off 125mA \u2192 relative capacity 100%. Note: 'Percentage index of the discharge at 25\u2103 at 10A (=2,450mAh) is 100%.'"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_capacity_rapid_charge_pct = 98 pct (p.5)",
+            "sec": "relative_discharge_capacity_pct = 98 pct (p.5)",
+            "ref_property": "rel_capacity_rapid_charge_pct",
+            "sec_property": "relative_discharge_capacity_pct",
+            "ref_value": "98",
+            "sec_value": "98",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "Charge condition: Maximum rapid charge 4A, 100mA cut-off; discharge constant current 10A and 2.5V cut-off after the cell is charged with 4.2V",
+            "sec_conditions": "7.8 Charge rate capabilities: Charge condition Maximum rapid charge 4A / cut-off 100mA \u2192 relative capacity 98%; discharge measured at 10A to 2.5V; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_discharge_capacity_0_5a_pct = 100 pct (p.5)",
+            "sec": "relative_discharge_capacity_pct = 100 pct (p.5)",
+            "ref_property": "rel_discharge_capacity_0_5a_pct",
+            "sec_property": "relative_discharge_capacity_pct",
+            "ref_value": "100",
+            "sec_value": "100",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "Discharge condition: 0.50A, 2.5V cut-off after the standard charge",
+            "sec_conditions": "7.9 Discharge rate capabilities: 'Discharge capacity is measured with the various currents in under table and 2.5V cut-off after the standard charge.' Discharge current 0.50A \u2192 relative capacity 100%. 'Percentage index of the discharge at 25\u2103 at 10A (=2,450mAh) is 100%.'"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_discharge_capacity_5a_pct = 97 pct (p.5)",
+            "sec": "relative_discharge_capacity_pct = 97 pct (p.5)",
+            "ref_property": "rel_discharge_capacity_5a_pct",
+            "sec_property": "relative_discharge_capacity_pct",
+            "ref_value": "97",
+            "sec_value": "97",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "Discharge condition: 5A, 2.5V cut-off after the standard charge",
+            "sec_conditions": "7.9 Discharge rate capabilities: discharge current 5A \u2192 relative capacity 97%, measured to 2.5V after the standard charge; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_discharge_capacity_10a_pct = 100 pct (p.5)",
+            "sec": "relative_discharge_capacity_pct = 100 pct (p.5)",
+            "ref_property": "rel_discharge_capacity_10a_pct",
+            "sec_property": "relative_discharge_capacity_pct",
+            "ref_value": "100",
+            "sec_value": "100",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "Discharge condition: 10A, 2.5V cut-off after the standard charge",
+            "sec_conditions": "7.9 Discharge rate capabilities: discharge current 10A \u2192 relative capacity 100%, measured to 2.5V after the standard charge; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_discharge_capacity_15a_pct = 97 pct (p.5)",
+            "sec": "relative_discharge_capacity_pct = 97 pct (p.5)",
+            "ref_property": "rel_discharge_capacity_15a_pct",
+            "sec_property": "relative_discharge_capacity_pct",
+            "ref_value": "97",
+            "sec_value": "97",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "Discharge condition: 15A, 2.5V cut-off after the standard charge",
+            "sec_conditions": "7.9 Discharge rate capabilities: discharge current 15A \u2192 relative capacity 97%, measured to 2.5V after the standard charge; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "rel_discharge_capacity_20a_pct = 95 pct (p.5)",
+            "sec": "relative_discharge_capacity_pct = 95 pct (p.5)",
+            "ref_property": "rel_discharge_capacity_20a_pct",
+            "sec_property": "relative_discharge_capacity_pct",
+            "ref_value": "95",
+            "sec_value": "95",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "Discharge condition: 20A, 2.5V cut-off after the standard charge",
+            "sec_conditions": "7.9 Discharge rate capabilities: discharge current 20A \u2192 relative capacity 95%, measured to 2.5V after the standard charge; 100% = 2,450mAh at 25\u2103 at 10A"
+          },
+          {
+            "kind": "naming-only",
+            "ref": "ex_factory_soc_pct = 50 pct (p.5)",
+            "sec": "shipping_state_soc_pct = 50 pct (p.5)",
+            "ref_property": "ex_factory_soc_pct",
+            "sec_property": "shipping_state_soc_pct",
+            "ref_value": "50",
+            "sec_value": "50",
+            "ref_unit": "pct",
+            "sec_unit": "pct",
+            "ref_page": 5,
+            "sec_page": 5,
+            "ref_conditions": "The cell should be shipped in 50 \u00b1 5% charged state.",
+            "sec_conditions": "7.12 Status of the cell as of ex-factory: 'The cell should be shipped in 50 \u00b1 5% charged state. In this case, OCV is from 3.600V to 3.690V.'"
+          }
+        ],
+        "value": [],
+        "ref_only": [],
+        "sec_only": [
+          {
+            "kind": "second-only",
+            "sec": "std_charge_end_current_a = 0.125 A (p.3)",
+            "sec_property": "std_charge_end_current_a",
+            "sec_value": "0.125",
+            "sec_unit": "A",
+            "sec_page": 3,
+            "stratum": "specification row",
+            "sec_conditions": "3.3 Standard charge | CCCV, 1.25A, 4.20 \u00b1 0.05 V, 125mA cut-off"
+          },
+          {
+            "kind": "second-only",
+            "sec": "fast_charge_end_current_a = 0.1 A (p.3)",
+            "sec_property": "fast_charge_end_current_a",
+            "sec_value": "0.1",
+            "sec_unit": "A",
+            "sec_page": 3,
+            "stratum": "specification row",
+            "sec_conditions": "3.4 Rapid charge | CCCV, 4A, 4.20 \u00b1 0.05 V, 100mA cut-off"
+          },
+          {
+            "kind": "second-only",
+            "sec": "recommended_recharge_release_temp_c = 45 degC (p.3)",
+            "sec_property": "recommended_recharge_release_temp_c",
+            "sec_value": "45",
+            "sec_unit": "degC",
+            "sec_page": 3,
+            "stratum": "specification row",
+            "sec_conditions": "3.11 Operating temperature (surface temperature) | Charge : 0 to 50\u2103 (recommended recharge release < 45\u2103)"
+          },
+          {
+            "kind": "second-only",
+            "sec": "recommended_redischarge_release_temp_c = 60 degC (p.3)",
+            "sec_property": "recommended_redischarge_release_temp_c",
+            "sec_value": "60",
+            "sec_unit": "degC",
+            "sec_page": 3,
+            "stratum": "specification row",
+            "sec_conditions": "3.11 Operating temperature (surface temperature) | Discharge: -20 to 75\u2103 (recommended re-discharge release < 60\u2103)"
+          },
+          {
+            "kind": "second-only",
+            "sec": "storage_capacity_remaining_pct = 90 pct (p.5)",
+            "sec_property": "storage_capacity_remaining_pct",
+            "sec_value": "90",
+            "sec_unit": "pct",
+            "sec_page": 5,
+            "stratum": "specification row",
+            "sec_conditions": "7.11 Storage characteristics: 'Standard rated discharge capacity after storage for 1 month at 60\u2103 from the standard charged state is \u2265 90% of the initial 10A discharge capacity at 25\u2103'"
+          }
+        ]
+      }
+    }
+  ]
+}

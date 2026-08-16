@@ -1,0 +1,251 @@
+# Second-annotator extraction from the 1-page A123 APR18650M1A datasheet
+# (doc MD100009). `page` = physical PDF page.
+cell_model: A123 APR18650M1A
+manufacturer: A123 Systems
+source_document: a123_apr18650m1a.pdf
+
+annotator: A2
+annotated_date: 2026-08-14
+
+new_properties:
+  - name: std_charge_time_min
+    meaning: duration of the recommended standard charge, in minutes as printed
+  - name: fast_charge_time_min
+    meaning: duration of the recommended fast charge, in minutes as printed
+  - name: discharge_capacity_ah
+    meaning: capacity delivered to the stated end voltage at a stated discharge current, read off a discharge curve
+  - name: capacity_retention_at_cycle_pct
+    meaning: capacity remaining as a percentage of initial capacity after a stated number of cycles, read off a cycle-life curve
+
+# ---------------------------------------------------------------------------
+# CLAIMS
+# ---------------------------------------------------------------------------
+claims:
+
+  # --- specification list, page 1 ------------------------------------------
+
+  - property: nominal_capacity_ah
+    value: 1.1
+    unit: Ah
+    page: 1
+    stated_conditions:
+      text: "Nominal capacity and voltage: 1.1Ah, 3.3 V — no test conditions stated"
+
+  - property: nominal_voltage_v
+    value: 3.3
+    unit: V
+    page: 1
+    stated_conditions:
+      text: "Nominal capacity and voltage: 1.1Ah, 3.3 V — no test conditions stated"
+  - property: std_charge_current_a
+    value: 1.5
+    unit: A
+    page: 1
+    stated_conditions:
+      text: "Recommended standard charge method: 1.5A to 3.6V CCCV, 45 min"
+      charge_voltage_v: 3.6
+      charge_time_min: 45
+
+  - property: std_charge_time_min
+    value: 45
+    unit: min
+    page: 1
+    stated_conditions:
+      text: "Recommended standard charge method: 1.5A to 3.6V CCCV, 45 min"
+      charge_current_a: 1.5
+      charge_voltage_v: 3.6
+  - property: fast_charge_current_a
+    value: 4
+    unit: A
+    page: 1
+    stated_conditions:
+      text: "Recommended fast charge current: 4A to 3.6V CCCV, 15 min"
+      charge_voltage_v: 3.6
+      charge_time_min: 15
+
+  - property: fast_charge_time_min
+    value: 15
+    unit: min
+    page: 1
+    stated_conditions:
+      text: "Recommended fast charge current: 4A to 3.6V CCCV, 15 min"
+      charge_current_a: 4
+      charge_voltage_v: 3.6
+  - property: max_cont_discharge_a
+    value: 30
+    unit: A
+    page: 1
+    stated_conditions:
+      text: "Maximum continuous discharge: 30A — no temperature, cut-off voltage or duration stated"
+    notes: "the word 'Maximum' is part of the property itself here, not a bound on a
+            differently-named quantity, so no direction note"
+
+  - property: cycle_life_cycles
+    value: 1000
+    unit: cycles
+    page: 1
+    stated_conditions:
+      text: "Cycle life at 5C discharge, 100% DOD: Over 1,000 cycles"
+      discharge_c_rate: 5
+      dod_pct: 100
+    notes: "lower bound; document says 'Over 1,000 cycles'."
+
+  - property: charge_voltage_v
+    value: 3.6
+    unit: V
+    page: 1
+    stated_conditions:
+      text: "Recommended charge and cut-off V at 25°C: 3.6V to 2V"
+      temperature_c: 25
+    notes: "repeated value: 3.6V also appears in the standard-charge row ('1.5A to
+            3.6V CCCV, 45 min') and the fast-charge row ('4A to 3.6V CCCV, 15 min'),
+            both on page 1 and both without a stated temperature."
+
+  - property: discharge_cutoff_v
+    value: 2
+    unit: V
+    page: 1
+    stated_conditions:
+      text: "Recommended charge and cut-off V at 25°C: 3.6V to 2V"
+      temperature_c: 25
+  - property: operating_temp_range_c
+    value: [-30, 60]
+    unit: degC
+    page: 1
+    stated_conditions:
+      text: "Operating temperature range: -30°C to +60°C"
+
+  - property: storage_temp_range_c
+    value: [-50, 60]
+    unit: degC
+    page: 1
+    stated_conditions:
+      text: "Storage temperature range: -50°C to +60°C"
+
+  - property: mass_g
+    value: 39
+    unit: g
+    page: 1
+    stated_conditions:
+      text: "Core cell weight: 39 grams"
+    notes: "document says 'Core cell weight', not simply 'weight'; recorded as
+            mass_g since it is the only mass figure given."
+
+  # --- plot: "Discharge Characteristics, Room Temperature" -----------
+
+  - property: discharge_capacity_ah
+    value: 1.03
+    unit: Ah
+    page: 1
+    stated_conditions:
+      text: "Plot 'Discharge Characteristics, Room Temperature': the 5A curve
+             reaches the 2.0 V bottom of the voltage axis at approximately
+             1.03 Ah on the capacity axis"
+      discharge_current_a: 5
+      discharge_cutoff_v: 2
+    notes: "read from graph; coined name."
+
+  - property: discharge_capacity_ah
+    value: 1.03
+    unit: Ah
+    page: 1
+    stated_conditions:
+      text: "Plot 'Discharge Characteristics, Room Temperature': the 10A curve
+             reaches the 2.0 V bottom of the voltage axis at approximately
+             1.03 Ah on the capacity axis"
+      discharge_current_a: 10
+      discharge_cutoff_v: 2
+    notes: "read from graph."
+
+  - property: discharge_capacity_ah
+    value: 1.01
+    unit: Ah
+    page: 1
+    stated_conditions:
+      text: "Plot 'Discharge Characteristics, Room Temperature': the 20A curve
+             reaches the 2.0 V bottom of the voltage axis at approximately
+             1.01 Ah on the capacity axis"
+      discharge_current_a: 20
+      discharge_cutoff_v: 2
+    notes: "read from graph; clearly terminates left of the two green curves, so the
+            ordering is legible even though the absolute value is not precise"
+
+  # --- plot: "Projected Cycle Life, 100% DOD, 1C/1C, Room Temperature" ------
+
+  - property: capacity_retention_at_cycle_pct
+    value: 95
+    unit: pct
+    page: 1
+    stated_conditions:
+      text: "Plot 'Projected Cycle Life, 100% DOD, 1C/1C, Room Temperature':
+             the curve is at approximately 95% of initial capacity at 1000 cycles"
+      dod_pct: 100
+      charge_c_rate: 1
+      discharge_c_rate: 1
+      cycles: 1000
+    notes: "read from graph; coined name."
+
+  - property: capacity_retention_at_cycle_pct
+    value: 94
+    unit: pct
+    page: 1
+    stated_conditions:
+      text: "Plot 'Projected Cycle Life, 100% DOD, 1C/1C, Room Temperature':
+             the curve ends at approximately 94% of initial capacity at
+             approximately 1700 cycles, the right-hand end of the plotted data"
+      dod_pct: 100
+      charge_c_rate: 1
+      discharge_c_rate: 1
+      cycles: 1700
+    notes: "read from graph; both the retention and the cycle number are graph
+            reads, so this claim is doubly imprecise (cycle number ±30)."
+
+# ---------------------------------------------------------------------------
+# OMISSIONS — properties actively searched for and confirmed ABSENT.
+# ---------------------------------------------------------------------------
+omissions:
+
+  - property: cycle_life_retention_pct
+    note: "the cycle-life row states 'Over 1,000 cycles' at 5C / 100% DOD but never
+           says what capacity threshold defines end of life — no '80% of initial',
+           no '≥X% of nominal' anywhere. Searched the specification list, the
+           title and axes of both plots, and the footnote line. The
+           projected-cycle-life plot shows retention as a curve but does not name
+           a threshold. This is the significant absence in this document:
+           the headline life claim is not falsifiable as printed"
+
+  - property: internal_impedance_mohm
+    note: "no AC (1 kHz) or DC internal resistance figure anywhere. Searched the
+           specification list and both plots; the sheet emphasises 'very high
+           power' qualitatively but gives no impedance number"
+
+  - property: gravimetric_energy_density_wh_kg
+    note: "no Wh/kg or Wh/L figure. Searched the specification list. The document
+           gives capacity (1.1 Ah), nominal voltage (3.3 V) and weight (39 g),
+           from which one could compute it, but never states an energy density —
+           and computing it would put a number in this file that the document does
+           not contain"
+
+  - property: minimum_capacity_ah
+    note: "only a nominal capacity is given; no guaranteed or minimum capacity, and
+           no tolerance on the 1.1 Ah. Searched the specification list and the
+           footnote, which disclaims 'Preliminary specifications' generally but
+           states no bound"
+
+  - property: std_discharge_current_a
+    note: "no standard/reference discharge current is defined. The document gives a
+           maximum continuous discharge (30A) and plots three rates (5/10/20A) but
+           never nominates one as the standard condition, which is why the nominal
+           capacity claim above has no discharge current attached. Searched the
+           specification list and the discharge plot"
+
+  - property: charge_temp_range_c
+    note: "the document gives a single 'Operating temperature range' (-30 to +60°C)
+           and a storage range, but never separates the allowed charge temperature
+           window from the discharge one — a distinction most cell datasheets make
+           and this one does not. Searched the specification list"
+
+  - property: discharge_temp_range_c
+    note: "absent for the same reason as charge_temp_range_c: only an undivided
+           'Operating temperature range' is given. Recorded as its own omission
+           because the vocabulary separates the two and this document does not"

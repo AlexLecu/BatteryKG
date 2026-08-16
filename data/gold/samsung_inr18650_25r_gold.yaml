@@ -27,6 +27,7 @@ manufacturer: Samsung SDI
 source_document: Samsung-INR18650-25R-Datasheet.pdf
 source_url: https://www.dnkpower.com/wp-content/uploads/2018/04/Samsung-INR18650-25R-Datasheet.pdf
 retrieved: 2026-08-06
+annotator: A1
 
 # Properties verified ABSENT — document read exhaustively (all 16 numbered
 # pages, including Fig.1/Fig.2, handling, remarks and revision history).

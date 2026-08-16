@@ -1,0 +1,671 @@
+# Second-annotator extraction from the Samsung SDI "Specification of product",
+# Spec. No. INR18650-25R, Version 1.0, Mar. 2014.
+# `page` = physical PDF page; the printed footer "- N/16 -" sits on page N+1.
+cell_model: Samsung INR18650-25R
+manufacturer: Samsung SDI Co., Ltd.
+source_document: samsung_inr18650_25r.pdf
+
+annotator: A2
+annotated_date: 2026-08-14
+
+new_properties:
+  - name: std_charge_time_min
+    meaning: duration of the standard charge, in minutes as printed
+  - name: fast_charge_time_min
+    meaning: duration of the rapid charge, in minutes as printed
+  - name: std_charge_end_current_a
+    meaning: charge-termination cut-off current of the standard charge, converted mA to A
+  - name: fast_charge_end_current_a
+    meaning: charge-termination cut-off current of the rapid charge, converted mA to A
+  - name: height_mm
+    meaning: cell height stated as a specification value
+  - name: diameter_mm
+    meaning: cell diameter stated as a specification value
+  - name: recommended_recharge_release_temp_c
+    meaning: cell surface temperature below which recharging is recommended to be released/resumed
+  - name: recommended_redischarge_release_temp_c
+    meaning: cell surface temperature below which re-discharging is recommended to be released/resumed
+  - name: relative_discharge_capacity_pct
+    meaning: discharge capacity under a stated charge or discharge rate, as a percentage of the 10A/25℃ reference capacity
+  - name: shipping_state_soc_pct
+    meaning: state of charge the cells are shipped at, as a percentage of full charge
+  - name: ex_factory_ocv_range_v
+    meaning: open-circuit voltage window corresponding to the ex-factory state of charge
+
+# ---------------------------------------------------------------------------
+# CLAIMS
+# ---------------------------------------------------------------------------
+claims:
+
+  # === Section 3.0, Nominal specifications — physical page 3 (printed 2/16) =
+
+  - property: nominal_voltage_v
+    value: 3.6
+    unit: V
+    page: 3
+    stated_conditions:
+      text: "3.2 Nominal voltage | 3.6V"
+    notes: "no discharge current, temperature or averaging basis stated for this
+            row, unlike the capacity rows above and below it"
+
+  - property: std_charge_current_a
+    value: 1.25
+    unit: A
+    page: 3
+    stated_conditions:
+      text: "3.3 Standard charge | CCCV, 1.25A, 4.20 ± 0.05 V, 125mA cut-off"
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+      temperature_c: 25
+      charge_c_rate: 0.5
+    notes: "cross-reference resolved: 7.1 on physical page 4 restates this as
+            'charge current 0.5CmA (1,250mA), constant voltage 4.2V and 125mA cut-
+            off in CV mode at 25℃', which is where the temperature and the 0.5C rate
+            come from."
+
+  - property: charge_voltage_v
+    value: 4.20
+    unit: V
+    page: 3
+    stated_conditions:
+      text: "3.3 Standard charge | CCCV, 1.25A, 4.20 ± 0.05 V, 125mA cut-off"
+      charge_current_a: 1.25
+      end_current_ma: 125
+      temperature_c: 25
+    notes: "only the central value 4.20 is recorded; the ± 0.05 stays in the quoted
+            text."
+
+  - property: std_charge_end_current_a
+    value: 0.125
+    unit: A
+    page: 3
+    stated_conditions:
+      text: "3.3 Standard charge | CCCV, 1.25A, 4.20 ± 0.05 V, 125mA cut-off"
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      temperature_c: 25
+    notes: "coined name; 125mA converted to A as the unit list has no mA."
+
+  - property: fast_charge_current_a
+    value: 4
+    unit: A
+    page: 3
+    stated_conditions:
+      text: "3.4 Rapid charge | CCCV, 4A, 4.20 ± 0.05 V, 100mA cut-off"
+      charge_voltage_v: 4.20
+      end_current_ma: 100
+      temperature_c: 25
+    notes: "cross-reference resolved: 7.2 adds 'at 25℃'."
+
+  - property: fast_charge_end_current_a
+    value: 0.1
+    unit: A
+    page: 3
+    stated_conditions:
+      text: "3.4 Rapid charge | CCCV, 4A, 4.20 ± 0.05 V, 100mA cut-off"
+      charge_current_a: 4
+      charge_voltage_v: 4.20
+      temperature_c: 25
+  - property: std_charge_time_min
+    value: 180
+    unit: min
+    page: 3
+    stated_conditions:
+      text: "3.6 Charging time | Standard charge : 180min / 125mA cut-off"
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+    notes: "coined name; kept in minutes as printed, not converted to hours."
+
+  - property: fast_charge_time_min
+    value: 60
+    unit: min
+    page: 3
+    stated_conditions:
+      text: "3.6 Charging time | Rapid charge: 60min (at 25℃) / 100mA cut-off"
+      temperature_c: 25
+      charge_current_a: 4
+      charge_voltage_v: 4.20
+      end_current_ma: 100
+    notes: "coined name; kept in minutes."
+
+  - property: max_cont_discharge_a
+    value: 20
+    unit: A
+    page: 3
+    stated_conditions:
+      text: "3.7 Max. continuous discharge (Continuous) | 20A(at 25℃), 60% at 250 cycle"
+      temperature_c: 25
+    notes: "the trailing '60% at 250 cycle' in this same row is the cycle-life
+            claim, recorded once from 7.10 on physical page 5 where it is stated in
+            full with its 1,500mAh threshold."
+
+  - property: discharge_cutoff_v
+    value: 2.5
+    unit: V
+    page: 3
+    stated_conditions:
+      text: "3.8 Discharge cut-off voltage / End of discharge | 2.5V"
+    notes: "repeated throughout section 7 (7.3, 7.4, 7.6, 7.7, 7.8, 7.9) and in the
+            3.1 row; recorded once here"
+
+  - property: mass_g
+    value: 45.0
+    unit: g
+    page: 3
+    stated_conditions:
+      text: "3.9 Cell weight | 45.0g max"
+  - property: height_mm
+    value: 64.85
+    unit: mm
+    page: 3
+    stated_conditions:
+      text: "3.10 Cell dimension | Height : 64.85 ± 0.15mm. Repeated on Fig.1
+             (physical page 7) as '64.85± 0.15' with 'Unit : mm' and 'With tube'"
+  - property: diameter_mm
+    value: 18.33
+    unit: mm
+    page: 3
+    stated_conditions:
+      text: "3.10 Cell dimension | Diameter : 18.33 ± 0.07mm. Repeated on Fig.1
+             (physical page 7) as '18.33±0.07' with 'Unit : mm' and 'With tube'"
+    notes: "coined name; central value only."
+
+  - property: charge_temp_range_c
+    value: [0, 50]
+    unit: degC
+    page: 3
+    stated_conditions:
+      text: "3.11 Operating temperature (surface temperature) | Charge : 0 to 50℃
+             (recommended recharge release < 45℃)"
+    notes: "the document scopes this to cell SURFACE temperature."
+
+  - property: discharge_temp_range_c
+    value: [-20, 75]
+    unit: degC
+    page: 3
+    stated_conditions:
+      text: "3.11 Operating temperature (surface temperature) | Discharge: -20 to
+             75℃ (recommended re-discharge release < 60℃)"
+  - property: recommended_recharge_release_temp_c
+    value: 45
+    unit: degC
+    page: 3
+    stated_conditions:
+      text: "3.11 Operating temperature (surface temperature) | Charge : 0 to 50℃
+             (recommended recharge release < 45℃)"
+    notes: "upper bound — the document writes '< 45℃'."
+
+  - property: recommended_redischarge_release_temp_c
+    value: 60
+    unit: degC
+    page: 3
+    stated_conditions:
+      text: "3.11 Operating temperature (surface temperature) | Discharge: -20 to
+             75℃ (recommended re-discharge release < 60℃)"
+    notes: "upper bound — '< 60℃'."
+
+  - property: storage_temp_range_c
+    value: [-30, 25]
+    unit: degC
+    page: 3
+    stated_conditions:
+      text: "3.12 Storage temperature (Recovery 90% after storage) | 1.5 year |
+             -30~25℃(1*)"
+      duration_years: 1.5
+    notes: "one of three storage rows differing only in duration."
+
+  - property: storage_temp_range_c
+    value: [-30, 45]
+    unit: degC
+    page: 3
+    stated_conditions:
+      text: "3.12 Storage temperature (Recovery 90% after storage) | 3 months |
+             -30~45℃(1*)"
+      duration_months: 3
+
+  - property: storage_temp_range_c
+    value: [-30, 60]
+    unit: degC
+    page: 3
+    stated_conditions:
+      text: "3.12 Storage temperature (Recovery 90% after storage) | 1 month |
+             -30~60℃(1*)"
+      duration_months: 1
+
+  - property: storage_capacity_recovery_pct
+    value: 90
+    unit: pct
+    page: 3
+    stated_conditions:
+      text: "3.12 Storage temperature (Recovery 90% after storage), Note (1): 'If
+             the cell is kept as ex-factory status (50±5% SOC, 25℃), the capacity
+             recovery rate is more than 90% of 10A discharge capacity. 100% is
+             2,450mAh at 25℃ with SOC 100% after formation.'"
+      soc_pct: 50
+      temperature_c: 25
+      discharge_current_a: 10
+    notes: "lower bound — 'more than 90%'."
+
+  # === Section 7.0, Characteristics — physical page 4 (printed 3/16) =======
+
+  - property: nominal_capacity_ah
+    value: 2.5
+    unit: Ah
+    page: 4
+    stated_conditions:
+      text: "7.3 Nominal discharge capacity: 'The standard discharge capacity is the
+             initial discharge capacity of the cell, which is measured with
+             discharge current of 500mA(0.2C) with 2.5V cut-off at 25℃ within 1hour
+             after the standard charge.' Nominal discharge capacity ≥ 2,500mAh.
+             'Which complying to the minimum capacity of IEC61960 standard.'"
+      discharge_current_a: 0.5
+      discharge_c_rate: 0.2
+      discharge_cutoff_v: 2.5
+      temperature_c: 25
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+    notes: "lower bound — '≥'."
+
+  - property: rated_capacity_ah
+    value: 2.45
+    unit: Ah
+    page: 4
+    stated_conditions:
+      text: "7.4 Standard rated discharge capacity: 'The standard rated discharge is
+             the discharge capacity of the cell, which is measured with discharge
+             current of 10A with 2.5V cut-off at 25℃ within 1hour after the
+             standard charge.' Standard rated discharge capacity ≥ 2,450mAh"
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+      temperature_c: 25
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+    notes: "lower bound — '≥'."
+
+  - property: internal_impedance_mohm
+    value: 18
+    unit: mOhm
+    page: 4
+    stated_conditions:
+      text: "7.5 Initial internal impedance: 'Initial internal impedance measured at
+             AC 1kHz after standard charge.' Initial internal impedance ≤ 18mΩ"
+      frequency_hz: 1000
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+    notes: "upper bound — '≤'. No temperature is stated for the impedance
+            measurement itself, so none is recorded — the blanket 25±5℃ of 6.1 is a
+            whole-test-setup condition, not a per-claim one"
+
+  # === 7.6 Temperature dependence of DISCHARGE capacity — grid, 5 cells ====
+  # Header is printed on physical page 4, the values on physical page 5
+  # the page recorded is the one the value itself appears on.
+
+  - property: capacity_retention_at_temp_pct
+    value: 60
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.6 Temperature dependence of discharge capacity: 'Capacity comparison
+             at each temperature, measured with discharge constant current 10A and
+             2.5V cut-off after the standard charge.' Discharge temperature -20℃ →
+             60%. Note: 'Percentage index of the discharge at 25℃ at 10A
+             (=2,450mAh) is 100%.' 'If charge temperature and discharge temperature
+             is not the same, the interval for temperature change is 3 hours.'"
+      discharge_temperature_c: -20
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+    notes: "grid cell = own claim."
+
+  - property: capacity_retention_at_temp_pct
+    value: 75
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.6 Temperature dependence of discharge capacity: discharge temperature
+             -10℃ → 75%, measured at 10A to 2.5V after the standard charge;
+             100% = 2,450mAh at 25℃ at 10A"
+      discharge_temperature_c: -10
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+  - property: capacity_retention_at_temp_pct
+    value: 80
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.6 Temperature dependence of discharge capacity: discharge temperature
+             0℃ → 80%, measured at 10A to 2.5V after the standard charge;
+             100% = 2,450mAh at 25℃ at 10A"
+      discharge_temperature_c: 0
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+  - property: capacity_retention_at_temp_pct
+    value: 100
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.6 Temperature dependence of discharge capacity: discharge temperature
+             25℃ → 100%, measured at 10A to 2.5V after the standard charge;
+             100% = 2,450mAh at 25℃ at 10A"
+      discharge_temperature_c: 25
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+  - property: capacity_retention_at_temp_pct
+    value: 100
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.6 Temperature dependence of discharge capacity: discharge temperature
+             60℃ → 100%, measured at 10A to 2.5V after the standard charge;
+             100% = 2,450mAh at 25℃ at 10A"
+      discharge_temperature_c: 60
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+  # === 7.7 Temperature dependence of CHARGE capacity — grid, 5 cells =======
+
+  - property: capacity_retention_at_temp_pct
+    value: 80
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.7 Temperature dependence of charge capacity: 'Capacity comparison at
+             each temperature, measured with discharge constant current 10A and
+             2.5V cut-off after the standard charge.' Charge temperature 0℃,
+             discharge temperature 25℃ → relative capacity 80%.
+             100% = 2,450mAh at 25℃ at 10A"
+      charge_temperature_c: 0
+      discharge_temperature_c: 25
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+  - property: capacity_retention_at_temp_pct
+    value: 90
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.7 Temperature dependence of charge capacity: charge temperature 5℃,
+             discharge temperature 25℃ → relative capacity 90%;
+             100% = 2,450mAh at 25℃ at 10A"
+      charge_temperature_c: 5
+      discharge_temperature_c: 25
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+  - property: capacity_retention_at_temp_pct
+    value: 100
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.7 Temperature dependence of charge capacity: charge temperature 25℃,
+             discharge temperature 25℃ → relative capacity 100%;
+             100% = 2,450mAh at 25℃ at 10A"
+      charge_temperature_c: 25
+      discharge_temperature_c: 25
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+    notes: "grid cell; the 100% reference cell of this grid"
+
+  - property: capacity_retention_at_temp_pct
+    value: 95
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.7 Temperature dependence of charge capacity: charge temperature 45℃,
+             discharge temperature 25℃ → relative capacity 95%;
+             100% = 2,450mAh at 25℃ at 10A"
+      charge_temperature_c: 45
+      discharge_temperature_c: 25
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+  - property: capacity_retention_at_temp_pct
+    value: 95
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.7 Temperature dependence of charge capacity: charge temperature 50℃,
+             discharge temperature 25℃ → relative capacity 95%;
+             100% = 2,450mAh at 25℃ at 10A"
+      charge_temperature_c: 50
+      discharge_temperature_c: 25
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+  # === 7.8 Charge rate capabilities — grid, 2 cells ========================
+
+  - property: relative_discharge_capacity_pct
+    value: 100
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.8 Charge rate capabilities: 'Discharge capacity is measured with
+             constant current 10A and 2.5V cut-off after the cell is charged with
+             4.2V as follows.' Charge condition Standard 1.25A / cut-off 125mA →
+             relative capacity 100%. Note: 'Percentage index of the discharge at
+             25℃ at 10A (=2,450mAh) is 100%.'"
+      charge_current_a: 1.25
+      charge_voltage_v: 4.2
+      end_current_ma: 125
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+    notes: "grid cell = own claim; coined name because the varying quantity here is
+            the CHARGE RATE, not a temperature, so capacity_retention_at_temp_pct
+            does not fit."
+
+  - property: relative_discharge_capacity_pct
+    value: 98
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.8 Charge rate capabilities: Charge condition Maximum rapid charge 4A
+             / cut-off 100mA → relative capacity 98%; discharge measured at 10A to
+             2.5V; 100% = 2,450mAh at 25℃ at 10A"
+      charge_current_a: 4
+      charge_voltage_v: 4.2
+      end_current_ma: 100
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+    notes: "grid cell."
+
+  # === 7.9 Discharge rate capabilities — grid, 5 cells =====================
+
+  - property: relative_discharge_capacity_pct
+    value: 100
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.9 Discharge rate capabilities: 'Discharge capacity is measured with
+             the various currents in under table and 2.5V cut-off after the standard
+             charge.' Discharge current 0.50A → relative capacity 100%.
+             'Percentage index of the discharge at 25℃ at 10A (=2,450mAh) is 100%.'"
+      discharge_current_a: 0.5
+      discharge_cutoff_v: 2.5
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+    notes: "grid cell. this grid is non-monotonic — 0.50A and 10A both read 100%
+            while the intermediate 5A reads 97%"
+
+  - property: relative_discharge_capacity_pct
+    value: 97
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.9 Discharge rate capabilities: discharge current 5A → relative
+             capacity 97%, measured to 2.5V after the standard charge;
+             100% = 2,450mAh at 25℃ at 10A"
+      discharge_current_a: 5
+      discharge_cutoff_v: 2.5
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+  - property: relative_discharge_capacity_pct
+    value: 100
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.9 Discharge rate capabilities: discharge current 10A → relative
+             capacity 100%, measured to 2.5V after the standard charge;
+             100% = 2,450mAh at 25℃ at 10A"
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+    notes: "grid cell; the reference cell of this grid, 100% by construction"
+
+  - property: relative_discharge_capacity_pct
+    value: 97
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.9 Discharge rate capabilities: discharge current 15A → relative
+             capacity 97%, measured to 2.5V after the standard charge;
+             100% = 2,450mAh at 25℃ at 10A"
+      discharge_current_a: 15
+      discharge_cutoff_v: 2.5
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+  - property: relative_discharge_capacity_pct
+    value: 95
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.9 Discharge rate capabilities: discharge current 20A → relative
+             capacity 95%, measured to 2.5V after the standard charge;
+             100% = 2,450mAh at 25℃ at 10A"
+      discharge_current_a: 20
+      discharge_cutoff_v: 2.5
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+  # === 7.10-7.12 — physical page 5 ========================================
+
+  - property: cycle_life_cycles
+    value: 250
+    unit: cycles
+    page: 5
+    stated_conditions:
+      text: "7.10 Cycle life: 'With standard charge and maximum continuous
+             discharge. Capacity after 250cycles, Capacity ≥ 1,500mAh (60% of the
+             nominal capacity at 25℃)'"
+      charge_current_a: 1.25
+      charge_voltage_v: 4.20
+      end_current_ma: 125
+      discharge_current_a: 20
+      discharge_cutoff_v: 2.5
+      temperature_c: 25
+      end_condition: "capacity >= 1500 mAh, i.e. 60% of nominal capacity, at cycle 250"
+    notes: "pass criterion, not typical life."
+
+  - property: cycle_life_retention_pct
+    value: 60
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.10 Cycle life: end-of-life threshold — 'Capacity ≥ 1,500mAh (60% of
+             the nominal capacity at 25℃)' after 250 cycles"
+      temperature_c: 25
+      cycles: 250
+    notes: "lower bound."
+
+  - property: storage_capacity_remaining_pct
+    value: 90
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.11 Storage characteristics: 'Standard rated discharge capacity after
+             storage for 1 month at 60℃ from the standard charged state is ≥ 90% of
+             the initial 10A discharge capacity at 25℃'"
+      storage_temperature_c: 60
+      duration_months: 1
+      temperature_c: 25
+      discharge_current_a: 10
+      discharge_cutoff_v: 2.5
+    notes: "lower bound — '≥'."
+
+  - property: shipping_state_soc_pct
+    value: 50
+    unit: pct
+    page: 5
+    stated_conditions:
+      text: "7.12 Status of the cell as of ex-factory: 'The cell should be shipped in
+             50 ± 5% charged state. In this case, OCV is from 3.600V to 3.690V.'"
+    notes: "coined name. only the central value 50 is recorded; the ± 5 stays in the
+            quoted text."
+
+  - property: ex_factory_ocv_range_v
+    value: [3.600, 3.690]
+    unit: V
+    page: 5
+    stated_conditions:
+      text: "7.12 Status of the cell as of ex-factory: 'The cell should be shipped in
+             50 ± 5% charged state. In this case, OCV is from 3.600V to 3.690V.'"
+      soc_pct: 50
+# ---------------------------------------------------------------------------
+# OMISSIONS — properties actively searched for and confirmed ABSENT.
+# ---------------------------------------------------------------------------
+omissions:
+
+  - property: max_charge_voltage_v
+    note: "no absolute maximum charge voltage is stated. 3.3 and 3.4 give the
+           standard and rapid charge voltage as 4.20 ± 0.05 V, and 7.8 says the
+           cell 'is charged with 4.2V', but nothing states a not-to-exceed limit or
+           what happens above it. Searched the whole of section 3.0, section 7.0
+           and the handling precautions on physical pages 9-11, which discuss
+           over-charge protection qualitatively but state no voltage"
+
+  - property: max_charge_current_a
+    note: "no maximum charge current as such. 3.4 gives a rapid charge current of
+           4A and 7.8 labels it 'Maximum rapid charge 4A', which is the closest the
+           document comes, but it is presented as the rapid-charge condition rather
+           than as an absolute ceiling, and no other charge current is permitted or
+           forbidden by name. Searched sections 3.0, 7.2, 7.8 and the design
+           precautions on physical pages 10-11"
+
+  - property: gravimetric_energy_density_wh_kg
+    note: "no Wh/kg figure. Searched sections 3.0 and 7.0. The document gives
+           capacity, nominal voltage and a maximum weight, but '45.0g max' is a
+           bound rather than an actual mass, so an energy density is not even
+           computable from stated values without assuming the weight — and
+           computing it would introduce a number the document does not state"
+
+  - property: volumetric_energy_density_wh_l
+    note: "no Wh/L figure. Searched sections 3.0 and 7.0 and both figures; the
+           dimensions in 3.10 and Fig.1 would allow a volume to be computed but the
+           document never states an energy density"
+
+  - property: storage_capacity_remaining_pct
+    note: "partial absence worth recording alongside the 7.11 claim: the three
+           storage-temperature rows in 3.12 cover 1 month, 3 months and 1.5 years,
+           but the only measured storage claims are for ONE month — 7.11 (1 month
+           at 60℃ from the charged state) and Note (1) (ex-factory state). Neither
+           the 3-month nor the 1.5-year row has any retained- or recovered-capacity
+           figure attached, so the long-duration limits are permissions without an
+           associated performance guarantee. Searched 3.12, its Note (1), 7.11 and
+           11.1 (which recommends dry low-temperature storage for 3 months or more
+           but states no number)"
+
+  - property: cycle_life_cycles
+    note: "partial absence: cycle life is specified at exactly one condition — the
+           standard charge with the 20A maximum continuous discharge, 250 cycles.
+           anticipates a life claim per rate, and this document plots capacity
+           against five discharge rates in 7.9 and two charge rates in 7.8 without
+           giving a cycle life for any of them. So the cycle life at the standard
+           0.2C or 10A discharge — the rates its own capacity claims are defined at
+           — is unstated. Searched 3.7, 7.8, 7.9 and 7.10"

@@ -1,0 +1,2606 @@
+{
+ "raw_runs": [
+  [
+   {
+    "property": "nominal_capacity_ah",
+    "value": 2.5,
+    "unit": "Ah",
+    "page": 3,
+    "stated_conditions": {
+     "text": "Charge: 1.25A, 4.20V,CCCV 125mA cut-off, Discharge: 0.2C, 2.5V discharge cut-off"
+    },
+    "source_unit": "p3_t1_r1",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "nominal_voltage_v",
+    "value": 3.6,
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r2",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_charge_current_a",
+    "value": 1.25,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r3",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "charge_voltage_v",
+    "value": [
+     4.15,
+     4.25
+    ],
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r3",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "discharge_cutoff_v",
+    "value": 0.125,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r3",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "max_charge_current_a",
+    "value": 4,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r4",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "max_charge_voltage_v",
+    "value": [
+     4.15,
+     4.25
+    ],
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r4",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_charge_current_a",
+    "value": 4,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r4",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "discharge_cutoff_v",
+    "value": "unspecified",
+    "unit": "unspecified",
+    "page": 3,
+    "stated_conditions": {
+     "text": "100mA cut-off"
+    },
+    "source_unit": "p3_t1_r4",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_charge_time_h",
+    "value": "unspecified",
+    "unit": "unspecified",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r4",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "fast_charge_time_h",
+    "value": 1,
+    "unit": "h",
+    "page": 3,
+    "stated_conditions": {
+     "text": "at 25℃"
+    },
+    "source_unit": "p3_t1_r4",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_charge_time_h",
+    "value": 3,
+    "unit": "h",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_charge_current_a",
+    "value": 0.125,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "fast_charge_time_h",
+    "value": 1,
+    "unit": "h",
+    "page": 3,
+    "stated_conditions": {
+     "text": "at 25°C"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "fast_charge_current_a",
+    "value": "unspecified",
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "charge_cutoff_current_a",
+    "value": 0.125,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "fast_charge_cutoff_current_a",
+    "value": 0.1,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "at 25°C"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "max_cont_discharge_a",
+    "value": 20,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "at 25℃",
+     "temperature_c": 25
+    },
+    "source_unit": "p3_t1_r6",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "cycle_life_retention_pct",
+    "value": 60,
+    "unit": "pct",
+    "page": 3,
+    "stated_conditions": {
+     "text": "at 250 cycle",
+     "cycles": 250
+    },
+    "source_unit": "p3_t1_r6",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "discharge_cutoff_v",
+    "value": 2.5,
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r7",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "mass_g",
+    "value": 45.0,
+    "unit": "g",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r8",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "height_mm",
+    "value": [
+     64.7,
+     65.0
+    ],
+    "unit": "mm",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r9",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "diameter_mm",
+    "value": [
+     18.26,
+     18.4
+    ],
+    "unit": "mm",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r9",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "charge_temp_range_c",
+    "value": [
+     0,
+     50
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r10",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "discharge_temp_range_c",
+    "value": [
+     -20,
+     75
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r10",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "storage_temp_range_c",
+    "value": [
+     -30,
+     25
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "1.5 year",
+     "duration": "1.5 year"
+    },
+    "source_unit": "p3_t1_r11",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "storage_temp_range_c",
+    "value": [
+     -30,
+     45
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "3 months"
+    },
+    "source_unit": "p3_t1_r11",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "storage_temp_range_c",
+    "value": [
+     -30,
+     60
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "1 month"
+    },
+    "source_unit": "p3_t1_r11",
+    "unit_kind": "spec_row"
+   },
+   {
+    "value": 60,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "temperature_c": -20
+    },
+    "property": "rel_discharge_capacity_m20c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": -20
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 75,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "temperature_c": -10
+    },
+    "property": "rel_discharge_capacity_m10c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": -10
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 80,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "temperature_c": 0
+    },
+    "property": "rel_discharge_capacity_0c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 0
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "temperature_c": 25
+    },
+    "property": "rel_discharge_capacity_25c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 25
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "temperature_c": 60
+    },
+    "property": "rel_discharge_capacity_60c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 60
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 80,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "discharge_current_a": 10,
+     "discharge_cutoff_v": 2.5
+    },
+    "property": "rel_charge_capacity_0c_pct",
+    "grid_axis": {
+     "family": "rel_charge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 0
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 90,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "discharge_current_a": 10,
+     "discharge_cutoff_v": 2.5
+    },
+    "property": "rel_charge_capacity_5c_pct",
+    "grid_axis": {
+     "family": "rel_charge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 5
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "discharge_current_a": 10,
+     "discharge_cutoff_v": 2.5
+    },
+    "property": "rel_charge_capacity_25c_pct",
+    "grid_axis": {
+     "family": "rel_charge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 25
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 95,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "discharge_current_a": 10,
+     "discharge_cutoff_v": 2.5
+    },
+    "property": "rel_charge_capacity_45c_pct",
+    "grid_axis": {
+     "family": "rel_charge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 45
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 95,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "discharge_current_a": 10,
+     "discharge_cutoff_v": 2.5
+    },
+    "property": "rel_charge_capacity_50c_pct",
+    "grid_axis": {
+     "family": "rel_charge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 50
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "charged with 4.2V, cut-off 125mA",
+     "charge_current_a": 1.25
+    },
+    "property": "rel_charge_capacity_1_25a_pct",
+    "grid_axis": {
+     "family": "rel_charge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 1.25
+    },
+    "source_unit": "p5_t3_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 98,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "charged with 4.2V, cut-off 100mA",
+     "charge_current_a": 4
+    },
+    "property": "rel_charge_capacity_4a_pct",
+    "grid_axis": {
+     "family": "rel_charge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 4
+    },
+    "source_unit": "p5_t3_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge capacity is measured with constant current and 2.5V cut-off after the standard charge",
+     "temperature_c": 25
+    },
+    "property": "rel_discharge_capacity_0_5a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 0.5
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 97,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge capacity is measured with constant current and 2.5V cut-off after the standard charge",
+     "temperature_c": 25
+    },
+    "property": "rel_discharge_capacity_5a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 5
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge capacity is measured with constant current and 2.5V cut-off after the standard charge",
+     "temperature_c": 25
+    },
+    "property": "rel_discharge_capacity_10a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 10
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 97,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge capacity is measured with constant current and 2.5V cut-off after the standard charge",
+     "temperature_c": 25
+    },
+    "property": "rel_discharge_capacity_15a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 15
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 95,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge capacity is measured with constant current and 2.5V cut-off after the standard charge",
+     "temperature_c": 25
+    },
+    "property": "rel_discharge_capacity_20a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 20
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   }
+  ],
+  [
+   {
+    "property": "nominal_capacity_ah",
+    "value": 2.5,
+    "unit": "Ah",
+    "page": 3,
+    "stated_conditions": {
+     "text": "Charge: 1.25A, 4.20V,CCCV 125mA cut-off, Discharge: 0.2C, 2.5V discharge cut-off"
+    },
+    "source_unit": "p3_t1_r1",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "charge_voltage_v",
+    "value": 4.2,
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "Charge: 1.25A, 4.20V,CCCV 125mA cut-off, Discharge: 0.2C, 2.5V discharge cut-off"
+    },
+    "source_unit": "p3_t1_r1",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_charge_current_a",
+    "value": 1.25,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "Charge: 1.25A, 4.20V,CCCV 125mA cut-off, Discharge: 0.2C, 2.5V discharge cut-off"
+    },
+    "source_unit": "p3_t1_r1",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "discharge_cutoff_v",
+    "value": 2.5,
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "Charge: 1.25A, 4.20V,CCCV 125mA cut-off, Discharge: 0.2C, 2.5V discharge cut-off"
+    },
+    "source_unit": "p3_t1_r1",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "discharge_c_rate",
+    "value": 0.2,
+    "unit": "C",
+    "page": 3,
+    "stated_conditions": {
+     "text": "Charge: 1.25A, 4.20V,CCCV 125mA cut-off, Discharge: 0.2C, 2.5V discharge cut-off"
+    },
+    "source_unit": "p3_t1_r1",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "nominal_voltage_v",
+    "value": 3.6,
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r2",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_charge_current_a",
+    "value": 1.25,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r3",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "charge_voltage_v",
+    "value": [
+     4.15,
+     4.25
+    ],
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r3",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "discharge_cutoff_v",
+    "value": 0.125,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r3",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "max_charge_current_a",
+    "value": 4,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r4",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "max_charge_voltage_v",
+    "value": [
+     4.15,
+     4.25
+    ],
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r4",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_discharge_current_a",
+    "value": 0.1,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r4",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_charge_time_h",
+    "value": 180,
+    "unit": "min",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_charge_current_a",
+    "value": 0.125,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "fast_charge_time_h",
+    "value": 60,
+    "unit": "min",
+    "page": 3,
+    "stated_conditions": {
+     "text": "at 25℃"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "fast_charge_current_a",
+    "value": "unspecified",
+    "unit": "unspecified",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "charge_cutoff_current_a",
+    "value": [
+     0.1,
+     0.125
+    ],
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "max_cont_discharge_a",
+    "value": 20,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "at 25℃",
+     "temperature_c": 25
+    },
+    "source_unit": "p3_t1_r6",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "cycle_life_retention_pct",
+    "value": 60,
+    "unit": "pct",
+    "page": 3,
+    "stated_conditions": {
+     "text": "at 250 cycle",
+     "end_condition": "250 cycle"
+    },
+    "source_unit": "p3_t1_r6",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "discharge_cutoff_v",
+    "value": 2.5,
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r7",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "mass_g",
+    "value": 45.0,
+    "unit": "g",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r8",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "height_mm",
+    "value": [
+     64.7,
+     65.0
+    ],
+    "unit": "mm",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r9",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "diameter_mm",
+    "value": [
+     18.26,
+     18.4
+    ],
+    "unit": "mm",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r9",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "charge_temp_range_c",
+    "value": [
+     0,
+     50
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r10",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "discharge_temp_range_c",
+    "value": [
+     -20,
+     75
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r10",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "storage_temp_range_c",
+    "value": [
+     -30,
+     25
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "1.5 year",
+     "duration": "1.5 year"
+    },
+    "source_unit": "p3_t1_r11",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "storage_temp_range_c",
+    "value": [
+     -30,
+     45
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "3 months"
+    },
+    "source_unit": "p3_t1_r11",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "storage_temp_range_c",
+    "value": [
+     -30,
+     60
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "1 month"
+    },
+    "source_unit": "p3_t1_r11",
+    "unit_kind": "spec_row"
+   },
+   {
+    "value": 60,
+    "unit": "pct",
+    "page": 4,
+    "stated_conditions": {
+     "text": "unspecified",
+     "discharge_current_a": 10,
+     "charge_current_a": 0.5,
+     "charge_temp_c": 25,
+     "discharge_temp_c": "varies"
+    },
+    "property": "rel_discharge_capacity_m20c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": -20
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 75,
+    "unit": "pct",
+    "page": 4,
+    "stated_conditions": {
+     "text": "unspecified",
+     "discharge_current_a": 10,
+     "charge_current_a": 0.5,
+     "charge_temp_c": 25,
+     "discharge_temp_c": "varies"
+    },
+    "property": "rel_discharge_capacity_m10c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": -10
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 80,
+    "unit": "pct",
+    "page": 4,
+    "stated_conditions": {
+     "text": "unspecified",
+     "discharge_current_a": 10,
+     "charge_current_a": 0.5,
+     "charge_temp_c": 25,
+     "discharge_temp_c": "varies"
+    },
+    "property": "rel_discharge_capacity_0c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 0
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 4,
+    "stated_conditions": {
+     "text": "unspecified",
+     "discharge_current_a": 10,
+     "charge_current_a": 0.5,
+     "charge_temp_c": 25,
+     "discharge_temp_c": "varies"
+    },
+    "property": "rel_discharge_capacity_25c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 25
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 4,
+    "stated_conditions": {
+     "text": "unspecified",
+     "discharge_current_a": 10,
+     "charge_current_a": 0.5,
+     "charge_temp_c": 25,
+     "discharge_temp_c": "varies"
+    },
+    "property": "rel_discharge_capacity_60c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 60
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 80,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "charge_temp_c": 0,
+     "discharge_current_a": 10,
+     "discharge_cutoff_v": 2.5
+    },
+    "property": "rel_discharge_capacity_0c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 0
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 90,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "charge_temp_c": 5,
+     "discharge_current_a": 10,
+     "discharge_cutoff_v": 2.5
+    },
+    "property": "rel_discharge_capacity_5c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 5
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "charge_temp_c": 25,
+     "discharge_current_a": 10,
+     "discharge_cutoff_v": 2.5
+    },
+    "property": "rel_discharge_capacity_25c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 25
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 95,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "charge_temp_c": 45,
+     "discharge_current_a": 10,
+     "discharge_cutoff_v": 2.5
+    },
+    "property": "rel_discharge_capacity_45c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 45
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 95,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+     "charge_temp_c": 50,
+     "discharge_current_a": 10,
+     "discharge_cutoff_v": 2.5
+    },
+    "property": "rel_discharge_capacity_50c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 50
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "charged with 4.2V, cut-off 125mA, discharge at 25℃ at 10A (=2,450mAh) is 100%",
+     "charge_current_a": 1.25,
+     "discharge_current_a": 10,
+     "charge_temp_c": 25,
+     "discharge_temp_c": 25
+    },
+    "property": "rel_charge_capacity_1_25a_pct",
+    "grid_axis": {
+     "family": "rel_charge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 1.25
+    },
+    "source_unit": "p5_t3_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 98,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "charged with 4.2V, cut-off 100mA, discharge at 25℃ at 10A (=2,450mAh) is 100%",
+     "charge_current_a": 4,
+     "discharge_current_a": 10,
+     "charge_temp_c": 25,
+     "discharge_temp_c": 25
+    },
+    "property": "rel_charge_capacity_4a_pct",
+    "grid_axis": {
+     "family": "rel_charge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 4
+    },
+    "source_unit": "p5_t3_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "2.5V cut-off after the standard charge",
+     "discharge_current_a": 0.5
+    },
+    "property": "rel_discharge_capacity_0_5a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 0.5
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 97,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "2.5V cut-off after the standard charge",
+     "discharge_current_a": 5
+    },
+    "property": "rel_discharge_capacity_5a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 5
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "2.5V cut-off after the standard charge",
+     "discharge_current_a": 10
+    },
+    "property": "rel_discharge_capacity_10a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 10
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 97,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "2.5V cut-off after the standard charge",
+     "discharge_current_a": 15
+    },
+    "property": "rel_discharge_capacity_15a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 15
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 95,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "2.5V cut-off after the standard charge",
+     "discharge_current_a": 20
+    },
+    "property": "rel_discharge_capacity_20a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 20
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   }
+  ],
+  [
+   {
+    "property": "nominal_capacity_ah",
+    "value": 2.5,
+    "unit": "Ah",
+    "page": 3,
+    "stated_conditions": {
+     "text": "Charge: 1.25A, 4.20V,CCCV 125mA cut-off, Discharge: 0.2C, 2.5V discharge cut-off"
+    },
+    "source_unit": "p3_t1_r1",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "nominal_voltage_v",
+    "value": 3.6,
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r2",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_charge_current_a",
+    "value": 1.25,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r3",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "charge_voltage_v",
+    "value": [
+     4.15,
+     4.25
+    ],
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r3",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "charge_cutoff_current_a",
+    "value": 0.125,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r3",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "max_charge_current_a",
+    "value": 4,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r4",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "max_charge_voltage_v",
+    "value": [
+     4.15,
+     4.25
+    ],
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r4",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_discharge_current_a",
+    "value": 0.1,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r4",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_charge_time_h",
+    "value": 3,
+    "unit": "h",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "std_charge_current_a",
+    "value": 0.125,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "fast_charge_time_h",
+    "value": 1,
+    "unit": "h",
+    "page": 3,
+    "stated_conditions": {
+     "text": "at 25℃",
+     "temperature_c": 25
+    },
+    "source_unit": "p3_t1_r5",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "max_cont_discharge_a",
+    "value": 20,
+    "unit": "A",
+    "page": 3,
+    "stated_conditions": {
+     "text": "at 25℃",
+     "temperature_c": 25
+    },
+    "source_unit": "p3_t1_r6",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "cycle_life_retention_pct",
+    "value": 60,
+    "unit": "pct",
+    "page": 3,
+    "stated_conditions": {
+     "text": "at 250 cycle",
+     "end_condition": "250 cycle"
+    },
+    "source_unit": "p3_t1_r6",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "discharge_cutoff_v",
+    "value": 2.5,
+    "unit": "V",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r7",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "mass_g",
+    "value": 45.0,
+    "unit": "g",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r8",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "height_mm",
+    "value": [
+     64.7,
+     65.0
+    ],
+    "unit": "mm",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r9",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "diameter_mm",
+    "value": [
+     18.26,
+     18.4
+    ],
+    "unit": "mm",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r9",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "charge_temp_range_c",
+    "value": [
+     0,
+     50
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r10",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "discharge_temp_range_c",
+    "value": [
+     -20,
+     75
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "unspecified"
+    },
+    "source_unit": "p3_t1_r10",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "storage_temp_range_c",
+    "value": [
+     -30,
+     25
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "1.5 year",
+     "duration": "1.5 year"
+    },
+    "source_unit": "p3_t1_r11",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "storage_temp_range_c",
+    "value": [
+     -30,
+     45
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "3 months"
+    },
+    "source_unit": "p3_t1_r11",
+    "unit_kind": "spec_row"
+   },
+   {
+    "property": "storage_temp_range_c",
+    "value": [
+     -30,
+     60
+    ],
+    "unit": "degC",
+    "page": 3,
+    "stated_conditions": {
+     "text": "1 month"
+    },
+    "source_unit": "p3_t1_r11",
+    "unit_kind": "spec_row"
+   },
+   {
+    "value": 60,
+    "unit": "pct",
+    "page": 4,
+    "stated_conditions": {
+     "text": "unspecified",
+     "discharge_current_a": 10,
+     "charge_current_a": 0.5,
+     "charge_temp_c": 25,
+     "discharge_temp_c": "varies"
+    },
+    "property": "rel_discharge_capacity_m20c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": -20
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 75,
+    "unit": "pct",
+    "page": 4,
+    "stated_conditions": {
+     "text": "unspecified",
+     "discharge_current_a": 10,
+     "charge_current_a": 0.5,
+     "charge_temp_c": 25,
+     "discharge_temp_c": "varies"
+    },
+    "property": "rel_discharge_capacity_m10c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": -10
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 80,
+    "unit": "pct",
+    "page": 4,
+    "stated_conditions": {
+     "text": "unspecified",
+     "discharge_current_a": 10,
+     "charge_current_a": 0.5,
+     "charge_temp_c": 25,
+     "discharge_temp_c": "varies"
+    },
+    "property": "rel_discharge_capacity_0c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 0
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 4,
+    "stated_conditions": {
+     "text": "unspecified",
+     "discharge_current_a": 10,
+     "charge_current_a": 0.5,
+     "charge_temp_c": 25,
+     "discharge_temp_c": "varies"
+    },
+    "property": "rel_discharge_capacity_25c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 25
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 4,
+    "stated_conditions": {
+     "text": "unspecified",
+     "discharge_current_a": 10,
+     "charge_current_a": 0.5,
+     "charge_temp_c": 25,
+     "discharge_temp_c": "varies"
+    },
+    "property": "rel_discharge_capacity_60c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 60
+    },
+    "source_unit": "p4_t1+p5_t1_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 80,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "If charge temperature and discharge temperature is not the same, the interval for temperature change is 3 hours. Percentage index of the discharge at 25℃ at 10A (=2,450mAh) is 100%.",
+     "temperature_c": 0,
+     "discharge_current_a": 10,
+     "charge_temp_range_c": "unspecified",
+     "discharge_temp_range_c": "unspecified"
+    },
+    "property": "rel_discharge_capacity_0c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 0
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 90,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "If charge temperature and discharge temperature is not the same, the interval for temperature change is 3 hours. Percentage index of the discharge at 25℃ at 10A (=2,450mAh) is 100%.",
+     "temperature_c": 5,
+     "discharge_current_a": 10,
+     "charge_temp_range_c": "unspecified",
+     "discharge_temp_range_c": "unspecified"
+    },
+    "property": "rel_discharge_capacity_5c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 5
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "If charge temperature and discharge temperature is not the same, the interval for temperature change is 3 hours. Percentage index of the discharge at 25℃ at 10A (=2,450mAh) is 100%.",
+     "temperature_c": 25,
+     "discharge_current_a": 10,
+     "charge_temp_range_c": "unspecified",
+     "discharge_temp_range_c": "unspecified"
+    },
+    "property": "rel_discharge_capacity_25c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 25
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 95,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "If charge temperature and discharge temperature is not the same, the interval for temperature change is 3 hours. Percentage index of the discharge at 25℃ at 10A (=2,450mAh) is 100%.",
+     "temperature_c": 45,
+     "discharge_current_a": 10,
+     "charge_temp_range_c": "unspecified",
+     "discharge_temp_range_c": "unspecified"
+    },
+    "property": "rel_discharge_capacity_45c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 45
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 95,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "If charge temperature and discharge temperature is not the same, the interval for temperature change is 3 hours. Percentage index of the discharge at 25℃ at 10A (=2,450mAh) is 100%.",
+     "temperature_c": 50,
+     "discharge_current_a": 10,
+     "charge_temp_range_c": "unspecified",
+     "discharge_temp_range_c": "unspecified"
+    },
+    "property": "rel_discharge_capacity_50c_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "temperature_c",
+     "axis_value": 50
+    },
+    "source_unit": "p5_t2_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "standard charge",
+     "charge_current_a": 1.25
+    },
+    "property": "rel_charge_capacity_1_25a_pct",
+    "grid_axis": {
+     "family": "rel_charge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 1.25
+    },
+    "source_unit": "p5_t3_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 98,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "maximum rapid charge",
+     "charge_current_a": 4
+    },
+    "property": "rel_charge_capacity_4a_pct",
+    "grid_axis": {
+     "family": "rel_charge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 4
+    },
+    "source_unit": "p5_t3_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge condition",
+     "temperature_c": 25,
+     "discharge_current_a": 0.5
+    },
+    "property": "rel_discharge_capacity_0_5a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 0.5
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 97,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge condition",
+     "temperature_c": 25,
+     "discharge_current_a": 5
+    },
+    "property": "rel_discharge_capacity_5a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 5
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 100,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge condition",
+     "temperature_c": 25,
+     "discharge_current_a": 10
+    },
+    "property": "rel_discharge_capacity_10a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 10
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 97,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge condition",
+     "temperature_c": 25,
+     "discharge_current_a": 15
+    },
+    "property": "rel_discharge_capacity_15a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 15
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   },
+   {
+    "value": 95,
+    "unit": "pct",
+    "page": 5,
+    "stated_conditions": {
+     "text": "Discharge condition",
+     "temperature_c": 25,
+     "discharge_current_a": 20
+    },
+    "property": "rel_discharge_capacity_20a_pct",
+    "grid_axis": {
+     "family": "rel_discharge_capacity",
+     "axis_kind": "current_a",
+     "axis_value": 20
+    },
+    "source_unit": "p5_t4_grid",
+    "unit_kind": "grid"
+   }
+  ]
+ ],
+ "raw_run_sizes": [
+  45,
+  45,
+  39
+ ],
+ "validator": [
+  {
+   "run": "run1",
+   "in": 45,
+   "accepted": 42,
+   "normalized": 4,
+   "rejected": [
+    {
+     "doc": "samsung_inr18650_25r",
+     "run": "run1",
+     "property": "discharge_cutoff_v",
+     "value": "unspecified",
+     "reason": "malformed_value",
+     "detail": ""
+    },
+    {
+     "doc": "samsung_inr18650_25r",
+     "run": "run1",
+     "property": "std_charge_time_h",
+     "value": "unspecified",
+     "reason": "malformed_value",
+     "detail": ""
+    },
+    {
+     "doc": "samsung_inr18650_25r",
+     "run": "run1",
+     "property": "fast_charge_current_a",
+     "value": "unspecified",
+     "reason": "malformed_value",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "run": "run2",
+   "in": 45,
+   "accepted": 43,
+   "normalized": 4,
+   "rejected": [
+    {
+     "doc": "samsung_inr18650_25r",
+     "run": "run2",
+     "property": "std_charge_time_h",
+     "value": 180,
+     "reason": "implausible",
+     "detail": "bounds [0.05, 50]"
+    },
+    {
+     "doc": "samsung_inr18650_25r",
+     "run": "run2",
+     "property": "fast_charge_current_a",
+     "value": "unspecified",
+     "reason": "malformed_value",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "run": "run3",
+   "in": 39,
+   "accepted": 39,
+   "normalized": 4,
+   "rejected": []
+  }
+ ],
+ "consensus_only": [
+  {
+   "property": "nominal_capacity_ah",
+   "value": 2.5,
+   "unit": "Ah",
+   "page": 3,
+   "stated_conditions": {
+    "text": "Charge: 1.25A, 4.20V,CCCV 125mA cut-off, Discharge: 0.2C, 2.5V discharge cut-off"
+   },
+   "source_unit": "p3_t1_r1",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "nominal_voltage_v",
+   "value": 3.6,
+   "unit": "V",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r2",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "std_charge_current_a",
+   "value": 1.25,
+   "unit": "A",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r3",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "charge_voltage_v",
+   "value": [
+    4.15,
+    4.25
+   ],
+   "unit": "V",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r3",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "discharge_cutoff_v",
+   "value": 0.125,
+   "unit": "A",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r3",
+   "unit_kind": "spec_row",
+   "consensus_level": 2
+  },
+  {
+   "property": "max_charge_current_a",
+   "value": 4,
+   "unit": "A",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r4",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "max_charge_voltage_v",
+   "value": [
+    4.15,
+    4.25
+   ],
+   "unit": "V",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r4",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "fast_charge_time_h",
+   "value": 1,
+   "unit": "h",
+   "page": 3,
+   "stated_conditions": {
+    "text": "at 25℃"
+   },
+   "source_unit": "p3_t1_r4",
+   "unit_kind": "spec_row",
+   "consensus_level": 2
+  },
+  {
+   "property": "std_charge_time_h",
+   "value": 3,
+   "unit": "h",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r5",
+   "unit_kind": "spec_row",
+   "consensus_level": 2
+  },
+  {
+   "property": "std_charge_current_a",
+   "value": 0.125,
+   "unit": "A",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r5",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "charge_cutoff_current_a",
+   "value": 0.125,
+   "unit": "A",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r5",
+   "unit_kind": "spec_row",
+   "consensus_level": 2
+  },
+  {
+   "property": "max_cont_discharge_a",
+   "value": 20,
+   "unit": "A",
+   "page": 3,
+   "stated_conditions": {
+    "text": "at 25℃",
+    "temperature_c": 25
+   },
+   "source_unit": "p3_t1_r6",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "cycle_life_retention_pct",
+   "value": 60,
+   "unit": "pct",
+   "page": 3,
+   "stated_conditions": {
+    "text": "at 250 cycle",
+    "cycles": 250
+   },
+   "source_unit": "p3_t1_r6",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "discharge_cutoff_v",
+   "value": 2.5,
+   "unit": "V",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r7",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "mass_g",
+   "value": 45.0,
+   "unit": "g",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r8",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "height_mm",
+   "value": [
+    64.7,
+    65.0
+   ],
+   "unit": "mm",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r9",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "diameter_mm",
+   "value": [
+    18.26,
+    18.4
+   ],
+   "unit": "mm",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r9",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "charge_temp_range_c",
+   "value": [
+    0,
+    50
+   ],
+   "unit": "degC",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r10",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "discharge_temp_range_c",
+   "value": [
+    -20,
+    75
+   ],
+   "unit": "degC",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r10",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "storage_temp_range_c",
+   "value": [
+    -30,
+    25
+   ],
+   "unit": "degC",
+   "page": 3,
+   "stated_conditions": {
+    "text": "1.5 year",
+    "duration": "1.5 year"
+   },
+   "source_unit": "p3_t1_r11",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "storage_temp_range_c",
+   "value": [
+    -30,
+    45
+   ],
+   "unit": "degC",
+   "page": 3,
+   "stated_conditions": {
+    "text": "3 months"
+   },
+   "source_unit": "p3_t1_r11",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "property": "storage_temp_range_c",
+   "value": [
+    -30,
+    60
+   ],
+   "unit": "degC",
+   "page": 3,
+   "stated_conditions": {
+    "text": "1 month"
+   },
+   "source_unit": "p3_t1_r11",
+   "unit_kind": "spec_row",
+   "consensus_level": 3
+  },
+  {
+   "value": 60,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "Discharge constant current 10A and 2.5V cut-off after the standard charge",
+    "temperature_c": -20
+   },
+   "property": "rel_discharge_capacity_m20c_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "temperature_c",
+    "axis_value": -20
+   },
+   "source_unit": "p4_t1+p5_t1_grid",
+   "unit_kind": "grid",
+   "consensus_level": 3
+  },
+  {
+   "value": 75,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "Discharge constant current 10A and 2.5V cut-off after the standard charge",
+    "temperature_c": -10
+   },
+   "property": "rel_discharge_capacity_m10c_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "temperature_c",
+    "axis_value": -10
+   },
+   "source_unit": "p4_t1+p5_t1_grid",
+   "unit_kind": "grid",
+   "consensus_level": 3
+  },
+  {
+   "value": 80,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "Discharge constant current 10A and 2.5V cut-off after the standard charge",
+    "temperature_c": 0
+   },
+   "property": "rel_discharge_capacity_0c_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "temperature_c",
+    "axis_value": 0
+   },
+   "source_unit": "p4_t1+p5_t1_grid",
+   "unit_kind": "grid",
+   "consensus_level": 3
+  },
+  {
+   "value": 100,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "Discharge constant current 10A and 2.5V cut-off after the standard charge",
+    "temperature_c": 25
+   },
+   "property": "rel_discharge_capacity_25c_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "temperature_c",
+    "axis_value": 25
+   },
+   "source_unit": "p4_t1+p5_t1_grid",
+   "unit_kind": "grid",
+   "consensus_level": 3
+  },
+  {
+   "value": 100,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "Discharge constant current 10A and 2.5V cut-off after the standard charge",
+    "temperature_c": 60
+   },
+   "property": "rel_discharge_capacity_60c_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "temperature_c",
+    "axis_value": 60
+   },
+   "source_unit": "p4_t1+p5_t1_grid",
+   "unit_kind": "grid",
+   "consensus_level": 3
+  },
+  {
+   "value": 100,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "charged with 4.2V, cut-off 125mA",
+    "charge_current_a": 1.25
+   },
+   "property": "rel_charge_capacity_1_25a_pct",
+   "grid_axis": {
+    "family": "rel_charge_capacity",
+    "axis_kind": "current_a",
+    "axis_value": 1.25
+   },
+   "source_unit": "p5_t3_grid",
+   "unit_kind": "grid",
+   "consensus_level": 3
+  },
+  {
+   "value": 98,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "charged with 4.2V, cut-off 100mA",
+    "charge_current_a": 4
+   },
+   "property": "rel_charge_capacity_4a_pct",
+   "grid_axis": {
+    "family": "rel_charge_capacity",
+    "axis_kind": "current_a",
+    "axis_value": 4
+   },
+   "source_unit": "p5_t3_grid",
+   "unit_kind": "grid",
+   "consensus_level": 3
+  },
+  {
+   "value": 100,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "Discharge capacity is measured with constant current and 2.5V cut-off after the standard charge",
+    "temperature_c": 25
+   },
+   "property": "rel_discharge_capacity_0_5a_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "current_a",
+    "axis_value": 0.5
+   },
+   "source_unit": "p5_t4_grid",
+   "unit_kind": "grid",
+   "consensus_level": 3
+  },
+  {
+   "value": 97,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "Discharge capacity is measured with constant current and 2.5V cut-off after the standard charge",
+    "temperature_c": 25
+   },
+   "property": "rel_discharge_capacity_5a_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "current_a",
+    "axis_value": 5
+   },
+   "source_unit": "p5_t4_grid",
+   "unit_kind": "grid",
+   "consensus_level": 3
+  },
+  {
+   "value": 100,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "Discharge capacity is measured with constant current and 2.5V cut-off after the standard charge",
+    "temperature_c": 25
+   },
+   "property": "rel_discharge_capacity_10a_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "current_a",
+    "axis_value": 10
+   },
+   "source_unit": "p5_t4_grid",
+   "unit_kind": "grid",
+   "consensus_level": 3
+  },
+  {
+   "value": 97,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "Discharge capacity is measured with constant current and 2.5V cut-off after the standard charge",
+    "temperature_c": 25
+   },
+   "property": "rel_discharge_capacity_15a_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "current_a",
+    "axis_value": 15
+   },
+   "source_unit": "p5_t4_grid",
+   "unit_kind": "grid",
+   "consensus_level": 3
+  },
+  {
+   "value": 95,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "Discharge capacity is measured with constant current and 2.5V cut-off after the standard charge",
+    "temperature_c": 25
+   },
+   "property": "rel_discharge_capacity_20a_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "current_a",
+    "axis_value": 20
+   },
+   "source_unit": "p5_t4_grid",
+   "unit_kind": "grid",
+   "consensus_level": 3
+  },
+  {
+   "property": "std_discharge_current_a",
+   "value": 0.1,
+   "unit": "A",
+   "page": 3,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "source_unit": "p3_t1_r4",
+   "unit_kind": "spec_row",
+   "consensus_level": 2
+  },
+  {
+   "value": 80,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+    "charge_temp_c": 0,
+    "discharge_current_a": 10,
+    "discharge_cutoff_v": 2.5
+   },
+   "property": "rel_discharge_capacity_0c_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "temperature_c",
+    "axis_value": 0
+   },
+   "source_unit": "p5_t2_grid",
+   "unit_kind": "grid",
+   "consensus_level": 2
+  },
+  {
+   "value": 90,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+    "charge_temp_c": 5,
+    "discharge_current_a": 10,
+    "discharge_cutoff_v": 2.5
+   },
+   "property": "rel_discharge_capacity_5c_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "temperature_c",
+    "axis_value": 5
+   },
+   "source_unit": "p5_t2_grid",
+   "unit_kind": "grid",
+   "consensus_level": 2
+  },
+  {
+   "value": 100,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+    "charge_temp_c": 25,
+    "discharge_current_a": 10,
+    "discharge_cutoff_v": 2.5
+   },
+   "property": "rel_discharge_capacity_25c_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "temperature_c",
+    "axis_value": 25
+   },
+   "source_unit": "p5_t2_grid",
+   "unit_kind": "grid",
+   "consensus_level": 2
+  },
+  {
+   "value": 95,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+    "charge_temp_c": 45,
+    "discharge_current_a": 10,
+    "discharge_cutoff_v": 2.5
+   },
+   "property": "rel_discharge_capacity_45c_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "temperature_c",
+    "axis_value": 45
+   },
+   "source_unit": "p5_t2_grid",
+   "unit_kind": "grid",
+   "consensus_level": 2
+  },
+  {
+   "value": 95,
+   "unit": "pct",
+   "page": 5,
+   "stated_conditions": {
+    "text": "measured with discharge constant current 10A and 2.5V cut-off after the standard charge",
+    "charge_temp_c": 50,
+    "discharge_current_a": 10,
+    "discharge_cutoff_v": 2.5
+   },
+   "property": "rel_discharge_capacity_50c_pct",
+   "grid_axis": {
+    "family": "rel_discharge_capacity",
+    "axis_kind": "temperature_c",
+    "axis_value": 50
+   },
+   "source_unit": "p5_t2_grid",
+   "unit_kind": "grid",
+   "consensus_level": 2
+  }
+ ],
+ "model": {
+  "provider": "groq",
+  "model": "llama-3.3-70b-versatile",
+  "temperature": 0.0,
+  "seed": 42
+ },
+ "n_runs": 3,
+ "usage": {
+  "calls": 45,
+  "prompt_tokens": 68070,
+  "completion_tokens": 10286
+ }
+}

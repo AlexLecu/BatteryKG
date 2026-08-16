@@ -7,6 +7,8 @@ manufacturer: Panasonic
 source_document: panasonic_ncr18650b.pdf
 source_url: https://www.orbtronic.com/content/NCR18650B-Datasheet-Panasonic-Specifications.pdf
 retrieved: 2026-07-11
+annotator: A1
+annotated_date: 2026-07-11
 omissions:
   - property: cycle_life_cycles
     note: "no cycle-life number or graph anywhere in this 4-page datasheet —

@@ -1,0 +1,46 @@
+{
+ "document": "panasonic_ncr18650b",
+ "pdf": "data/claims/datasheets/panasonic_ncr18650b.pdf",
+ "source_raster": "1684x1190 at 144 dpi",
+ "tesseract": "5.5.2",
+ "poppler": "pdftoppm version 26.07.0",
+ "config": {
+  "native_dpi": 144,
+  "rule_min_run": 60,
+  "upscale": 3,
+  "tesseract_config": "--oem 1 --psm 6 -c preserve_interword_spaces=1",
+  "selection_criterion": "max tokens with confidence >= 60 (gold-independent)"
+ },
+ "snapshot": "experiments/exp13_ocr_panasonic/panasonic_ncr18650b_ocr.txt",
+ "snapshot_chars": 3181,
+ "pages": [
+  {
+   "page": 1,
+   "chars": 1307,
+   "tokens": 117,
+   "confident_tokens": 85,
+   "mean_conf": 70.03
+  },
+  {
+   "page": 2,
+   "chars": 611,
+   "tokens": 68,
+   "confident_tokens": 38,
+   "mean_conf": 59.46
+  },
+  {
+   "page": 3,
+   "chars": 503,
+   "tokens": 55,
+   "confident_tokens": 30,
+   "mean_conf": 55.62
+  },
+  {
+   "page": 4,
+   "chars": 694,
+   "tokens": 110,
+   "confident_tokens": 42,
+   "mean_conf": 49.15
+  }
+ ]
+}

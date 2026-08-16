@@ -8,6 +8,8 @@ manufacturer: Panasonic
 source_document: panasonic_ncr18650b_full_spec_sanyo.pdf
 source_url: https://www.dnkpower.com/wp-content/uploads/2022/08/NCR18650B-datasheet.pdf
 retrieved: 2026-07-11
+annotator: A1
+annotated_date: 2026-07-11
 claims:
   - property: rated_capacity_ah
     value: 3.2

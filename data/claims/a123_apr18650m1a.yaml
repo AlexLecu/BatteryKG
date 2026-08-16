@@ -4,6 +4,8 @@ manufacturer: A123 Systems
 source_document: a123_apr18650m1a.pdf
 source_url: https://www.batteryspace.com/prod-specs/6612.pdf
 retrieved: 2026-07-11
+annotator: A1
+annotated_date: 2026-07-11
 claims:
   - property: nominal_capacity_ah
     value: 1.1

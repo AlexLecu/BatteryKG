@@ -1,0 +1,629 @@
+{
+ "raw_runs": [
+  [
+   {
+    "property": "rated_capacity_ah",
+    "value": [
+     0.0032,
+     0.00325
+    ],
+    "unit": "Ah",
+    "page": 1,
+    "stated_conditions": {
+     "text": "at 20°C"
+    }
+   },
+   {
+    "property": "nominal_capacity_ah",
+    "value": 0.00335,
+    "unit": "Ah",
+    "page": 1,
+    "stated_conditions": {
+     "text": "at 25°C"
+    }
+   },
+   {
+    "property": "nominal_voltage_v",
+    "value": 3.6,
+    "unit": "V",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "charge_voltage_v",
+    "value": 4.2,
+    "unit": "V",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "std_charge_current_a",
+    "value": 0.1625,
+    "unit": "A",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "std_charge_time_h",
+    "value": 4.0,
+    "unit": "h",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "charge_temp_range_c",
+    "value": [
+     10,
+     45
+    ],
+    "unit": "°C",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "discharge_temp_range_c",
+    "value": [
+     -20,
+     60
+    ],
+    "unit": "°C",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "storage_temp_range_c",
+    "value": [
+     -20,
+     50
+    ],
+    "unit": "°C",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "mass_g",
+    "value": 47.5,
+    "unit": "g",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "volumetric_energy_density_wh_l",
+    "value": 676,
+    "unit": "Wh/l",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "gravimetric_energy_density_wh_kg",
+    "value": 243,
+    "unit": "Wh/kg",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   }
+  ],
+  [
+   {
+    "property": "rated_capacity_ah",
+    "value": [
+     0.0032,
+     0.00325
+    ],
+    "unit": "Ah",
+    "page": 1,
+    "stated_conditions": {
+     "text": "at 20°C"
+    }
+   },
+   {
+    "property": "nominal_capacity_ah",
+    "value": 0.00335,
+    "unit": "Ah",
+    "page": 1,
+    "stated_conditions": {
+     "text": "at 25°C"
+    }
+   },
+   {
+    "property": "nominal_voltage_v",
+    "value": 3.6,
+    "unit": "V",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "charge_voltage_v",
+    "value": 4.2,
+    "unit": "V",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "std_charge_current_a",
+    "value": 0.1625,
+    "unit": "A",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "std_charge_time_h",
+    "value": 4.0,
+    "unit": "h",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "charge_temp_range_c",
+    "value": [
+     10,
+     45
+    ],
+    "unit": "°C",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "discharge_temp_range_c",
+    "value": [
+     -20,
+     60
+    ],
+    "unit": "°C",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "storage_temp_range_c",
+    "value": [
+     -20,
+     50
+    ],
+    "unit": "°C",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "mass_g",
+    "value": 47.5,
+    "unit": "g",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "volumetric_energy_density_wh_l",
+    "value": 676,
+    "unit": "Wh/l",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "gravimetric_energy_density_wh_kg",
+    "value": 243,
+    "unit": "Wh/kg",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   }
+  ],
+  [
+   {
+    "property": "rated_capacity_ah",
+    "value": [
+     0.0032,
+     0.00325
+    ],
+    "unit": "Ah",
+    "page": 1,
+    "stated_conditions": {
+     "text": "at 20°C"
+    }
+   },
+   {
+    "property": "nominal_capacity_ah",
+    "value": 0.00335,
+    "unit": "Ah",
+    "page": 1,
+    "stated_conditions": {
+     "text": "at 25°C"
+    }
+   },
+   {
+    "property": "nominal_voltage_v",
+    "value": 3.6,
+    "unit": "V",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "charge_voltage_v",
+    "value": 4.2,
+    "unit": "V",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "std_charge_current_a",
+    "value": 0.1625,
+    "unit": "A",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "std_charge_time_h",
+    "value": 4.0,
+    "unit": "h",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "charge_temp_range_c",
+    "value": [
+     10,
+     45
+    ],
+    "unit": "°C",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "discharge_temp_range_c",
+    "value": [
+     -20,
+     60
+    ],
+    "unit": "°C",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "storage_temp_range_c",
+    "value": [
+     -20,
+     50
+    ],
+    "unit": "°C",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "mass_g",
+    "value": 47.5,
+    "unit": "g",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "volumetric_energy_density_wh_l",
+    "value": 676,
+    "unit": "Wh/l",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   },
+   {
+    "property": "gravimetric_energy_density_wh_kg",
+    "value": 243,
+    "unit": "Wh/kg",
+    "page": 1,
+    "stated_conditions": {
+     "text": "unspecified"
+    }
+   }
+  ]
+ ],
+ "raw_run_sizes": [
+  12,
+  12,
+  12
+ ],
+ "validator": [
+  {
+   "run": "run1",
+   "in": 12,
+   "accepted": 9,
+   "normalized": 0,
+   "rejected": [
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run1",
+     "property": "rated_capacity_ah",
+     "value": [
+      0.0032,
+      0.00325
+     ],
+     "reason": "implausible",
+     "detail": "bounds [0.1, 10]"
+    },
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run1",
+     "property": "nominal_capacity_ah",
+     "value": 0.00335,
+     "reason": "value_not_in_source",
+     "detail": ""
+    },
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run1",
+     "property": "std_charge_current_a",
+     "value": 0.1625,
+     "reason": "value_not_in_source",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "run": "run2",
+   "in": 12,
+   "accepted": 9,
+   "normalized": 0,
+   "rejected": [
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run2",
+     "property": "rated_capacity_ah",
+     "value": [
+      0.0032,
+      0.00325
+     ],
+     "reason": "implausible",
+     "detail": "bounds [0.1, 10]"
+    },
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run2",
+     "property": "nominal_capacity_ah",
+     "value": 0.00335,
+     "reason": "value_not_in_source",
+     "detail": ""
+    },
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run2",
+     "property": "std_charge_current_a",
+     "value": 0.1625,
+     "reason": "value_not_in_source",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "run": "run3",
+   "in": 12,
+   "accepted": 9,
+   "normalized": 0,
+   "rejected": [
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run3",
+     "property": "rated_capacity_ah",
+     "value": [
+      0.0032,
+      0.00325
+     ],
+     "reason": "implausible",
+     "detail": "bounds [0.1, 10]"
+    },
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run3",
+     "property": "nominal_capacity_ah",
+     "value": 0.00335,
+     "reason": "value_not_in_source",
+     "detail": ""
+    },
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run3",
+     "property": "std_charge_current_a",
+     "value": 0.1625,
+     "reason": "value_not_in_source",
+     "detail": ""
+    }
+   ]
+  }
+ ],
+ "consensus_only": [
+  {
+   "property": "rated_capacity_ah",
+   "value": [
+    0.0032,
+    0.00325
+   ],
+   "unit": "Ah",
+   "page": 1,
+   "stated_conditions": {
+    "text": "at 20°C"
+   },
+   "consensus_level": 3
+  },
+  {
+   "property": "nominal_capacity_ah",
+   "value": 0.00335,
+   "unit": "Ah",
+   "page": 1,
+   "stated_conditions": {
+    "text": "at 25°C"
+   },
+   "consensus_level": 3
+  },
+  {
+   "property": "nominal_voltage_v",
+   "value": 3.6,
+   "unit": "V",
+   "page": 1,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "consensus_level": 3
+  },
+  {
+   "property": "charge_voltage_v",
+   "value": 4.2,
+   "unit": "V",
+   "page": 1,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "consensus_level": 3
+  },
+  {
+   "property": "std_charge_current_a",
+   "value": 0.1625,
+   "unit": "A",
+   "page": 1,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "consensus_level": 3
+  },
+  {
+   "property": "std_charge_time_h",
+   "value": 4.0,
+   "unit": "h",
+   "page": 1,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "consensus_level": 3
+  },
+  {
+   "property": "charge_temp_range_c",
+   "value": [
+    10,
+    45
+   ],
+   "unit": "°C",
+   "page": 1,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "consensus_level": 3
+  },
+  {
+   "property": "discharge_temp_range_c",
+   "value": [
+    -20,
+    60
+   ],
+   "unit": "°C",
+   "page": 1,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "consensus_level": 3
+  },
+  {
+   "property": "storage_temp_range_c",
+   "value": [
+    -20,
+    50
+   ],
+   "unit": "°C",
+   "page": 1,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "consensus_level": 3
+  },
+  {
+   "property": "mass_g",
+   "value": 47.5,
+   "unit": "g",
+   "page": 1,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "consensus_level": 3
+  },
+  {
+   "property": "volumetric_energy_density_wh_l",
+   "value": 676,
+   "unit": "Wh/l",
+   "page": 1,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "consensus_level": 3
+  },
+  {
+   "property": "gravimetric_energy_density_wh_kg",
+   "value": 243,
+   "unit": "Wh/kg",
+   "page": 1,
+   "stated_conditions": {
+    "text": "unspecified"
+   },
+   "consensus_level": 3
+  }
+ ],
+ "model": {
+  "provider": "groq",
+  "model": "llama-3.3-70b-versatile",
+  "temperature": 0.0,
+  "seed": 42
+ },
+ "n_runs": 3,
+ "snapshot_chars": 3181,
+ "usage": {
+  "calls": 3,
+  "prompt_tokens": 4449,
+  "completion_tokens": 2022
+ }
+}

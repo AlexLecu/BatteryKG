@@ -1,0 +1,101 @@
+[
+ {
+  "property": "nominal_voltage_v",
+  "value": 3.6,
+  "unit": "V",
+  "page": 1,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3
+ },
+ {
+  "property": "charge_voltage_v",
+  "value": 4.2,
+  "unit": "V",
+  "page": 1,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3
+ },
+ {
+  "property": "std_charge_time_h",
+  "value": 4.0,
+  "unit": "h",
+  "page": 1,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3
+ },
+ {
+  "property": "charge_temp_range_c",
+  "value": [
+   10,
+   45
+  ],
+  "unit": "°C",
+  "page": 1,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3
+ },
+ {
+  "property": "discharge_temp_range_c",
+  "value": [
+   -20,
+   60
+  ],
+  "unit": "°C",
+  "page": 1,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3
+ },
+ {
+  "property": "storage_temp_range_c",
+  "value": [
+   -20,
+   50
+  ],
+  "unit": "°C",
+  "page": 1,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3
+ },
+ {
+  "property": "mass_g",
+  "value": 47.5,
+  "unit": "g",
+  "page": 1,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3
+ },
+ {
+  "property": "volumetric_energy_density_wh_l",
+  "value": 676,
+  "unit": "Wh/l",
+  "page": 1,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3
+ },
+ {
+  "property": "gravimetric_energy_density_wh_kg",
+  "value": 243,
+  "unit": "Wh/kg",
+  "page": 1,
+  "stated_conditions": {
+   "text": "unspecified"
+  },
+  "consensus_level": 3
+ }
+]

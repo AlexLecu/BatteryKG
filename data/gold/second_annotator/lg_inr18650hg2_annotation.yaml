@@ -1,0 +1,485 @@
+# Second-annotator extraction from the LG Chem product specification
+# "Rechargeable Lithium Ion Battery Model: INR18650HG2 3000mAh", doc PS-HG2-Rev0,
+# dated 2015-01-28. `page` = physical PDF page (equals the printed footer here).
+cell_model: LG INR18650HG2
+manufacturer: LG Chem
+source_document: lg_inr18650hg2.pdf
+
+annotator: A2
+annotated_date: 2026-08-14
+
+new_properties:
+  - name: std_charge_end_current_a
+    meaning: charge-termination (taper cut-off) current of the standard charge, converted mA to A
+  - name: fast_charge_end_current_a
+    meaning: charge-termination cut-off current of the fast charge, converted mA to A
+  - name: initial_capacity_ah
+    meaning: beginning-of-life capacity specified under a stated charge/discharge protocol, stated separately from the nominal capacity
+  - name: shipping_state_soc_pct
+    meaning: state of charge the cells are shipped at, as a percentage of fully charged capacity
+  - name: diameter_mm
+    meaning: cell diameter stated as a specification value
+  - name: height_mm
+    meaning: cell height stated as a specification value
+  - name: thermal_shock_capacity_recovery_pct
+    meaning: capacity recoverable after a stated thermal-shock cycling test, as a percentage of nominal capacity
+
+# ---------------------------------------------------------------------------
+# CLAIMS
+# ---------------------------------------------------------------------------
+claims:
+
+  # === Section 2, Nominal Specification table — PDF page 4 ==================
+
+  - property: nominal_capacity_ah
+    value: 3.0
+    unit: Ah
+    page: 4
+    stated_conditions:
+      text: "2.1 Capacity | Condition: Std. charge / discharge | Nominal 3000 mAh (Cnom)"
+      charge_current_a: 1.5
+      charge_voltage_v: 4.2
+      end_current_ma: 50
+      discharge_current_a: 0.6
+      discharge_cutoff_v: 2.0
+      temperature_c: 25
+    notes: "cross-reference resolved: 'Std. charge / discharge' = 4.1.1 (CC 1500mA,
+            CV 4.2V, taper to 50mA, 25ºC ± 2ºC) and 4.1.2 (CC 600mA to 2.0V, 25ºC ±
+            2ºC)."
+
+  - property: nominal_voltage_v
+    value: 3.60
+    unit: V
+    page: 4
+    stated_conditions:
+      text: "2.2 Nominal Voltage | Condition: Average for Std. discharge | 3.60V"
+      discharge_current_a: 0.6
+      discharge_cutoff_v: 2.0
+      temperature_c: 25
+    notes: "cross-reference resolved: 'Std. discharge' = 4.1.2, CC 600mA to 2.0V at
+            25ºC ± 2ºC."
+
+  - property: std_charge_current_a
+    value: 1.5
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.3.1 Standard Charge (Refer to 4.1.1) | Constant current | 1500mA"
+      charge_voltage_v: 4.2
+      end_current_ma: 50
+      temperature_c: 25
+    notes: "cross-reference resolved: 4.1.1 adds 'For test purposes, charging shall
+            be performed at 25ºC ± 2ºC'"
+
+  - property: charge_voltage_v
+    value: 4.2
+    unit: V
+    page: 4
+    stated_conditions:
+      text: "2.3.1 Standard Charge (Refer to 4.1.1) | Constant voltage | 4.2V"
+      charge_current_a: 1.5
+      end_current_ma: 50
+      temperature_c: 25
+    notes: "the CV set-point of the standard charge protocol, distinct from the 2.4
+            Max."
+
+  - property: std_charge_end_current_a
+    value: 0.05
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.3.1 Standard Charge (Refer to 4.1.1) | End condition(Cut off) | 50mA"
+      charge_current_a: 1.5
+      charge_voltage_v: 4.2
+      temperature_c: 25
+    notes: "coined name; 50mA converted to A because the unit list has no mA."
+
+  - property: fast_charge_current_a
+    value: 4.0
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.3.2 Fast charge (Refer to 4.1.3) | Constant current | 4000mA;
+             Constant voltage 4.2V; End condition(Cut off) 100mA"
+      charge_voltage_v: 4.2
+      end_current_ma: 100
+    notes: "cross-reference resolved: 4.1.3 states 'charged at constant current of
+            4000mA to 4.2V with end current of 100mA' and 'rest 10 minutes after
+            charge'."
+
+  - property: fast_charge_end_current_a
+    value: 0.1
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.3.2 Fast charge (Refer to 4.1.3) | End condition(Cut off) | 100mA"
+      charge_current_a: 4.0
+      charge_voltage_v: 4.2
+  - property: max_charge_voltage_v
+    value: 4.20
+    unit: V
+    page: 4
+    stated_conditions:
+      text: "2.4 Max. Charge Voltage | Condition: - | 4.20±0.05V"
+    notes: "only the central value 4.20 is recorded; the ±0.05 stays in the quoted
+            text. The condition column is literally '-', i.e. the document states no
+            test condition for this limit"
+
+  - property: max_charge_current_a
+    value: 6.0
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.5 Max. Charge Current | Condition: - | 6000mA"
+    notes: "condition column is literally '-'; no temperature or voltage stated"
+
+  - property: std_discharge_current_a
+    value: 0.6
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.6.1 Standard Discharge (Refer to 4.1.2) | Constant current | 600mA"
+      discharge_cutoff_v: 2.0
+      temperature_c: 25
+    notes: "cross-reference resolved: 4.1.2 = CC 600mA to 2.0V at 25ºC ± 2ºC 'unless
+            otherwise noted (such as capacity versus temperature)'"
+
+  - property: discharge_cutoff_v
+    value: 2.0
+    unit: V
+    page: 4
+    stated_conditions:
+      text: "2.6.1 Standard Discharge (Refer to 4.1.2) | End voltage(Cut off) | 2.0V"
+      discharge_current_a: 0.6
+      temperature_c: 25
+    notes: "repeated value: the same 2.0V end voltage is stated again in 2.6.2 for
+            fast discharge on the same page, and in 4.1.2 and 4.1.3 on pages 5-6."
+
+  - property: fast_discharge_current_a
+    value: 10.0
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.6.2 Fast Discharge (Refer to 4.1.3) | Constant current | 10000mA ,
+             20000mA | End voltage(Cut off) 2.0V"
+      discharge_cutoff_v: 2.0
+    notes: "the row states two fast-discharge currents; they are two separate
+            claims sharing a property name."
+
+  - property: fast_discharge_current_a
+    value: 20.0
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.6.2 Fast Discharge (Refer to 4.1.3) | Constant current | 10000mA ,
+             20000mA | End voltage(Cut off) 2.0V"
+      discharge_cutoff_v: 2.0
+  - property: max_cont_discharge_a
+    value: 20.0
+    unit: A
+    page: 4
+    stated_conditions:
+      text: "2.7 Max. Discharge Current | Condition: For continuous discharge | 20000mA"
+    notes: "numerically equal to the upper fast-discharge current in 2.6.2 but a
+            distinct assertion (a continuous-discharge limit, not a test rate);
+            recorded separately."
+
+  - property: mass_g
+    value: 47.0
+    unit: g
+    page: 4
+    stated_conditions:
+      text: "2.8 Weight | Condition: Max. | 47.0 g"
+    notes: "upper bound"
+
+  - property: charge_temp_range_c
+    value: [-5, 50]
+    unit: degC
+    page: 4
+    stated_conditions:
+      text: "2.9 Operating Temperature (Cell Surface Temperature) | Charge | -5 ~ 50℃"
+    notes: "the document scopes this to cell SURFACE temperature."
+
+  - property: discharge_temp_range_c
+    value: [-20, 75]
+    unit: degC
+    page: 4
+    stated_conditions:
+      text: "2.9 Operating Temperature (Cell Surface Temperature) | Discharge | -20 ~ 75℃"
+  - property: storage_temp_range_c
+    value: [-20, 60]
+    unit: degC
+    page: 4
+    stated_conditions:
+      text: "2.10 Storage Temperature (for shipping state) | 1 month | -20 ~ 60℃"
+      duration_months: 1
+    notes: "one of three storage-temperature rows differing only in duration."
+
+  - property: storage_temp_range_c
+    value: [-20, 45]
+    unit: degC
+    page: 4
+    stated_conditions:
+      text: "2.10 Storage Temperature (for shipping state) | 3 month | -20 ~ 45℃"
+      duration_months: 3
+
+  - property: storage_temp_range_c
+    value: [-20, 20]
+    unit: degC
+    page: 4
+    stated_conditions:
+      text: "2.10 Storage Temperature (for shipping state) | 1 year | -20 ~ 20℃"
+      duration_years: 1
+    notes: "coined condition field duration_years to avoid converting '1 year' to
+            days or months"
+
+  - property: shipping_state_soc_pct
+    value: 40
+    unit: pct
+    page: 4
+    stated_conditions:
+      text: "footnote to section 2: '* Shipping state : About 40% capacity of fully
+             charged state'"
+  # === Section 3.2, Dimension — PDF page 5 =================================
+
+  - property: diameter_mm
+    value: 18.3
+    unit: mm
+    page: 5
+    stated_conditions:
+      text: "3.2 Dimension — Diameter: 18.3 + 0.2/-0.3 mm ( Max. 18.5 mm ).
+             'Diameter is defined as the largest data value measured on the \"A\"
+             area of a cylindrical cell.'"
+    notes: "coined name."
+
+  - property: height_mm
+    value: 65.0
+    unit: mm
+    page: 5
+    stated_conditions:
+      text: "3.2 Dimension — Height: 65.0 ± 0.2 mm ( Max. 65.2 mm )"
+    notes: "coined name; central value only, the ± 0.2 and the Max."
+
+  # === Section 4.2, Electrical Specification — PDF page 6 ==================
+
+  - property: internal_impedance_mohm
+    value: 20
+    unit: mOhm
+    page: 6
+    stated_conditions:
+      text: "4.2.1 Initial AC Impedance | Cell shall be measured at 1kHz after
+             charge per 4.1.1 | ≤ 20 mΩ, without PTC"
+      charge_current_a: 1.5
+      charge_voltage_v: 4.2
+      end_current_ma: 50
+      temperature_c: 25
+      frequency_hz: 1000
+    notes: "upper bound (the '≤' is present in the rendered page but is dropped by
+            the PDF text layer)."
+
+  - property: initial_capacity_ah
+    value: 3.0
+    unit: Ah
+    page: 6
+    stated_conditions:
+      text: "4.2.2 Initial Capacity | Cell shall be charged per 4.1.1 and
+             discharged per 4.1.2 within 1h after full charge | 3000 mAh (Cnom)"
+      charge_current_a: 1.5
+      charge_voltage_v: 4.2
+      end_current_ma: 50
+      discharge_current_a: 0.6
+      discharge_cutoff_v: 2.0
+      temperature_c: 25
+    notes: "coined name for why this is recorded as a separate assertion from the
+            2.1 nominal capacity rather than as a repeat."
+
+  - property: cycle_life_cycles
+    value: 300
+    unit: cycles
+    page: 6
+    stated_conditions:
+      text: "4.2.3 Cycle Life | Cells shall be charged and discharged per 4.1.3,
+             300 cycles(10A) and 200 cycles(20A). A cycle is defined as one charge
+             and one discharge. 301st (10A) and 201st (20A) discharge capacity
+             shall be measured per 4.1.1 and 4.1.2 | ≥ 60 % (of Cnom in 2.1)"
+      charge_current_a: 4.0
+      charge_voltage_v: 4.2
+      end_current_ma: 100
+      discharge_current_a: 10.0
+      discharge_cutoff_v: 2.0
+      end_condition: "301st cycle discharge capacity >= 60% of Cnom"
+    notes: "pass criterion, not typical life. NO cycling temperature is stated
+            anywhere for this test — 4.1.3 omits it — so temperature_c is
+            deliberately absent; the 25ºC of 4.1.1/4.1.2 applies only to the
+            capacity measurement at cycle 301"
+
+  - property: cycle_life_cycles
+    value: 200
+    unit: cycles
+    page: 6
+    stated_conditions:
+      text: "4.2.3 Cycle Life | ... 300 cycles(10A) and 200 cycles(20A) ... 201st
+             (20A) discharge capacity shall be measured per 4.1.1 and 4.1.2 |
+             ≥ 60 % (of Cnom in 2.1)"
+      charge_current_a: 4.0
+      charge_voltage_v: 4.2
+      end_current_ma: 100
+      discharge_current_a: 20.0
+      discharge_cutoff_v: 2.0
+      end_condition: "201st cycle discharge capacity >= 60% of Cnom"
+    notes: "pass criterion, not typical life; the 20 A rate of the same clause."
+
+  - property: cycle_life_retention_pct
+    value: 60
+    unit: pct
+    page: 6
+    stated_conditions:
+      text: "4.2.3 Cycle Life | end-of-life threshold for both rates: ≥ 60 % (of
+             Cnom in 2.1)"
+    notes: "lower bound."
+
+  # === Section 4.3, Environmental Specification — PDF pages 6-7 ============
+
+  - property: storage_capacity_remaining_pct
+    value: 90
+    unit: pct
+    page: 6
+    stated_conditions:
+      text: "4.3.1 Storage Characteristics | Cells shall be charged per 4.1.1 and
+             stored in a temperature-controlled environment at 23ºC ± 2ºC for 30
+             days. After storage, cells shall be discharged per 4.1.2 to obtain the
+             remaining capacity | Capacity remaining rate ≥ 90% (of Cnom in 2.1)"
+      temperature_c: 23
+      duration_days: 30
+      charge_current_a: 1.5
+      charge_voltage_v: 4.2
+      discharge_current_a: 0.6
+      discharge_cutoff_v: 2.0
+    notes: "lower bound — the '≥' is visible on the rendered page but is dropped by
+            the PDF text layer, where this reads as a bare '90%'. Storage
+            temperature 23ºC here, not the 25ºC of the standard test condition"
+
+  - property: storage_capacity_recovery_pct
+    value: 80
+    unit: pct
+    page: 6
+    stated_conditions:
+      text: "4.3.2 High Temperature Storage Test | Cells shall be charged per 4.1.1
+             and stored in a temperature-controlled environment at 60ºC for 1 week.
+             After storage, cells shall be discharged per 4.1.2 and cycled per
+             4.1.1 and 4.1.2 for 3 cycles to obtain recovered capacity | No
+             leakage, Capacity recovery rate ≥ 80% (of Cnom in 2.1)"
+      temperature_c: 60
+      duration_days: 7
+      cycles: 3
+    notes: "lower bound ('≥', again absent from the text layer)."
+
+  - property: thermal_shock_capacity_recovery_pct
+    value: 80
+    unit: pct
+    page: 7
+    stated_conditions:
+      text: "4.3.3 Thermal Shock Test | 72ºC (8h) ← 3hrs → -20ºC (8h) for 8 cycles
+             with cells charged per 4.1.1. After test, cells are discharged per
+             4.1.2 and cycled per 4.1.1 and 4.1.2 for 3 cycles to obtain recovered
+             capacity | No leakage, Capacity recovery rate ≥ 80% (of Cnom in 2.1)"
+      cycles: 8
+      end_condition: "capacity recovery rate >= 80% of Cnom after 8 thermal cycles"
+    notes: "lower bound; coined name because storage_capacity_recovery_pct is
+            defined for recovery after storage and this is thermal cycling.
+            inclusion was a judgement call: it sits under 'Environmental
+            specification' and its criterion is a capacity number, so treated it as
+            a claim, but it could reasonably be excluded as an abuse test."
+
+  # --- 4.3.4 Temperature Dependency of Capacity: 2-D grid, 4 cells ---
+
+  - property: capacity_retention_at_temp_pct
+    value: 60
+    unit: pct
+    page: 7
+    stated_conditions:
+      text: "4.3.4 Temperature Dependency of Capacity | Cells shall be charged per
+             4.1.1 at 23ºC ± 2ºC and discharged per 4.1.2 at the following
+             temperatures | Charge 25℃ / Discharge -10℃ → 60% (of Cnom in 2.1)"
+      charge_temperature_c: 25
+      discharge_temperature_c: -10
+      discharge_current_a: 0.6
+      discharge_cutoff_v: 2.0
+    notes: "grid cell = own claim. contradiction recorded as printed: the table
+            preamble says the cells are charged at 23ºC ± 2ºC, but the table's own
+            Charge column says 25℃, and 4.1.1 says 25ºC ± 2ºC. took the grid column
+            value for charge_temperature_c and left the conflict visible in the
+            quoted text."
+
+  - property: capacity_retention_at_temp_pct
+    value: 80
+    unit: pct
+    page: 7
+    stated_conditions:
+      text: "4.3.4 | Charge 25℃ / Discharge 0℃ → 80% (of Cnom in 2.1); preamble
+             states charge per 4.1.1 at 23ºC ± 2ºC"
+      charge_temperature_c: 25
+      discharge_temperature_c: 0
+      discharge_current_a: 0.6
+      discharge_cutoff_v: 2.0
+    notes: "grid cell; same 23ºC/25ºC charge-temperature contradiction as the -10℃
+            cell"
+
+  - property: capacity_retention_at_temp_pct
+    value: 100
+    unit: pct
+    page: 7
+    stated_conditions:
+      text: "4.3.4 | Charge 25℃ / Discharge 25℃ → 100% (of Cnom in 2.1); preamble
+             states charge per 4.1.1 at 23ºC ± 2ºC"
+      charge_temperature_c: 25
+      discharge_temperature_c: 25
+      discharge_current_a: 0.6
+      discharge_cutoff_v: 2.0
+  - property: capacity_retention_at_temp_pct
+    value: 95
+    unit: pct
+    page: 7
+    stated_conditions:
+      text: "4.3.4 | Charge 25℃ / Discharge 60℃ → 95% (of Cnom in 2.1); preamble
+             states charge per 4.1.1 at 23ºC ± 2ºC"
+      charge_temperature_c: 25
+      discharge_temperature_c: 60
+      discharge_current_a: 0.6
+      discharge_cutoff_v: 2.0
+# ---------------------------------------------------------------------------
+# OMISSIONS — properties actively searched for and confirmed ABSENT.
+# ---------------------------------------------------------------------------
+omissions:
+
+  - property: minimum_capacity_ah
+    note: "no guaranteed or minimum capacity is stated. This is a notable absence
+           rather than a routine one: safety test 4.5.3 (page 8) specifies
+           discharging 'to 250% of the minimum capacity', so the document uses the
+           term as though it were defined, but no minimum capacity appears in
+           section 2, in 4.2, or anywhere else. Searched the whole of sections 2
+           and 4 and the footnotes on pages 4 and 6"
+
+  - property: std_charge_time_h
+    note: "no standard charge duration is stated. 4.1.1 defines the standard charge
+           by its currents and its taper cut-off but gives no time, and section 2
+           has no charge-time row. 5.1 says only 'Charge time should not be longer
+           than specified in the manual', deferring to a document not supplied.
+           Searched sections 2, 4.1 and 5.1"
+
+  - property: gravimetric_energy_density_wh_kg
+    note: "no Wh/kg figure. Searched section 2 (which gives capacity, nominal
+           voltage and weight, from which it could be computed) and 4.2. Computing
+           it would introduce a number the document does not state"
+
+  - property: volumetric_energy_density_wh_l
+    note: "no Wh/L figure. Searched section 2, section 3.2 (which gives the
+           dimensions needed to compute a volume) and 4.2"
+
+  - property: capacity_retention_at_temp_pct
+    note: "partial absence — the grid in 4.3.4 covers discharge temperatures only.
+           The document states four capacity figures for discharge at -10/0/25/60℃
+           but none for charging at low or high temperature, even though 2.9
+           defines a charge temperature window (-5 ~ 50℃) distinct from the
+           discharge one. So the effect of temperature on charging is unspecified.
+           Searched 4.3.4, the rest of 4.3, and 5.3.3"

@@ -1,0 +1,496 @@
+# Second-annotator extraction from the SANYO/Panasonic full product
+# specification "Specifications of Lithium Ion battery (Cylindrical Type)",
+# File No. NCR18650-068, type NCR18650B-H00BA, issued 2012-05-29 (Tentative).
+# `page` = physical PDF page; printed "page N/13" sits on physical page N+2.
+cell_model: Panasonic NCR18650B (SANYO NCR18650B-H00BA)
+manufacturer: SANYO Electric Co., Ltd. / Panasonic
+source_document: panasonic_ncr18650b_full_spec_sanyo.pdf
+
+annotator: A2
+annotated_date: 2026-08-14
+
+new_properties:
+  - name: discharge_time_min
+    meaning: duration of discharge to the stated end voltage at a stated current, in minutes as printed
+  - name: shipping_state_soc_pct
+    meaning: state of charge the cells are shipped at, as a percentage of full charge
+  - name: precharge_current_a
+    meaning: current used to pre-charge a cell that has fallen below the pre-charge threshold voltage
+  - name: precharge_threshold_voltage_v
+    meaning: cell voltage below which pre-charging rather than standard charging must be used
+  - name: over_discharge_limit_v
+    meaning: absolute floor voltage below which the cell must not be discharged, distinct from the normal discharge end voltage
+  - name: series_discharge_cutoff_v
+    meaning: discharge end voltage required per cell when cells are connected in series
+  - name: storage_humidity_max_pct
+    meaning: maximum relative humidity permitted during storage
+
+# ---------------------------------------------------------------------------
+# CLAIMS
+# ---------------------------------------------------------------------------
+claims:
+
+  # === Section 5, Nominal Specifications — physical page 8 (printed 6/13) ===
+
+  - property: rated_capacity_ah
+    value: 3.2
+    unit: Ah
+    page: 8
+    stated_conditions:
+      text: "5.1 Rated Capacity (Minimum) | 3200mAh | Notes: 0.65A discharge at 20℃"
+      discharge_current_a: 0.65
+      temperature_c: 20
+    notes: "lower bound — the row is headed '(Minimum)'."
+
+  - property: nominal_capacity_ah
+    value: 3.25
+    unit: Ah
+    page: 8
+    stated_conditions:
+      text: "5.2 Nominal Capacity (Minimum) | 3250mAh | Notes: 0.65A discharge at 25℃"
+      discharge_current_a: 0.65
+      temperature_c: 25
+    notes: "lower bound — '(Minimum)'."
+
+  - property: nominal_capacity_ah
+    value: 3.35
+    unit: Ah
+    page: 8
+    stated_conditions:
+      text: "5.3 Nominal Capacity (Typical) | 3350mAh | Notes: Reference only"
+  - property: nominal_voltage_v
+    value: 3.6
+    unit: V
+    page: 8
+    stated_conditions:
+      text: "5.4 Nominal Voltage | 3.6V | Notes: 0.65A discharge"
+      discharge_current_a: 0.65
+    notes: "discharge current stated but no temperature for this row"
+
+  - property: discharge_cutoff_v
+    value: 2.5
+    unit: V
+    page: 8
+    stated_conditions:
+      text: "5.5 Discharging End Voltage | 2.5V"
+    notes: "restated in 10-1(2) on physical page 11 ('The discharge end voltage
+            should be more than 2.5V/cell') and used throughout section 6; recorded
+            once here"
+
+  - property: std_charge_current_a
+    value: 1.625
+    unit: A
+    page: 8
+    stated_conditions:
+      text: "5.6 Charging Current (Std.) | 1.625A"
+      charge_voltage_v: 4.20
+      temperature_c: 25
+    notes: "cross-reference resolved: 6.1 Full Charge on physical page 9 adds that
+            the CC-CV charge to 4.20V runs a total of 4.0 hours at 25℃."
+
+  - property: charge_voltage_v
+    value: 4.20
+    unit: V
+    page: 8
+    stated_conditions:
+      text: "5.7 Charging Voltage | 4.20 ± 0.03V"
+      charge_current_a: 1.625
+    notes: "only the central value 4.20 is recorded; the ± 0.03 stays in the quoted
+            text."
+
+  - property: std_charge_time_h
+    value: 4.0
+    unit: h
+    page: 8
+    stated_conditions:
+      text: "5.8 Charging Time (Std.) | 4.0 hours"
+      charge_current_a: 1.625
+      charge_voltage_v: 4.20
+      temperature_c: 25
+    notes: "printed in hours, recorded in hours with no conversion."
+
+  - property: max_cont_discharge_a
+    value: 4.875
+    unit: A
+    page: 8
+    stated_conditions:
+      text: "5.9 Continuous Discharging Current (Max.)※1 | 4.875A | Notes: 0 ~ +40℃.
+             ※1 'The maximum discharge current for a single cell use. However after
+             the battery pack assembly, there will be a limitation of maximum
+             discharge current due to a protection circuit or a protection device.'"
+    notes: "the ※1 footnote is folded into the text as part of this row's
+            conditions."
+
+  - property: internal_impedance_mohm
+    value: 100
+    unit: mOhm
+    page: 8
+    stated_conditions:
+      text: "5.10 Internal Resistance | less than 100mΩ | Notes: AC Impedance 1 kHz"
+      frequency_hz: 1000
+    notes: "upper bound — 'less than'."
+
+  - property: mass_g
+    value: 48.5
+    unit: g
+    page: 8
+    stated_conditions:
+      text: "5.11 Weight | less than 48.5g"
+    notes: "upper bound — 'less than'"
+
+  - property: charge_temp_range_c
+    value: [0, 40]
+    unit: degC
+    page: 8
+    stated_conditions:
+      text: "5.12 Operating Temperature | Charge | 0 ~ +40℃"
+    notes: "restated in 10-1(1) on physical page 11 ('The charging temperature range
+            should be set between 0 ℃ to +40 ℃'); recorded once"
+
+  - property: discharge_temp_range_c
+    value: [-20, 60]
+    unit: degC
+    page: 8
+    stated_conditions:
+      text: "5.12 Operating Temperature | Discharge | -20 ~ +60℃"
+    notes: "restated in 10-1(2) on physical page 11; recorded once"
+
+  - property: storage_temp_range_c
+    value: [-20, 50]
+    unit: degC
+    page: 8
+    stated_conditions:
+      text: "5.13 Storing Conditions | less than 1 month | -20 ~ +50℃"
+      duration_months: 1
+    notes: "one of three storing-condition rows differing only in duration."
+
+  - property: storage_temp_range_c
+    value: [-20, 40]
+    unit: degC
+    page: 8
+    stated_conditions:
+      text: "5.13 Storing Conditions | less than 3 months | -20 ~ +40℃"
+      duration_months: 3
+    notes: "restated in 11-1 on physical page 13 ('Within 3 months... between -20℃
+            to +40℃'); recorded once here"
+
+  - property: storage_temp_range_c
+    value: [-20, 20]
+    unit: degC
+    page: 8
+    stated_conditions:
+      text: "5.13 Storing Conditions | less than 1 year | -20 ~ + 20℃"
+      duration_years: 1
+    notes: "coined condition field duration_years to avoid converting '1 year'."
+
+  - property: storage_capacity_recovery_pct
+    value: 80
+    unit: pct
+    page: 8
+    stated_conditions:
+      text: "5.13 Storing Conditions, Notes column (spanning all three duration
+             rows): 'Percentage of recoverable capacity 80%※2'. ※2: 'Percentage of
+             recoverable capacity = (Discharging time after storage / Initial
+             discharging time) ×100. The discharging time is measured by the
+             discharge current of 0.65A until 2.5V of end voltage after the battery
+             is fully charged at 25℃.'"
+      discharge_current_a: 0.65
+      discharge_cutoff_v: 2.5
+      temperature_c: 25
+    notes: "'recoverable', so storage_capacity_recovery_pct rather than
+            storage_capacity_remaining_pct."
+
+  # === Section 6, Electrical Characteristics — physical pages 9-10 =========
+
+  - property: discharge_time_min
+    value: 300
+    unit: min
+    page: 9
+    stated_conditions:
+      text: "6.2 Capacity ① 'Within 1 hour, after fully charged at 25℃, the battery
+             is discharged with 0.65A continuously until 2.5V of end voltage at
+             25℃.' Criteria: More than 300min."
+      discharge_current_a: 0.65
+      discharge_cutoff_v: 2.5
+      temperature_c: 25
+      charge_current_a: 1.625
+      charge_voltage_v: 4.20
+    notes: "lower bound — 'More than'."
+
+  - property: discharge_time_min
+    value: 54
+    unit: min
+    page: 9
+    stated_conditions:
+      text: "6.2 Capacity ② 'Within 1 hour, after fully charged at 25℃, the battery
+             is discharged with 3.25A continuously until 2.5V of end voltage at
+             25℃.' Criteria: More than 54min."
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.5
+      temperature_c: 25
+      charge_current_a: 1.625
+      charge_voltage_v: 4.20
+    notes: "lower bound. The 3.25A variant, which is the reference test that 6.3,
+            6.4, 6.5 and 6.6 all measure against"
+
+  - property: cycle_life_cycles
+    value: 300
+    unit: cycles
+    page: 9
+    stated_conditions:
+      text: "6.3 Cycle Life 'The battery is repeated 300 times of Charge and
+             Discharge cycles, (Charged by CC-CV of 1.625A-4.20V for 4.0 hours,
+             Discharged by CC of 3.25A to 2.5V (E.V.)) at 25℃. After the 300
+             cycles, the discharge time is measured by the Item 6.2.②.'
+             Criteria: More than 38min."
+      charge_current_a: 1.625
+      charge_voltage_v: 4.20
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.5
+      temperature_c: 25
+      charge_time_min: 240
+      end_condition: "discharge time > 38 min measured per 6.2 (2) after 300 cycles"
+    notes: "pass criterion, not typical life."
+
+  - property: discharge_time_min
+    value: 38
+    unit: min
+    page: 9
+    stated_conditions:
+      text: "6.3 Cycle Life, criteria: 'More than 38min.' — the discharge time
+             measured per Item 6.2.② after 300 charge/discharge cycles at 25℃"
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.5
+      temperature_c: 25
+      cycles: 300
+    notes: "lower bound."
+
+  - property: discharge_time_min
+    value: 30
+    unit: min
+    page: 9
+    stated_conditions:
+      text: "6.4 Temperature Characteristics ① 'Within 1 hour, after fully charged
+             at 25℃, the battery is stored at 0 ℃ for 3 hours. After that, the
+             discharge time is measured Item 6.2.② at 0 ℃.' Criteria: More than 30min."
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.5
+      discharge_temperature_c: 0
+      charge_temperature_c: 25
+    notes: "lower bound."
+
+  - property: discharge_time_min
+    value: 50
+    unit: min
+    page: 9
+    stated_conditions:
+      text: "6.4 Temperature Characteristics ② 'Within 1 hour, after fully charged
+             at 25℃, the battery is stored at 60 ℃ for 3 hours. After that, the
+             discharge time is measured Item 6.2.② at 60 ℃.' Criteria: More than 50min."
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.5
+      discharge_temperature_c: 60
+      charge_temperature_c: 25
+    notes: "lower bound."
+
+  - property: discharge_time_min
+    value: 30
+    unit: min
+    page: 9
+    stated_conditions:
+      text: "6.5 Storage at Fully Charged State 'After fully charged at 25℃, the
+             battery is stored for 20 days at 60 ℃. After the storage, the battery
+             is set in 25℃ for 3 hours. Then, the discharge time is measured Item
+             6.2.②.' Criteria: More than 30min."
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.5
+      temperature_c: 25
+      duration_days: 20
+      storage_temperature_c: 60
+      end_condition: "remaining discharge time > 30 min after 20 days stored fully charged at 60 degC"
+    notes: "lower bound."
+
+  - property: discharge_time_min
+    value: 40
+    unit: min
+    page: 9
+    stated_conditions:
+      text: "6.5 Storage at Fully Charged State, second criterion: 'Then, the same
+             battery is fully charged again and checked the second discharge time
+             by the Item 6.2 ② at 25 ℃.' Criteria: More than 40min"
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.5
+      temperature_c: 25
+      duration_days: 20
+      storage_temperature_c: 60
+      end_condition: "recovered discharge time > 40 min after one further full charge"
+    notes: "lower bound. This is the RECOVERED capacity — the same test as the 30
+            min claim above but re-measured after a further full charge, so the pair
+            mirrors the remaining/recovery distinction of Two criteria printed in
+            one table row, hence two claims"
+
+  - property: discharge_time_min
+    value: 50
+    unit: min
+    page: 10
+    stated_conditions:
+      text: "6.6 Storage at Full Discharged State 'After fully charged at 25℃, the
+             battery is discharged by the Item 6.2.②. Then, the battery is stored
+             for 20 days at 60 ℃. After the storage, the battery is set in 25℃ for
+             3 hours. Then, the discharge time is measured by the Item 6.2.② at
+             25℃.' Criteria: More than 50min."
+      discharge_current_a: 3.25
+      discharge_cutoff_v: 2.5
+      temperature_c: 25
+      duration_days: 20
+      storage_temperature_c: 60
+    notes: "lower bound. Stored in the DISCHARGED state, so the criterion is higher
+            (50 min) than the fully-charged storage test (30 min) on the previous
+            page: the document is claiming that storage at 60℃ is far less damaging
+            from a discharged state"
+
+  # === Section 9, Shipping Charge — physical page 11 (printed 9/13) ========
+
+  - property: shipping_state_soc_pct
+    value: 40
+    unit: pct
+    page: 11
+    stated_conditions:
+      text: "9. Shipping Charge: 'The battery is shipped out with the approximately
+             40%＊ charged state. *The 40% capacity is the condition in which SANYO
+             ships the battery but it's not the condition when Fey Elektronik GmbH
+             receives the battery.'"
+  # === Section 10, Design Precautions — physical page 11 ===================
+
+  - property: max_charge_current_a
+    value: 1.625
+    unit: A
+    page: 11
+    stated_conditions:
+      text: "10-1(1) Charge: 'Regarding NCR18650B, the charging current should not
+             exceed 1.625A /cell.'"
+    notes: "upper bound."
+
+  - property: max_charge_voltage_v
+    value: 4.20
+    unit: V
+    page: 11
+    stated_conditions:
+      text: "10-1(1) Charge: 'The charging voltage should not exceed 4.20V /cell.'"
+    notes: "upper bound."
+
+  - property: precharge_threshold_voltage_v
+    value: 3.0
+    unit: V
+    page: 11
+    stated_conditions:
+      text: "10-1(1) Charge: 'If battery voltage goes down to less than 3.0V/cell,
+             the battery should be charged by pre-charge current of maximum 0.32A.
+             Once, the battery reached more than 3.0V/cell by the pre-charging, the
+             charger can resume the standard charging method.'"
+    notes: "coined name."
+
+  - property: precharge_current_a
+    value: 0.32
+    unit: A
+    page: 11
+    stated_conditions:
+      text: "10-1(1) Charge: 'the battery should be charged by pre-charge current of
+             maximum 0.32A'"
+      end_condition: "applies while cell voltage is below 3.0 V/cell"
+    notes: "upper bound — 'maximum'."
+
+  - property: over_discharge_limit_v
+    value: 2.0
+    unit: V
+    page: 11
+    stated_conditions:
+      text: "10-1(3) Over discharge: 'Do not discharge the battery less than
+             2.0V/cell.'"
+    notes: "lower bound."
+
+  # === Sections 11-12, Storing and Handling — physical page 13 ============
+
+  - property: storage_humidity_max_pct
+    value: 70
+    unit: pct
+    page: 13
+    stated_conditions:
+      text: "11-1 Storage Temperature and Humidity (Within 3 months): 'Cells should
+             be stored between -20℃ to +40℃ in a low humidity condition (less than
+             70 %RH) without any corrosive gases.' 11-2 Long Duration Storage
+             repeats 'less than 70%RH'."
+      duration_months: 3
+    notes: "upper bound — 'less than'."
+
+  - property: series_discharge_cutoff_v
+    value: 2.75
+    unit: V
+    page: 13
+    stated_conditions:
+      text: "12-1 Series Connections Precautions: 'If cells are connected in series,
+             the discharge end voltage should be set more than 2.75V/cell.'"
+    notes: "lower bound."
+
+# ---------------------------------------------------------------------------
+# OMISSIONS — properties actively searched for and confirmed ABSENT.
+# ---------------------------------------------------------------------------
+omissions:
+
+  - property: cycle_life_retention_pct
+    note: "no percentage end-of-life threshold anywhere. 6.3 defines the end of the
+           300-cycle test as 'More than 38min.' of discharge, a time, and the
+           document never converts that to a percentage of initial capacity.
+           Searched section 5, the whole of section 6, and the ※2 footnote on
+           physical page 8 (which does define a percentage, but for storage
+           recovery, not for cycling). This matters because the cycle-life claim
+           cannot be compared with a percentage-based measurement without assuming
+           the 6.2② initial value"
+
+  - property: gravimetric_energy_density_wh_kg
+    note: "no Wh/kg figure, and none is computable from stated values without
+           assumptions — section 5 gives capacity, nominal voltage and a maximum
+           weight, but 'less than 48.5g' is a bound rather than an actual mass.
+           Searched sections 5 and 6. Notably the short marketing sheet for the
+           same cell does state an energy density and this full specification does
+           not; judged on this document's own contents as requires"
+
+  - property: volumetric_energy_density_wh_l
+    note: "no Wh/L figure, and no dimensions are stated anywhere in this document
+           from which a volume could be derived (see the section 7 entry below).
+           Searched sections 5, 6 and 7"
+
+  - property: charge_temp_range_c
+    note: "partial absence and an internal inconsistency worth recording rather
+           than a plain omission: 5.12 does give a charge temperature range
+           (0 ~ +40℃), but no capacity or performance claim anywhere is qualified
+           by charge temperature. 6.4 characterises DISCHARGE temperature only
+           (0℃ and 60℃), charging in both cases at 25℃, so the effect of charging
+           at the extremes of the permitted 0-40℃ window is unspecified. Searched
+           section 5.12 and all of section 6"
+
+  - property: max_charge_voltage_v
+    note: "RECORDED ONLY AS A DESIGN PRECAUTION, not as a specification. The
+           not-to-exceed 4.20V is stated in section 10-1(1), among precautions for
+           designing the charger, and NOT in the section 5 nominal specification
+           table, which gives only the 4.20 ± 0.03V charging voltage. A reader
+           consulting only the specification table would not find a maximum charge
+           voltage. Searched sections 5, 6, 10 and 15"
+
+  - property: diameter_mm
+    note: "NO DIMENSION OF ANY KIND is stated in this document. Section 7 'Design
+           and Dimensions' consists of a single sentence — 'The battery design is
+           shown in the following documents or drawings' — and no drawing or
+           dimension follows it; section 8 'Appearance' is a list of cosmetic
+           defects with no numbers. Searched sections 5, 7 and 8 and every other
+           physical page. height_mm and terminal diameter are absent for the same
+           reason. This is striking for a full product specification, and it is
+           the clearest content difference from the short marketing sheet for the
+           same cell, which does dimension it"
+
+  - property: minimum_capacity_ah
+    note: "no separately named minimum capacity. 5.1 and 5.2 are themselves headed
+           '(Minimum)', so the concept is present but is expressed through the
+           rated and nominal rows rather than as its own specification; there is no
+           further guaranteed floor. Searched section 5 and section 6.2. Recorded
+           here so the distinction from documents that state all three is visible"

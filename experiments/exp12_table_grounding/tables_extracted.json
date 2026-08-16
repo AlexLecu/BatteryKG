@@ -1,0 +1,317 @@
+{
+  "document": "samsung_inr18650_25r",
+  "pdf": "data/claims/datasheets/samsung_inr18650_25r.pdf",
+  "n_content_tables_raw": 7,
+  "n_regions_after_stitch": 6,
+  "stitches": [
+    {
+      "merged": "p4_t1+p5_t1",
+      "pages": [
+        4,
+        5
+      ],
+      "n_cols": 5,
+      "note": "axis row ends page 4, value row begins page 5; 5 columns on both sides"
+    }
+  ],
+  "regions": [
+    {
+      "region_id": "p3_t1",
+      "pages": [
+        3
+      ],
+      "n_cols": 2,
+      "bboxes": [
+        [
+          72.74,
+          250.13,
+          531.26,
+          630.7
+        ]
+      ],
+      "kind": "spec_table",
+      "stitched": false,
+      "stitch_note": "",
+      "qty_rows": [],
+      "n_rows": 12
+    },
+    {
+      "region_id": "p4_t1+p5_t1",
+      "pages": [
+        4,
+        5
+      ],
+      "n_cols": 5,
+      "bboxes": [
+        [
+          86.66,
+          719.4,
+          536.74,
+          757.32
+        ],
+        [
+          87.38,
+          119.3,
+          537.46,
+          145.94
+        ]
+      ],
+      "kind": "grid",
+      "stitched": true,
+      "stitch_note": "axis row ends page 4, value row begins page 5; 5 columns on both sides",
+      "qty_rows": [
+        1,
+        2
+      ],
+      "n_rows": 3
+    },
+    {
+      "region_id": "p5_t2",
+      "pages": [
+        5
+      ],
+      "n_cols": 7,
+      "bboxes": [
+        [
+          87.38,
+          239.33,
+          537.46,
+          298.97
+        ]
+      ],
+      "kind": "grid",
+      "stitched": false,
+      "stitch_note": "",
+      "qty_rows": [
+        1,
+        2
+      ],
+      "n_rows": 3
+    },
+    {
+      "region_id": "p5_t3",
+      "pages": [
+        5
+      ],
+      "n_cols": 3,
+      "bboxes": [
+        [
+          82.58,
+          395.11,
+          502.8,
+          485.59
+        ]
+      ],
+      "kind": "grid",
+      "stitched": false,
+      "stitch_note": "",
+      "qty_rows": [
+        2,
+        3
+      ],
+      "n_rows": 4
+    },
+    {
+      "region_id": "p5_t4",
+      "pages": [
+        5
+      ],
+      "n_cols": 6,
+      "bboxes": [
+        [
+          82.58,
+          540.94,
+          502.8,
+          606.82
+        ]
+      ],
+      "kind": "grid",
+      "stitched": false,
+      "stitch_note": "",
+      "qty_rows": [
+        1,
+        2
+      ],
+      "n_rows": 3
+    },
+    {
+      "region_id": "p17_t1",
+      "pages": [
+        17
+      ],
+      "n_cols": 4,
+      "bboxes": [
+        [
+          51.24,
+          135.26,
+          543.1,
+          170.18
+        ]
+      ],
+      "kind": "other",
+      "stitched": false,
+      "stitch_note": "",
+      "qty_rows": [],
+      "n_rows": 2
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "p3_t1_r1",
+      "kind": "spec_row",
+      "region_id": "p3_t1",
+      "pages": [
+        3
+      ],
+      "stitched": false,
+      "n_rows": 1
+    },
+    {
+      "unit_id": "p3_t1_r2",
+      "kind": "spec_row",
+      "region_id": "p3_t1",
+      "pages": [
+        3
+      ],
+      "stitched": false,
+      "n_rows": 1
+    },
+    {
+      "unit_id": "p3_t1_r3",
+      "kind": "spec_row",
+      "region_id": "p3_t1",
+      "pages": [
+        3
+      ],
+      "stitched": false,
+      "n_rows": 1
+    },
+    {
+      "unit_id": "p3_t1_r4",
+      "kind": "spec_row",
+      "region_id": "p3_t1",
+      "pages": [
+        3
+      ],
+      "stitched": false,
+      "n_rows": 1
+    },
+    {
+      "unit_id": "p3_t1_r5",
+      "kind": "spec_row",
+      "region_id": "p3_t1",
+      "pages": [
+        3
+      ],
+      "stitched": false,
+      "n_rows": 1
+    },
+    {
+      "unit_id": "p3_t1_r6",
+      "kind": "spec_row",
+      "region_id": "p3_t1",
+      "pages": [
+        3
+      ],
+      "stitched": false,
+      "n_rows": 1
+    },
+    {
+      "unit_id": "p3_t1_r7",
+      "kind": "spec_row",
+      "region_id": "p3_t1",
+      "pages": [
+        3
+      ],
+      "stitched": false,
+      "n_rows": 1
+    },
+    {
+      "unit_id": "p3_t1_r8",
+      "kind": "spec_row",
+      "region_id": "p3_t1",
+      "pages": [
+        3
+      ],
+      "stitched": false,
+      "n_rows": 1
+    },
+    {
+      "unit_id": "p3_t1_r9",
+      "kind": "spec_row",
+      "region_id": "p3_t1",
+      "pages": [
+        3
+      ],
+      "stitched": false,
+      "n_rows": 1
+    },
+    {
+      "unit_id": "p3_t1_r10",
+      "kind": "spec_row",
+      "region_id": "p3_t1",
+      "pages": [
+        3
+      ],
+      "stitched": false,
+      "n_rows": 1
+    },
+    {
+      "unit_id": "p3_t1_r11",
+      "kind": "spec_row",
+      "region_id": "p3_t1",
+      "pages": [
+        3
+      ],
+      "stitched": false,
+      "n_rows": 1
+    },
+    {
+      "unit_id": "p4_t1+p5_t1_grid",
+      "kind": "grid",
+      "region_id": "p4_t1+p5_t1",
+      "pages": [
+        4,
+        5
+      ],
+      "stitched": true,
+      "n_rows": 3
+    },
+    {
+      "unit_id": "p5_t2_grid",
+      "kind": "grid",
+      "region_id": "p5_t2",
+      "pages": [
+        5
+      ],
+      "stitched": false,
+      "n_rows": 3
+    },
+    {
+      "unit_id": "p5_t3_grid",
+      "kind": "grid",
+      "region_id": "p5_t3",
+      "pages": [
+        5
+      ],
+      "stitched": false,
+      "n_rows": 4
+    },
+    {
+      "unit_id": "p5_t4_grid",
+      "kind": "grid",
+      "region_id": "p5_t4",
+      "pages": [
+        5
+      ],
+      "stitched": false,
+      "n_rows": 3
+    }
+  ],
+  "counts": {
+    "grid": 4,
+    "spec_row": 11,
+    "total_units": 15
+  },
+  "redacted": "cell text withheld from the public release \u2014 the source datasheet is copyright-restricted; rebuild with `python -m experiments.exp12_table_grounding.table_grid`"
+}

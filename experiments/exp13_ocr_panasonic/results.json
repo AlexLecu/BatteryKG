@@ -1,0 +1,216 @@
+{
+ "document": "panasonic_ncr18650b",
+ "framing": "exploratory pilot — one document, OCR text, frozen pipeline unchanged; NOT integrated into the extraction pipeline",
+ "snapshot": "experiments/exp13_ocr_panasonic/panasonic_ncr18650b_ocr.txt",
+ "snapshot_chars": 3181,
+ "model": {
+  "provider": "groq",
+  "model": "llama-3.3-70b-versatile",
+  "temperature": 0.0,
+  "seed": 42
+ },
+ "n_runs": 3,
+ "raw_run_sizes": [
+  12,
+  12,
+  12
+ ],
+ "usage": {
+  "calls": 3,
+  "prompt_tokens": 4449,
+  "completion_tokens": 2022
+ },
+ "value_in_source_recoverable": "14/14",
+ "value_metrics": {
+  "gold": 14,
+  "pred": 9,
+  "tp": 9,
+  "fp": 0,
+  "fn": 5,
+  "precision": 1.0,
+  "recall": 0.6429,
+  "f1": 0.7826,
+  "hallucinations": 0,
+  "errors": [
+   "FN   [panasonic_ncr18650b] rated_capacity_ah=3.2 Ah: not extracted at all",
+   "FN   [panasonic_ncr18650b] minimum_capacity_ah=3.25 Ah: not extracted at all",
+   "FN   [panasonic_ncr18650b] nominal_capacity_ah=3.35 Ah: not extracted at all",
+   "FN   [panasonic_ncr18650b] std_charge_current_a=1.625 A: not extracted at all",
+   "FN   [panasonic_ncr18650b] discharge_cutoff_v=2.5 V: not extracted at all"
+  ]
+ },
+ "recall_by_denominator": {
+  "all_14": {
+   "n": 14,
+   "hits": 9,
+   "recall": 0.6429,
+   "matched": [
+    "nominal_voltage_v=3.6",
+    "charge_voltage_v=4.2",
+    "std_charge_time_h=4.0",
+    "charge_temp_range_c=[10, 45]",
+    "discharge_temp_range_c=[-20, 60]",
+    "storage_temp_range_c=[-20, 50]",
+    "mass_g=47.5",
+    "volumetric_energy_density_wh_l=676",
+    "gravimetric_energy_density_wh_kg=243"
+   ],
+   "missed": [
+    "rated_capacity_ah=3.2",
+    "minimum_capacity_ah=3.25",
+    "nominal_capacity_ah=3.35",
+    "std_charge_current_a=1.625",
+    "discharge_cutoff_v=2.5"
+   ]
+  },
+  "spec_table_13": {
+   "n": 13,
+   "hits": 9,
+   "recall": 0.6923,
+   "matched": [
+    "nominal_voltage_v=3.6",
+    "charge_voltage_v=4.2",
+    "std_charge_time_h=4.0",
+    "charge_temp_range_c=[10, 45]",
+    "discharge_temp_range_c=[-20, 60]",
+    "storage_temp_range_c=[-20, 50]",
+    "mass_g=47.5",
+    "volumetric_energy_density_wh_l=676",
+    "gravimetric_energy_density_wh_kg=243"
+   ],
+   "missed": [
+    "rated_capacity_ah=3.2",
+    "minimum_capacity_ah=3.25",
+    "nominal_capacity_ah=3.35",
+    "std_charge_current_a=1.625"
+   ]
+  },
+  "graph_1": {
+   "n": 1,
+   "hits": 0,
+   "recall": 0.0,
+   "matched": [],
+   "missed": [
+    "discharge_cutoff_v=2.5"
+   ]
+  }
+ },
+ "error_taxonomy": {
+  "wrong_value": [
+   "rated_capacity_ah=3.2 Ah (page 1) — property extracted with value(s) ['[0.0032, 0.00325]']",
+   "nominal_capacity_ah=3.35 Ah (page 1) — property extracted with value(s) ['0.00335']",
+   "std_charge_current_a=1.625 A (page 1) — property extracted with value(s) ['0.1625']"
+  ],
+  "not_extracted": [
+   "minimum_capacity_ah=3.25 Ah (page 1) — property never proposed in any run",
+   "discharge_cutoff_v=2.5 V (page 2) — property never proposed in any run"
+  ]
+ },
+ "validator": [
+  {
+   "run": "run1",
+   "in": 12,
+   "accepted": 9,
+   "normalized": 0,
+   "rejected": [
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run1",
+     "property": "rated_capacity_ah",
+     "value": [
+      0.0032,
+      0.00325
+     ],
+     "reason": "implausible",
+     "detail": "bounds [0.1, 10]"
+    },
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run1",
+     "property": "nominal_capacity_ah",
+     "value": 0.00335,
+     "reason": "value_not_in_source",
+     "detail": ""
+    },
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run1",
+     "property": "std_charge_current_a",
+     "value": 0.1625,
+     "reason": "value_not_in_source",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "run": "run2",
+   "in": 12,
+   "accepted": 9,
+   "normalized": 0,
+   "rejected": [
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run2",
+     "property": "rated_capacity_ah",
+     "value": [
+      0.0032,
+      0.00325
+     ],
+     "reason": "implausible",
+     "detail": "bounds [0.1, 10]"
+    },
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run2",
+     "property": "nominal_capacity_ah",
+     "value": 0.00335,
+     "reason": "value_not_in_source",
+     "detail": ""
+    },
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run2",
+     "property": "std_charge_current_a",
+     "value": 0.1625,
+     "reason": "value_not_in_source",
+     "detail": ""
+    }
+   ]
+  },
+  {
+   "run": "run3",
+   "in": 12,
+   "accepted": 9,
+   "normalized": 0,
+   "rejected": [
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run3",
+     "property": "rated_capacity_ah",
+     "value": [
+      0.0032,
+      0.00325
+     ],
+     "reason": "implausible",
+     "detail": "bounds [0.1, 10]"
+    },
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run3",
+     "property": "nominal_capacity_ah",
+     "value": 0.00335,
+     "reason": "value_not_in_source",
+     "detail": ""
+    },
+    {
+     "doc": "panasonic_ncr18650b",
+     "run": "run3",
+     "property": "std_charge_current_a",
+     "value": 0.1625,
+     "reason": "value_not_in_source",
+     "detail": ""
+    }
+   ]
+  }
+ ]
+}

@@ -114,6 +114,10 @@ page says so instead of mocking data.
   (41 claims), annotated after the extraction prompt, the property vocabulary
   and the Validator's bounds were frozen, and read only at scoring time
   (experiment 11).
+- `data/gold/second_annotator/*.yaml` — an independent second annotation (164
+  claims) of the same five datasheets, produced blind to the reference set,
+  together with the `ANNOTATION_GUIDELINE.md` it was written from. Released so
+  the inter-annotator agreement of experiment 14 is recomputable end to end.
 
 The manufacturer PDFs themselves are copyrighted and are not redistributed;
 source URLs and retrieval dates are in `data/README.md`. The extraction-input
@@ -131,10 +135,10 @@ src/models/      graph-mediated predictor, graph-free baseline, coverage-gated a
 src/agents/      LLM claim extraction, validator, literature monitor (human-gated)
 src/viz/         publication figure scripts
 app/             Streamlit demo (4 pages) + trained serving artifacts
-experiments/     experiments 05-11 (see below); 01-04 live in src/models/
+experiments/     experiments 05-14 (see below); 01-04 live in src/models/
 tests/           full suite; fixtures stand in for network/copyrighted sources
 data/claims/     released gold standard (see above)
-data/gold/       held-out gold standard for experiment 11
+data/gold/       held-out gold standard (exp 11) + second annotation (exp 14)
 data/README.md   provenance for every dataset (URLs, download dates)
 ```
 
@@ -160,8 +164,10 @@ Shipped artifacts and the script that regenerates each:
 
 ## Revision experiments
 
-Experiments 05–11 back the major revision. Each is a package under
+Experiments 05–14 back the revision. Each is a package under
 `experiments/`; every one writes a `README.md` next to its outputs.
+Experiments 12–14 answer round-2 reviewer comments and are detailed below the
+table.
 
 | | what it establishes | what it needs |
 |---|---|---|
@@ -172,6 +178,9 @@ Experiments 05–11 back the major revision. Each is a package under
 | **09** | the hardest honest test of the gate: same cell and laboratory as Severson, charge protocols the bank has never seen | `python -m src.ingestion.download attia` (~2.4 GiB) |
 | **10** | the Section 4.4 comparability verdicts re-derived independently, without calling the code that produced them (read-only) | live Neo4j with the KG loaded |
 | **11** | held-out extraction on a datasheet that contributed nothing to the prompt, the vocabulary or the Validator: precise (0.875) and hallucinating nothing, but recovering 34 % of the gold | nothing — scores the frozen predictions; see below |
+| **12** | row-level table grounding on the same held-out datasheet: recovers 17/17 of the table-grid cells the document-level pass missed, recall 0.342 → 0.634, precision 0.875 → 0.591, 0 hallucinations | the text snapshot, for the full re-score; see below |
+| **13** | OCR (Tesseract) on the image-only Panasonic marketing sheet, frozen pipeline otherwise: P 1.000 / R 0.643 / F1 0.783, 0 hallucinations, all 14 gold values legible in the OCR text | the OCR snapshot, rebuildable with tesseract + poppler; see below |
+| **14** | inter-annotator agreement between the reference gold (103 claims) and an independent second annotation (164 claims) of the same five datasheets: 101/103 = 0.981 value-level coverage, κ 0.744 on naming (0.895 excluding the grid stratum) | nothing — both annotation sets ship |
 
 Experiment 08 cannot be re-run without the archive zip, so its summary in
 `outputs/experiment_08_snl_ingestion/README.md` ships as the evidence.
@@ -182,6 +191,35 @@ script reports the value-stage metrics — which do not read the document — an
 marks the hallucination count and Validator replay **unavailable** rather than
 guessing them. For the complete re-score, rebuild the snapshot first (see
 *Released gold standard* above).
+
+### Reproducing experiments 12–14
+
+```bash
+# 12 — row-level table grounding
+python -m experiments.exp12_table_grounding.table_grid       # deterministic, no LLM
+python -m experiments.exp12_table_grounding.run_grounding    # 3 cached runs (LLM)
+python -m experiments.exp12_table_grounding.score            # re-score only, no LLM path
+
+# 13 — OCR on the image-only marketing sheet
+python -m experiments.exp13_ocr_panasonic.ocr                # OCR, deterministic, no LLM
+python -m experiments.exp13_ocr_panasonic.run_ocr_extraction # 3 cached runs (LLM)
+python -m experiments.exp13_ocr_panasonic.score              # re-score only, no LLM path
+
+# 14 — inter-annotator agreement (needs nothing beyond the shipped YAMLs)
+python -m experiments.exp14_annotator_agreement.sanity       # schema + conventions
+python -m experiments.exp14_annotator_agreement.score        # agreement + adjudication list
+
+# the tests for all three need neither a PDF nor an API key
+pytest tests/test_exp12_table_grid.py tests/test_exp13_ocr.py tests/test_exp14_alpha.py
+```
+
+Experiment 14 runs from the released set as-is. Experiments 12 and 13 score
+against a text snapshot derived from a copyrighted datasheet, which is not
+redistributed: `exp12/score.py` and `exp13/score.py` raise `FileNotFoundError`
+until it is rebuilt (`python -m src.agents.pdf_text` for 12,
+`python -m experiments.exp13_ocr_panasonic.ocr` — which needs `tesseract` and
+`poppler` — for 13). Every metric they print is already recorded in each
+package's `results.json` and `README.md`.
 
 ## Tests
 

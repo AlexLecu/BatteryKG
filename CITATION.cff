@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "BatteryKG"
+abstract: >-
+  Official code for a provenance-aware knowledge graph that reconciles
+  manufacturer datasheet claims with measured degradation in commercial
+  lithium-ion cells, with coverage-gated abstention for cycle-life prediction.
+type: software
+authors:
+  - family-names: Lecu
+    given-names: Alexandru
+  - family-names: Hawizy
+    given-names: Lezan
+  - family-names: Groza
+    given-names: Adrian
+license: MIT
+repository-code: "https://github.com/AlexLecu/BatteryKG"
+url: "https://batterykg.streamlit.app"
+preferred-citation:
+  type: article
+  title: >-
+    Reconciling Manufacturer Claims with Measured Degradation in Commercial
+    Lithium-Ion Cells: A Provenance-Aware Knowledge Graph with Coverage-Gated
+    Abstention
+  authors:
+    - family-names: Lecu
+      given-names: Alexandru
+    - family-names: Hawizy
+      given-names: Lezan
+    - family-names: Groza
+      given-names: Adrian
+  journal: "Batteries"
+  publisher:
+    name: "MDPI"
+  year: 2026
+  volume: 12
+  issue: 8
+  start: 314
+  issn: "2313-0105"
+  doi: "10.3390/batteries12080314"
+  url: "https://www.mdpi.com/2313-0105/12/8/314"

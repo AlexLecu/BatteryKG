@@ -4,11 +4,14 @@
 
 ### Reconciling What Battery Makers Promise with What Independent Tests Measure — a Provenance-Tracked Knowledge Graph with Prediction that Knows When to Refuse
 
+[![DOI](https://img.shields.io/badge/DOI-10.3390%2Fbatteries12080314-blue.svg)](https://doi.org/10.3390/batteries12080314)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Docker](https://img.shields.io/badge/docker-compose-2496ED.svg)](https://docs.docker.com/compose/)
 [![Streamlit](https://img.shields.io/badge/streamlit-live%20demo-FF4B4B.svg)](https://batterykg.streamlit.app)
 
-[🌐 Live Demo](https://batterykg.streamlit.app) · [🎥 Video](https://youtu.be/Fkcdzemw5b0) · [📄 Paper](#paper)
+[🌐 Live Demo](https://batterykg.streamlit.app) · [🎥 Video](https://youtu.be/Fkcdzemw5b0) · [📄 Paper](https://www.mdpi.com/2313-0105/12/8/314) · [📚 Citation](#citation)
+
+**Official code for the paper** "[Reconciling Manufacturer Claims with Measured Degradation in Commercial Lithium-Ion Cells: A Provenance-Aware Knowledge Graph with Coverage-Gated Abstention](https://doi.org/10.3390/batteries12080314)", *Batteries* **12**(8), 314, 2026.
 
 <img src="assets/hero.png" alt="BatteryKG system architecture" width="90%">
 
@@ -55,10 +58,35 @@ Three pages to play with at [batterykg.streamlit.app](https://batterykg.streamli
 
 ## Paper
 
-> *Reconciling Manufacturer Claims with Measured Degradation: A Self-Updating
-> Knowledge-Graph Multi-Agent System for Trustworthy Battery Cell Life
-> Prediction.* Under review at **Batteries** (MDPI).
-> Citation and DOI will be added on publication.
+> Lecu, A.; Hawizy, L.; Groza, A. *Reconciling Manufacturer Claims with
+> Measured Degradation in Commercial Lithium-Ion Cells: A Provenance-Aware
+> Knowledge Graph with Coverage-Gated Abstention.* **Batteries** 2026,
+> *12*(8), 314. [doi:10.3390/batteries12080314](https://doi.org/10.3390/batteries12080314)
+> · [article page](https://www.mdpi.com/2313-0105/12/8/314)
+
+## Citation
+
+If you use this repository, the released gold sets, or the knowledge graph,
+please cite the paper:
+
+```bibtex
+@article{lecu2026batterykg,
+  author  = {Lecu, Alexandru and Hawizy, Lezan and Groza, Adrian},
+  title   = {Reconciling Manufacturer Claims with Measured Degradation in Commercial
+             Lithium-Ion Cells: A Provenance-Aware Knowledge Graph with
+             Coverage-Gated Abstention},
+  journal = {Batteries},
+  year    = {2026},
+  volume  = {12},
+  number  = {8},
+  pages   = {314},
+  issn    = {2313-0105},
+  doi     = {10.3390/batteries12080314},
+  url     = {https://www.mdpi.com/2313-0105/12/8/314}
+}
+```
+
+Machine-readable metadata is in [CITATION.cff](CITATION.cff).
 
 ## Quickstart
 

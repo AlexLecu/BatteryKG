@@ -7,9 +7,9 @@
 [![DOI](https://img.shields.io/badge/DOI-10.3390%2Fbatteries12080314-blue.svg)](https://doi.org/10.3390/batteries12080314)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Docker](https://img.shields.io/badge/docker-compose-2496ED.svg)](https://docs.docker.com/compose/)
-[![Streamlit](https://img.shields.io/badge/streamlit-live%20demo-FF4B4B.svg)](https://batterykg.streamlit.app)
+[![Live demo](https://img.shields.io/badge/live%20demo-batterykg.utcluj.ro-2563eb.svg)](https://batterykg.utcluj.ro)
 
-[🌐 Live Demo](https://batterykg.streamlit.app) · [🎥 Video](https://youtu.be/Fkcdzemw5b0) · [📄 Paper](https://www.mdpi.com/2313-0105/12/8/314) · [📚 Citation](#citation)
+[🌐 Live Demo](https://batterykg.utcluj.ro) · [🎥 Video](https://youtu.be/Fkcdzemw5b0) · [📄 Paper](https://www.mdpi.com/2313-0105/12/8/314) · [📚 Citation](#citation)
 
 **Official code for the paper** "[Reconciling Manufacturer Claims with Measured Degradation in Commercial Lithium-Ion Cells: A Provenance-Aware Knowledge Graph with Coverage-Gated Abstention](https://doi.org/10.3390/batteries12080314)", *Batteries* **12**(8), 314, 2026.
 
@@ -48,13 +48,18 @@ documents without ever writing to the graph unreviewed.
 
 ## 🕹️ Interactive Demo
 
-Three pages to play with at [batterykg.streamlit.app](https://batterykg.streamlit.app):
+Try it at **[batterykg.utcluj.ro](https://batterykg.utcluj.ro)**, hosted by the Technical University of Cluj-Napoca:
 
 | Page | What you can do |
 |---|---|
-| 🔋 **Will It Last?** | Design a fast-charging recipe and get a cycle-life prediction — or an honest refusal |
-| ⚖️ **Promise vs Reality** | The datasheet's cycle-life claim drawn over how long the cells actually lasted |
-| 🔍 **Who Is Lying?** | Official spec sheets for the same battery that disagree with each other |
+| 🔋 **[Will It Last?](https://batterykg.utcluj.ro/will-it-last)** | Design a fast-charging recipe and get a cycle-life prediction — or an honest refusal |
+| ⚖️ **[Promise vs Reality](https://batterykg.utcluj.ro/promise-vs-reality)** | The datasheet's cycle-life claim drawn over how long the cells actually lasted |
+| 🔍 **[Who Is Lying?](https://batterykg.utcluj.ro/who-is-lying)** | Official spec sheets for the same battery that disagree with each other |
+| 🕸️ **[The Graph](https://batterykg.utcluj.ro/graph)** | The `SIMILAR_TO` neighbourhood the predictor's data support is read from |
+
+The site is a Vue app ([`web/`](web/)) over a small FastAPI service ([`api/`](api/)) that
+reuses the Streamlit app's serving code unchanged, so both show the same numbers. It runs
+from the bundled knowledge-graph snapshot, without a database; see [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ## Paper
 
@@ -116,6 +121,9 @@ python -m src.kg.independent           # third source -> Neo4j (reconciliation p
 
 # 5. Demo app — http://localhost:8501
 streamlit run app/main.py
+# or the web app: API on :8000, UI on http://localhost:5173
+pip install -r api/requirements.txt && uvicorn api.main:app --port 8000
+cd web && npm install && npm run dev
 ```
 
 The trained serving artifacts ship in `app/artifacts/`, so the **Will It
@@ -163,6 +171,9 @@ src/models/      graph-mediated predictor, graph-free baseline, coverage-gated a
 src/agents/      LLM claim extraction, validator, literature monitor (human-gated)
 src/viz/         publication figure scripts
 app/             Streamlit demo (4 pages) + trained serving artifacts
+api/             FastAPI service behind the web app (reuses app/common.py)
+web/             Vue web app served at batterykg.utcluj.ro
+deploy/server/   docker compose + nginx for the hosted web app
 experiments/     experiments 05-14 (see below); 01-04 live in src/models/
 tests/           full suite; fixtures stand in for network/copyrighted sources
 data/claims/     released gold standard (see above)

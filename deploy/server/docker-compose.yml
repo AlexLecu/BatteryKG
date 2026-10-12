@@ -1,0 +1,37 @@
+# BatteryKG web app on a single server behind an existing reverse proxy.
+#
+#   docker compose up -d --build
+#
+# No database and no secrets: the API serves the knowledge graph from the recorded
+# snapshot (data/kg_snapshots/app_snapshot.json) and predictions from app/artifacts/.
+# Only the web container is published, on 127.0.0.1:${WEB_PORT}; the host's nginx
+# forwards the public hostname there (see nginx-host.conf).
+name: batterykg
+
+services:
+  api:
+    build:
+      context: ../..
+      dockerfile: deploy/server/api.Dockerfile
+    image: batterykg-api
+    container_name: batterykg-api
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  web:
+    build:
+      context: ../../web
+      dockerfile: ../deploy/server/web.Dockerfile
+      additional_contexts:
+        server: .
+    image: batterykg-web
+    container_name: batterykg-web
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "127.0.0.1:${WEB_PORT:-3003}:80"

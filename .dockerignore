@@ -1,0 +1,8 @@
+# Build context of app/Dockerfile and deploy/server/api.Dockerfile (both from the repo root)
+.git
+.venv
+.idea
+neo4j
+data/raw
+web/node_modules
+web/dist

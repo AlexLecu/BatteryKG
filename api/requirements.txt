@@ -4,7 +4,7 @@ fastapi==0.143.0
 uvicorn==0.54.0
 numpy==2.5.3
 pandas==3.0.6
-pyarrow==24.0.0
+pyarrow==26.0.0
 scikit-learn==1.9.1
 # xgboost-cpu: same library without the ~470 MB CUDA runtime (Linux/Windows wheels only)
 xgboost-cpu==3.4.1; sys_platform == "linux"

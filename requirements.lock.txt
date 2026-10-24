@@ -78,7 +78,7 @@ mdurl==0.1.2
 mistune==3.3.3
 narwhals==2.24.0
 nbclient==0.11.0
-nbconvert==7.17.1
+nbconvert==7.17.2
 nbformat==5.10.4
 neo4j==6.2.0
 nest-asyncio2==1.7.2

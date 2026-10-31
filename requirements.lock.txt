@@ -140,7 +140,7 @@ terminado==0.18.1
 threadpoolctl==3.6.0
 tinycss2==1.5.1
 toml==0.10.2
-tornado==6.5.9
+tornado==6.6
 tqdm==4.69.0
 traitlets==5.15.1
 typing_extensions==4.16.0
